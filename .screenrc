@@ -1,0 +1,6 @@
+hardstatus on
+hardstatus alwayslastline
+hardstatus string  "%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
+
+term screen-256color
+altscreen
