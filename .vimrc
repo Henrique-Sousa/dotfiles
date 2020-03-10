@@ -24,6 +24,7 @@ set smartindent
 
 set foldmethod=indent
 set foldtext=''
+set foldlevelstart=20
 hi Folded ctermbg=black
 hi Folded ctermfg=gray
 
