@@ -1,6 +1,5 @@
 set number
 set ruler
-
 set tabstop=4
 set shiftwidth=4
 
@@ -28,6 +27,7 @@ set foldlevelstart=20
 hi Folded ctermbg=black
 hi Folded ctermfg=gray
 
+inoremap jk <ESC>
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -68,11 +68,14 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
-"colorschemes
 Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+
+"colorschemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
+
 Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
@@ -83,7 +86,30 @@ filetype plugin indent on    " required
 
 "Nerdree settings
 "autocmd vimenter * NERDTree
-nmap <C-k><C-b> :NERDTreeToggle<CR> 
+nmap <C-n> :NERDTreeToggle<CR> 
 
-colorscheme gruvbox
+"Color scheme
+colorscheme	gruvbox
 set bg=dark
+
+"Vim airline
+let g:airline_powerline_fonts = 1
+
+	if !exists('g:airline_symbols')
+		let g:airline_symbols = {}
+	endif
+
+	let g:airline_symbols.space = "\ua0"
+	" unicode symbols
+	let g:airline_left_sep = '»'
+	let g:airline_left_sep = '▶'
+	let g:airline_right_sep = '«'
+	let g:airline_right_sep = '◀'
+	let g:airline_symbols.linenr = '␊'
+	let g:airline_symbols.linenr = '␤'
+	let g:airline_symbols.linenr = '¶'
+	let g:airline_symbols.branch = '⎇'
+	let g:airline_symbols.paste = 'ρ'
+	let g:airline_symbols.paste = 'Þ'
+	let g:airline_symbols.paste = '∥'
+	let g:airline_symbols.whitespace = 'Ξ'
