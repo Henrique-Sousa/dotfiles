@@ -1,5 +1,6 @@
 set number
 set ruler
+
 set tabstop=4
 set shiftwidth=4
 
@@ -9,23 +10,23 @@ set wildmenu
 set ignorecase
 set incsearch
 set hlsearch
-hi Search ctermbg=blue
-hi Search ctermfg=black
+"hi Search ctermbg=blue
+"hi Search ctermfg=black
 
-hi MatchParen cterm=none ctermbg=gray ctermfg=black
+"hi MatchParen cterm=none ctermbg=gray ctermfg=black
 
-hi DiffAdd ctermfg=black
-hi DiffChange ctermfg=black 
-hi DiffText ctermfg=white
+"hi DiffAdd ctermfg=black
+"hi DiffChange ctermfg=black 
+"hi DiffText ctermfg=white
 
 set autoindent
 set smartindent
 
 set foldmethod=indent
-set foldtext=''
 set foldlevelstart=20
-hi Folded ctermbg=black
-hi Folded ctermfg=gray
+"set foldtext=''
+"hi Folded ctermbg=black
+"hi Folded ctermfg=gray
 
 inoremap jk <ESC>
 
