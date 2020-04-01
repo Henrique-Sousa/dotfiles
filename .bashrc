@@ -123,9 +123,10 @@ if [ -e "$HOME/.ls_colors" ]; then
 	. $HOME/.ls_colors
 fi
 
+cd ~
+
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 if [ -x "$(command -v keychain)"  -a -e "$HOME/.ssh/github_rsa" ]; then 
 	eval $(keychain --eval $HOME/.ssh/github_rsa)
 fi
 
-cd ~
