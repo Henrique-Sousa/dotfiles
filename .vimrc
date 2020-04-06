@@ -1,12 +1,21 @@
 set number
 set ruler
 
-set listchars=space:_,tab:>~ list
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 set smarttab
+
+command ToggleWhitespace call ToggleWhitespace()
+function! ToggleWhitespace()
+  if &listchars != 'space:_,tab:>~'
+    set listchars=space:_,tab:>~ list
+  else
+    set listchars=""
+  endif
+endfunction
+
 set cindent
 
 set path+=**
