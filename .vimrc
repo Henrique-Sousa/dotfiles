@@ -142,21 +142,13 @@ let g:NERDTreeGitStatusWithFlags = 1
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+"nerdcomment
+map <C-_> :call NERDComment(0,"toggle")<CR>
 
 "Color scheme
 colorscheme	gruvbox
 "colorscheme solarized
 set bg=dark
-
-
-" vim-prettier
-let g:prettier#quickfix_enabled = 0
-let g:prettier#quickfix_auto_focus = 0
-"prettier command for coc
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
- run prettier on save
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 "Vim airline
 let g:airline_powerline_fonts = 1
@@ -180,9 +172,15 @@ let g:airline_powerline_fonts = 1
 	let g:airline_symbols.paste = '∥'
 	let g:airline_symbols.whitespace = 'Ξ'
 
+" vim-prettier
+let g:prettier#quickfix_enabled = 0
+let g:prettier#quickfix_auto_focus = 0
 
-"nerdcomment
-map <C-_> :call NERDComment(0,"toggle")<CR>
+"prettier command for coc
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+ run prettier on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 "coc config
 let g:coc_global_extensions = [
