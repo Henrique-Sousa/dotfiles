@@ -62,6 +62,25 @@ inoremap <Right> <Nop>
 "noremap <C-I> <Tab>
 "inoremap <C-I> <Tab>
 
+noremap <C-Left> <Nop>
+noremap <C-Right> <Nop>
+noremap <C-Up> <Nop>
+noremap <C-Down> <Nop>
+
+inoremap <C-Left> <Nop>
+inoremap <C-Right> <Nop>
+inoremap <C-Up> <Nop>
+inoremap <C-Down> <Nop>
+
+noremap <M-Left> <Nop>
+noremap <M-Right> <Nop>
+noremap <M-Up> <Nop>
+noremap <M-Down> <Nop>
+
+inoremap <M-Left> <Nop>
+inoremap <M-Right> <Nop>
+inoremap <M-Up> <Nop>
+inoremap <M-Down> <Nop>
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
