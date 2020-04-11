@@ -187,7 +187,6 @@ let g:coc_global_extensions = [
 	\ 'coc-snipets',
 	\ 'coc-pairs',
 	\ 'coc-tsserver',
-	\ 'coc-eslint',
 	\ 'coc-prettier',
 	\ 'coc-json',
 	\ ]
