@@ -7,7 +7,7 @@ set softtabstop=2
 set expandtab
 set smarttab
 
-command ToggleWhitespace call ToggleWhitespace()
+command! ToggleWhitespace call ToggleWhitespace()
 function! ToggleWhitespace()
   if &listchars != 'space:_,tab:>~'
     set listchars=space:_,tab:>~ list
