@@ -119,3 +119,9 @@ inoremap <M-Left> <Nop>
 inoremap <M-Right> <Nop>
 inoremap <M-Up> <Nop>
 inoremap <M-Down> <Nop>
+
+noremap <End> <Nop>
+noremap <Home> <Nop>
+inoremap <End> <Nop>
+inoremap <Home> <Nop>
+
