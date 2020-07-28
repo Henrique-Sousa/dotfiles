@@ -36,6 +36,9 @@ set softtabstop=2
 set expandtab
 set smarttab
 
+set splitbelow
+set splitright
+
 command! ToggleWhitespace call ToggleWhitespace()
 function! ToggleWhitespace()
   if &listchars != 'space:_,tab:>~'
