@@ -18,7 +18,7 @@ Plug 'TomNomNom/xoria256.vim'
 
 call plug#end()
 
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='powerlineish'
 
