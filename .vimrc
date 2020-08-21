@@ -74,6 +74,8 @@ set foldlevelstart=20
 "hi Folded ctermbg=black
 "hi Folded ctermfg=gray
 
+set nrformats+=alpha
+
 inoremap jk <ESC>
 
 noremap <Up> <Nop>
