@@ -31,6 +31,8 @@ cd ~
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
+export EDITOR='/usr/bin/vim'
+
 #----------------------------
 # Auto-launching ssh-agent
 
