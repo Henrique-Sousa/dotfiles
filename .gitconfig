@@ -4,3 +4,5 @@
 	prompt = false
 [pager]
 	log = false
+[core]
+	editor = vim
