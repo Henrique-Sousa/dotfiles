@@ -33,13 +33,11 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 export EDITOR='/usr/bin/vim'
 
-#----------------------------
-# Auto-launching ssh-agent
 
+# >>> Auto-launching ssh-agent >>>
 #if [ -x "$(command -v keychain)"  -a -e "$HOME/.ssh/windows_github_rsa" ]; then 
 	#eval $(keychain --eval $HOME/.ssh/windows_github_rsa)
 #fi
-
 env=~/.ssh/agent.env
 
 agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
@@ -62,6 +60,7 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
 fi
 
 unset env
+# <<< Auto-launching ssh-agent <<<
 
 
 # >>> conda initialize >>>
