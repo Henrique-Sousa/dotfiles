@@ -7,6 +7,21 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# top running processes by highest memory usage
+alias psmem='ps -A -o pid,tty,%mem,%cpu,comm --sort=-%mem  | head -35'
+# top running processes by highest cpu usage
+alias pscpu='ps -A -o pid,tty,%mem,%cpu,comm --sort=-%cpu  | head -35'
+
+# group processes with the same name and show memory usage
+tmem(){ 
+  echo $1 $(ps -C $1 -o %mem= | paste -sd+ | bc)% mem
+}
+# group processes with the same name and show cpu usage
+tcpu(){ 
+  echo $1 $(ps -C $1 -o %cpu= | paste -sd+ | bc)% cpu
+}
+
+
 if [ -a "$HOME/.PS1" ]; then
   . $HOME/.PS1
 fi
