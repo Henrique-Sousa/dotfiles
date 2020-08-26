@@ -21,6 +21,9 @@ tcpu(){
   echo $1 $(ps -C $1 -o %cpu= | paste -sd+ | bc)% cpu
 }
 
+alias taskmem="for process in \$(ps -e -o comm | sort -u); do tmem \$process; done | sort -rhk2 | while read instance; do echo \$instance; echo \$instance | awk '{print \$1}' | xargs -o ps -o tty,pid,comm,%mem --sort=-%mem --no-headers -C ; done | less"
+
+
 alias pj='python3 -m json.tool'
 
 
