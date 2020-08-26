@@ -21,6 +21,8 @@ tcpu(){
   echo $1 $(ps -C $1 -o %cpu= | paste -sd+ | bc)% cpu
 }
 
+alias pj='python3 -m json.tool'
+
 
 if [ -a "$HOME/.PS1" ]; then
   . $HOME/.PS1
