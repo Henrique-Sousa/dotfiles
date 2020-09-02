@@ -78,6 +78,24 @@ set nrformats+=alpha
 
 inoremap jk <ESC>
 
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" resize horzontal split window
+nmap <C-Left> <C-W><
+nmap <C-Right> <C-W>>
+" resize vertical split window
+nmap <C-Up> <C-W>-
+nmap <C-Down> <C-W>+
+
+nmap <S-Left> 5<C-w>< 
+nmap <S-Right> 5<C-w>>
+nmap <S-Up> 5<C-w>-
+nmap <S-Down> 5<C-w>+
+
+
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -105,15 +123,25 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
         
-noremap <C-Left> <Nop>
-noremap <C-Right> <Nop>
-noremap <C-Up> <Nop>
-noremap <C-Down> <Nop>
+"noremap <C-Left> <Nop>
+"noremap <C-Right> <Nop>
+"noremap <C-Up> <Nop>
+"noremap <C-Down> <Nop>
 
 inoremap <C-Left> <Nop>
 inoremap <C-Right> <Nop>
 inoremap <C-Up> <Nop>
 inoremap <C-Down> <Nop>
+
+"noremap <S-Left> <Nop>
+"noremap <S-Right> <Nop>
+"noremap <S-Up> <Nop>
+"noremap <S-Down> <Nop>
+
+inoremap <S-Left> <Nop>
+inoremap <S-Right> <Nop>
+inoremap <S-Up> <Nop>
+inoremap <S-Down> <Nop>
 
 noremap <M-Left> <Nop>
 noremap <M-Right> <Nop>
