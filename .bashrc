@@ -35,6 +35,8 @@ taskmem(){
 
 alias pj='python3 -m json.tool'
 
+alias log='git log --oneline -n 30'
+
 
 if [ -a "$HOME/.PS1" ]; then
   . $HOME/.PS1
