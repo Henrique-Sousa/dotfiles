@@ -9,6 +9,7 @@ alias lla='ls -alF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias grept='grep --include=*.{txt,md}' 
 
 # top running processes by highest memory usage
 alias psmem='ps -A -o pid,tty,%mem,%cpu,comm --sort=-%mem  | head -35'
