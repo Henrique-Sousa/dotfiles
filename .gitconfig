@@ -9,3 +9,6 @@
 	excludesfile = /home/user1/.gitignore
 [alias]
 	lg = log --oneline -n 30
+[user]
+	name = Henrique-Sousa
+	email = 29417378+Henrique-Sousa@users.noreply.github.com
