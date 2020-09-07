@@ -41,7 +41,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 
 if [ -a "$HOME/.PS1" ]; then
-  . $HOME/.PS1
+  source $HOME/.PS1
 fi
 
 # set LS_COLORS environment variable from a separate dotfile
