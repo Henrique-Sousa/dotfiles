@@ -37,6 +37,8 @@ taskmem(){
 
 alias log='git log --oneline -n 30'
 
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
 
 if [ -a "$HOME/.PS1" ]; then
   . $HOME/.PS1
@@ -57,11 +59,7 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-
 cd ~
-
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
 export EDITOR='/usr/bin/vim'
 
 
