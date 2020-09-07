@@ -6,3 +6,4 @@
 	log = false
 [core]
 	editor = vim
+	excludesfile = /home/user1/.gitignore
