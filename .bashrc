@@ -35,9 +35,6 @@ taskmem(){
   done | less
 }
 
-
-alias pj='python3 -m json.tool'
-
 alias log='git log --oneline -n 30'
 
 
