@@ -23,7 +23,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='powerlineish'
 
 color xoria256
-set bg=dark
 
 map <C-_> :call NERDComment(0,"toggle")<CR>
 
