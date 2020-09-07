@@ -36,8 +36,6 @@ taskmem(){
   done | less
 }
 
-alias log='git log --oneline -n 30'
-
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 

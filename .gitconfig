@@ -7,3 +7,5 @@
 [core]
 	editor = vim
 	excludesfile = /home/user1/.gitignore
+[alias]
+	lg = log --oneline -n 30
