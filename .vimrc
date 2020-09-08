@@ -23,6 +23,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='powerlineish'
 
 color xoria256
+set bg=dark 
 hi DiffAdd ctermbg=151 "green for add
 hi DiffDelete ctermbg=181 "red for delete
 hi DiffChange ctermbg=246 "grey for change
