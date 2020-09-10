@@ -9,6 +9,9 @@
 	excludesfile = /home/user1/.gitignore
 [alias]
 	lg = log --oneline -n 30
+  unmodify = checkout --
+  unstage = reset HEAD --
+  untrack = rm --cached
 [user]
 	name = Henrique-Sousa
 	email = 29417378+Henrique-Sousa@users.noreply.github.com
