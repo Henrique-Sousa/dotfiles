@@ -80,6 +80,12 @@ set foldlevelstart=20
 
 set nrformats+=alpha
 
+
+let mapleader = "\\"
+
+set pastetoggle=<leader>z
+
+
 inoremap jk <ESC>
 
 nmap <C-h> <C-w>h
