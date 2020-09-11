@@ -2,10 +2,9 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
-[pager]
-	log = false
 [core]
 	editor = vim
+  pager = cat
 	excludesfile = /home/user1/.gitignore
 [alias]
 	lg = log --oneline -n 30
