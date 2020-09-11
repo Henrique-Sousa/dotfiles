@@ -94,16 +94,18 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " resize horzontal split window
-nmap <C-Left> <C-W><
-nmap <C-Right> <C-W>>
+"nmap <C-Left> <C-W><
+"nmap <C-Right> <C-W>>
 " resize vertical split window
-nmap <C-Up> <C-W>-
-nmap <C-Down> <C-W>+
+"nmap <C-Up> <C-W>-
+"nmap <C-Down> <C-W>+
 
-nmap <S-Left> 5<C-w>< 
-nmap <S-Right> 5<C-w>>
-nmap <S-Up> 5<C-w>-
-nmap <S-Down> 5<C-w>+
+"nmap <S-Left> 5<C-w>< 
+"nmap <S-Right> 5<C-w>>
+"nmap <S-Up> 5<C-w>-
+"nmap <S-Down> 5<C-w>+
+
+"-----------------------
 
 
 noremap <Up> <Nop>
