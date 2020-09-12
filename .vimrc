@@ -60,6 +60,7 @@ set wildmenu
 set ignorecase
 set incsearch
 set hlsearch
+set shortmess-=S "show search count message when searching, e.g. [1/5]
 "hi Search ctermbg=blue
 "hi Search ctermfg=black
 
