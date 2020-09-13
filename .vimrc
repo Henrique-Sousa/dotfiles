@@ -86,6 +86,7 @@ let mapleader = " "
 
 set pastetoggle=<leader>z
 
+map <silent> <leader><cr> :noh<cr>
 
 inoremap jk <ESC>
 
