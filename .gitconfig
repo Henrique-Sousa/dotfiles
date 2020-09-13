@@ -5,7 +5,7 @@
 [core]
 	editor = vim
   pager = cat
-	excludesfile = /home/user1/.gitignore
+	excludesfile = ~/.excludesfile
 [alias]
   s = status
 	lo = log --oneline -n 30
