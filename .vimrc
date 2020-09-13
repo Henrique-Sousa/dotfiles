@@ -31,6 +31,9 @@ hi DiffText ctermbg=253
 
 map <C-_> :call NERDComment(0,"toggle")<CR>
 
+"disable automatic comment insertion when inserting blank lines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 set number
 set ruler
 
