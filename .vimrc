@@ -82,7 +82,7 @@ set foldlevelstart=20
 set nrformats+=alpha
 
 
-let mapleader = "\\"
+let mapleader = " "
 
 set pastetoggle=<leader>z
 
