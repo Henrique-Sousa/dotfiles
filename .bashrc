@@ -36,7 +36,7 @@ taskmem(){
   done | less
 }
 
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 
 if [ -a "$HOME/.PS1" ]; then
