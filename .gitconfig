@@ -7,7 +7,16 @@
   pager = cat
 	excludesfile = /home/user1/.gitignore
 [alias]
-	lg = log --oneline -n 30
+  s = status
+	lo = log --oneline -n 30
+  a = add
+  ap = add --patch
+  c = commit
+  cm = commit -m 
+  d = diff
+  dc = diff --cached
+  dt = difftool
+  dtc = difftool --cached
   unmodify = checkout --
   unstage = reset HEAD --
   untrack = rm --cached
