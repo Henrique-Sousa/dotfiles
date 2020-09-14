@@ -23,6 +23,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='powerlineish'
 
 color xoria256
+
 set bg=dark 
 hi DiffAdd ctermbg=151 "green for add
 hi DiffDelete ctermbg=181 "red for delete
@@ -87,7 +88,8 @@ set nrformats+=alpha  "includes alphabetic characters when increasing or decreas
 
 let mapleader = " "
 
-set pastetoggle=<leader>z
+"set pastetoggle=<leader>z
+map <leader>z :setlocal paste!<cr>
 
 map <silent> <leader><cr> :noh<cr>
 
