@@ -101,6 +101,9 @@ nmap <C-l> <C-w>l
 nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
 
+nmap <S-Left> :tabm -1<CR>
+nmap <S-Right> :tabm +1<CR>
+
 " resize horzontal split window
 "nmap <C-Left> <C-W><
 "nmap <C-Right> <C-W>>
