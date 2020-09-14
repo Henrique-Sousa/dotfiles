@@ -17,6 +17,7 @@
   dc = diff --cached
   dt = difftool
   dtc = difftool --cached
+  p = push
   unmodify = checkout --
   unstage = reset HEAD --
   untrack = rm --cached
