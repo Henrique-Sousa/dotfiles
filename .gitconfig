@@ -18,6 +18,8 @@
   dt = difftool
   dtc = difftool --cached
   p = push
+  po = push origin
+  pom = push origin master 
   unmodify = checkout --
   unstage = reset HEAD --
   untrack = rm --cached
