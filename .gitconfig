@@ -23,6 +23,11 @@
   p = push
   po = push origin
   pom = push origin master 
+  b = branch
+  co = checkout
+  nb = checkout -b
+  m = merge
+  amend = commit --amend
   unmodify = checkout --
   unstage = reset HEAD --
   untrack = rm --cached
