@@ -56,8 +56,6 @@ function! ToggleWhitespace()
   endif
 endfunction
 
-set cindent
-
 set path+=**
 set wildmenu
 
@@ -74,6 +72,7 @@ set shortmess-=S "show search count message when searching, e.g. [1/5]
 "hi DiffChange ctermfg=black 
 "hi DiffText ctermfg=white
 
+"set cindent
 set autoindent
 set smartindent
 
