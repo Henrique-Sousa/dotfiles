@@ -1,8 +1,8 @@
 shopt -s extglob
 
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls --color=auto --group-directories-first --time-style=long-iso'
 alias l='ls -CF'
-alias ll='ls -lF --time-style=long-iso'
+alias ll='ls -lF '
 alias la='ls -A'
 alias lla='ls -alF'
 
