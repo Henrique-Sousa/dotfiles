@@ -79,8 +79,8 @@ set smartindent
 set foldmethod=indent
 set foldlevelstart=20
 "set foldtext=''
-"hi Folded ctermbg=black
-"hi Folded ctermfg=gray
+hi Folded ctermbg=black
+hi Folded ctermfg=gray
 
 set nrformats+=alpha  "includes alphabetic characters when increasing or decreasing numbers
 
