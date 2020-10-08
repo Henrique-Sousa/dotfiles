@@ -16,6 +16,7 @@
     ap = add --patch
     c = commit
     cm = commit -m 
+    ca = commit --amend
     d = diff
     dc = diff --cached
     dt = difftool
@@ -27,7 +28,6 @@
     co = checkout
     nb = checkout -b
     m = merge
-    amend = commit --amend
     unmodify = checkout --
     unstage = reset HEAD --
     untrack = rm --cached
