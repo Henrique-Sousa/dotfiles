@@ -38,6 +38,8 @@ taskmem(){
 
 alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
+alias xnvp="xargs -d '\n' -o vim -p"
+
 
 if [ -a "$HOME/.PS1" ]; then
   source $HOME/.PS1
