@@ -40,6 +40,10 @@ alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 alias xnvp="xargs -d '\n' -o vim -p"
 
+seek() {
+    find -iname "*$1*";
+}
+
 
 if [ -a "$HOME/.PS1" ]; then
   source $HOME/.PS1
