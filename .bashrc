@@ -38,7 +38,7 @@ taskmem(){
 
 alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-alias xnvp="xargs -d '\n' -o vim -p"
+alias xvp="xargs -d '\n' -o vim -p"
 
 seek() {
     find -iname "*$1*";
