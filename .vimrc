@@ -1,3 +1,4 @@
+set bg=dark
 set number
 set ruler
 set laststatus=2
