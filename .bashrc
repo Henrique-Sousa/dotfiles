@@ -25,11 +25,17 @@ tcpu(){
   echo $1 $(ps -C $1 -o %cpu= | paste -sd+ | bc)% cpu
 }
 
-# show processes by memory usage, grouped by process name 
-taskmem(){
+rank_grouped_processes_by_mem() {
   for process in $(ps -e -o comm | sort -u); do
     tmem $process; 
-  done | sort -rhk2 | 
+  done | sort -rhk2
+}
+
+alias tops="rank_grouped_processes_by_mem | less"
+
+# show processes by memory usage, grouped by process name 
+taskmem(){
+  rank_grouped_processes_by_mem | 
   while read instance; do 
     echo $instance; 
     echo $instance | awk '{print $1}' | xargs -o ps -o tty,pid,comm,%mem --sort=-%mem --no-headers -C; 
