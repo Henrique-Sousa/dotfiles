@@ -33,3 +33,12 @@ nmap <S-Left> :tabm -1<CR>
 nmap <S-Right> :tabm +1<CR>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
+
+"to avoid ctrl + arrow or alt + arrow delete lines
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
