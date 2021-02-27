@@ -14,6 +14,7 @@ set incsearch
 set hlsearch
 set shortmess-=S
 set autoindent
+set smartindent
 set foldmethod=indent
 set foldlevelstart=20
 set nrformats+=alpha
