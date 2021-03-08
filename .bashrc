@@ -17,17 +17,17 @@ alias psmem='ps -A -o pid,tty,%mem,%cpu,comm --sort=-%mem  | head -35'
 alias pscpu='ps -A -o pid,tty,%mem,%cpu,comm --sort=-%cpu  | head -35'
 
 # group processes with the same name and show memory usage
-tmem(){ 
+gmem() { 
   echo $1 $(ps -C $1 -o %mem= | paste -sd+ | bc)% mem
 }
 # group processes with the same name and show cpu usage
-tcpu(){ 
+gcpu() { 
   echo $1 $(ps -C $1 -o %cpu= | paste -sd+ | bc)% cpu
 }
 
 rank_grouped_processes_by_mem() {
   for process in $(ps -e -o comm | sort -u); do
-    tmem $process; 
+    gmem $process; 
   done | sort -rhk2
 }
 
