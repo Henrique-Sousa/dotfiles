@@ -3,8 +3,8 @@ shopt -s extglob
 alias ls='ls --color=auto --group-directories-first --time-style=long-iso'
 alias l='ls -CF'
 alias ll='ls -lF '
-alias la='ls -A'
-alias lla='ls -alF'
+alias la='ls -AF'
+alias lla='ls -AlF'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
