@@ -1,4 +1,5 @@
 shopt -s extglob
+set -o noclobber
 
 alias ls='ls --color=auto --group-directories-first --time-style=long-iso'
 alias l='ls -CF'
