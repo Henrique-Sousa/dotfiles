@@ -73,5 +73,5 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 export EDITOR='/usr/bin/vim'
 
-export PATH="/home/user1/programs/anaconda3/bin:$PATH"
+export PATH=$PATH:/home/user1/programs/anaconda3/bin
 
