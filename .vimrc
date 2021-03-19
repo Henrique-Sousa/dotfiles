@@ -19,6 +19,8 @@ set foldmethod=indent
 set foldlevelstart=20
 set nrformats+=alpha
 
+let g:markdown_fenced_languages = ['asm', 'c', 'java', 'py=python', 'ss=scheme', 'js=javascript', 'php', 'sh=bash', 'awk', 'sql', 'html', 'xml', 'css', 'sass', 'less']
+
 let mapleader = " "
 map <leader>z :setlocal paste!<cr>
 map <silent> <leader><cr> :noh<cr>
