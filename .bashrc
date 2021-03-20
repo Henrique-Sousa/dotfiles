@@ -1,5 +1,6 @@
 shopt -s extglob
 set -o noclobber
+stty -ixon  # disable terminal freezing with Ctrl + s, allowing to do a forward-search-history with Ctrl + s
 
 alias ls='ls --color=auto --group-directories-first --time-style=long-iso'
 alias l='ls -CF'
