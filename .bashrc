@@ -49,7 +49,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias xvp="xargs -d '\n' -o vim -p"
 
 seek() {
-    find -iname "*$1*";
+    find -iname "*$1*" ${@:2};
 }
 
 
