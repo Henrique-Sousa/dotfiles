@@ -1,6 +1,6 @@
 shopt -s extglob
 set -o noclobber    # the redirection will fail if the file already exists 
-stty -ixon          # disable terminal freezing with Ctrl + s, allowing to do a forward-search-history with Ctrl + s
+[[ $- == *i* ]] && stty -ixon   # if shell is interactive, disable terminal freezing with Ctrl + s, allowing to do a forward-search-history with Ctrl + s
 
 alias ls='ls --color=auto --group-directories-first --time-style=long-iso'
 alias l='ls -CF'
