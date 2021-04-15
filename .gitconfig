@@ -24,6 +24,7 @@
     p = push
     po = push origin
     pom = push origin master 
+    pa = push --all
     b = branch
     co = checkout
     nb = checkout -b
