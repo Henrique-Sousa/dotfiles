@@ -12,6 +12,7 @@
 [alias]
     s = status
     lo = log --oneline -n 30
+    lgao = log --graph --all --oneline -n 30
     a = add
     ap = add --patch
     c = commit
