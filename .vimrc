@@ -24,7 +24,6 @@ let g:markdown_fenced_languages = ['asm', 'c', 'java', 'python', 'javascript', '
 let mapleader = " "
 map <leader>z :setlocal paste!<cr>
 map <silent> <leader><cr> :noh<cr>
-imap jk <ESC>
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
