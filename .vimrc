@@ -12,7 +12,6 @@ set wildmenu
 set ignorecase
 set incsearch
 set hlsearch
-set nostartofline
 set shortmess-=S
 set autoindent
 set smartindent
