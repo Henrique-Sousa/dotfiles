@@ -12,12 +12,8 @@
 [alias]
     s = status
     lo = log --oneline -n 30
-    lgao = log --graph --all --oneline -n 30
     a = add
-    ap = add --patch
     c = commit
-    cm = commit -m 
-    ca = commit --amend
     d = diff
     dc = diff --cached
     dt = difftool
@@ -28,8 +24,4 @@
     pa = push --all
     b = branch
     co = checkout
-    cb = checkout -b
     m = merge
-    unmodify = checkout --
-    unstage = reset HEAD --
-    untrack = rm --cached
