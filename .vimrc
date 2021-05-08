@@ -1,19 +1,15 @@
+source ~/.exrc
+
 set bg=dark
-set number
-set ruler
 set laststatus=2
-set tabstop=4
-set shiftwidth=4
 set expandtab
 set splitbelow
 set splitright
 set path+=**
 set wildmenu
-set ignorecase
 set incsearch
 set hlsearch
 set shortmess-=S
-set autoindent
 set smartindent
 set foldmethod=indent
 set foldlevelstart=20
