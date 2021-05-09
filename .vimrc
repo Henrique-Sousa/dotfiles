@@ -1,5 +1,6 @@
 source ~/.exrc
 
+set ruler
 set bg=dark
 set laststatus=2
 set expandtab
