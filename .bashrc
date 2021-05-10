@@ -35,7 +35,7 @@ set -o noclobber
 # disable terminal freezing with Ctrl + s, allowing to do a forward-search-history with Ctrl + s
 stty -ixon
 
-export EDITOR='/usr/bin/vim'
+export EDITOR='/usr/bin/vi'
 
 # to have colors on man pages
 export LESS=-R
