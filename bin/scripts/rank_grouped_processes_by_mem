@@ -1,0 +1,5 @@
+#!/bin/sh
+
+for process in $(ps -e -o comm | sort -u); do
+  gmem $process; 
+done | sort -rhk2

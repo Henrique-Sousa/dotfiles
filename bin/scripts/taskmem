@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# show processes by memory usage, grouped by process name 
+
+rank_grouped_processes_by_mem | 
+while read instance; do 
+  echo $instance; 
+  echo $instance | awk '{print $1}' | xargs -o ps -o tty,pid,comm,%mem --sort=-%mem --no-headers -C; 
+done | less

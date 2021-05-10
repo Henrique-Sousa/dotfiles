@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# top running processes by highest memory usage
+
+ps -A -o pid,tty,%mem,%cpu,comm --sort=-%mem  | head -35
