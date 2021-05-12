@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# group processes with the same name and show memory usage
-
-echo $1 $(ps -C $1 -o %mem= | paste -sd+ | bc)% mem
-

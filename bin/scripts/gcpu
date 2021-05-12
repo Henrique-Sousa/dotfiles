@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# group processes with the same name and show cpu usage
-
-echo $1 $(ps -C $1 -o %cpu= | paste -sd+ | bc)% cpu

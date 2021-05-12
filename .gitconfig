@@ -1,27 +1,3 @@
 [user]
     name = Henrique-Sousa
     email = 29417378+Henrique-Sousa@users.noreply.github.com
-[diff]
-    tool = vimdiff
-[difftool]
-    prompt = false
-[core]
-    editor = vi
-    pager = cat
-    excludesfile = ~/.excludesfile
-[alias]
-    s = status
-    lo = log --oneline -n 30
-    a = add
-    c = commit
-    d = diff
-    dc = diff --cached
-    dt = difftool
-    dtc = difftool --cached
-    p = push
-    po = push origin
-    pom = push origin master 
-    pa = push --all
-    b = branch
-    co = checkout
-    m = merge
