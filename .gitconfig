@@ -1,3 +1,5 @@
 [user]
     name = Henrique-Sousa
     email = 29417378+Henrique-Sousa@users.noreply.github.com
+[diff]
+    tool = vimdiff
