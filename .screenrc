@@ -2,6 +2,6 @@ altscreen
 
 hardstatus on
 hardstatus alwayslastline
-hardstatus string  "%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
+hardstatus string "%{wk}%?%-Lw%?%{kc}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
 
 term screen-256color
