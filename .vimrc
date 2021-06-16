@@ -20,3 +20,6 @@ set nrformats+=alpha
 let g:markdown_fenced_languages = ['asm', 'c', 'java', 'python', 'javascript', 'php', 'bash', 'sh', 'sed', 'awk', 'bc', 'sql', 'html', 'xml', 'css', 'sass', 'less', 'lisp', 'scheme', 'dockerfile']
 
 imap jk <Esc>
+
+autocmd BufRead * let &l:modifiable = !&readonly
+
