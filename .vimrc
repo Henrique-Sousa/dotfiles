@@ -3,7 +3,9 @@ source ~/.exrc
 set ruler
 set bg=dark
 set laststatus=2
-"set expandtab
+set expandtab
+set tabstop=2
+set shiftwidth=2
 set splitbelow
 set splitright
 set path+=**
