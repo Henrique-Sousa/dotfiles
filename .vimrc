@@ -24,4 +24,4 @@ let g:markdown_fenced_languages = ['asm', 'c', 'java', 'python', 'javascript', '
 imap jk <Esc>
 
 autocmd BufRead * let &l:modifiable = !&readonly
-
+autocmd FileType make setlocal noexpandtab
