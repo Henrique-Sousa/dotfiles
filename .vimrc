@@ -25,3 +25,7 @@ imap jk <Esc>
 
 autocmd BufRead * let &l:modifiable = !&readonly
 autocmd FileType make setlocal noexpandtab
+
+call plug#begin('~/.vim/plugged')
+Plug 'dense-analysis/ale'
+call plug#end()
