@@ -22,6 +22,10 @@ imap jk <Esc>
 
 autocmd BufRead * let &l:modifiable = !&readonly
 autocmd FileType make setlocal noexpandtab
+" hide errors for comments in json files
+autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd FileType json syntax match Comment +\/\*.\+\*\/+
+
 
 if &term =~ '^screen'
   " to avoid ctrl + arrow or alt + arrow delete lines while using tmux
