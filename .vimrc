@@ -26,18 +26,6 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\*.\+\*\/+
 
-
-if &term =~ '^screen'
-  " to avoid ctrl + arrow or alt + arrow delete lines while using tmux
-  " tmux will send xterm-style keys when its xterm-keys option is on
-  execute "set <xUp>=\e[1;*A"
-  execute "set <xDown>=\e[1;*B"
-  execute "set <xRight>=\e[1;*C"
-  execute "set <xLeft>=\e[1;*D"
-  " disable case-changing command to fix esc-esc-pagedown misbehavior.
-  map ~ <Nop>
-endif
-
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 call plug#end()

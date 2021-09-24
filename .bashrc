@@ -1,5 +1,6 @@
 export PS1='\[\033[1;94m\]\u@\h:\w\[\033[00m\]$ '
 export EDITOR='/usr/bin/vi'
+export TERM='xterm-256color'
 
 alias ls='ls --color --group-directories-first'
 alias grep='grep --color'
