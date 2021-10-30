@@ -15,6 +15,7 @@ set smartindent
 set foldmethod=indent
 set foldlevelstart=20
 set nrformats+=alpha
+set hidden
 
 let g:markdown_fenced_languages = ['asm', 'c', 'java', 'python', 'javascript', 'typescript', 'php', 'bash', 'sh', 'sed', 'awk', 'bc', 'sql', 'html', 'xml', 'css', 'sass', 'less', 'lisp', 'scheme', 'dockerfile', 'yaml', 'json']
 
