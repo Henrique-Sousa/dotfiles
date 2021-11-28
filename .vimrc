@@ -28,9 +28,12 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\*.\+\*\/+
 
 call plug#begin('~/.vim/plugged')
+  Plug 'morhetz/gruvbox'
   Plug 'dense-analysis/ale'
   Plug 'neoclide/coc.nvim'
 call plug#end()
+
+colorscheme gruvbox
 
 let g:coc_global_extensions = [ 'coc-tsserver' ]
 
