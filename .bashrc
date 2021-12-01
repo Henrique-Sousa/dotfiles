@@ -10,5 +10,3 @@ shopt -s extglob
 
 # disable terminal freezing with Ctrl + s, allowing to do a forward-search-history with Ctrl + s
 stty -ixon
-
-source "$HOME/.scripts/ppm.sh"
