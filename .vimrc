@@ -1,6 +1,7 @@
 source ~/.exrc
 
 set ruler
+set colorcolumn=80
 set bg=dark
 set laststatus=2
 set expandtab
@@ -30,7 +31,7 @@ autocmd FileType json syntax match Comment +\/\*.\+\*\/+
 call plug#begin('~/.vim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'dense-analysis/ale'
-  Plug 'neoclide/coc.nvim'
+"  Plug 'neoclide/coc.nvim'
 call plug#end()
 
 colorscheme gruvbox
