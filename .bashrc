@@ -5,6 +5,8 @@ export HISTCONTROL="ignoreboth:erasedups"
 
 alias ls='ls --color --group-directories-first'
 alias grep='grep --color'
+alias vi='vim'
+alias view='vi -R'
 
 shopt -s extglob
 
