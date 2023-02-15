@@ -1,5 +1,7 @@
 source ~/.exrc
 
+set encoding=utf-8
+
 set ruler
 set colorcolumn=80
 set bg=dark
