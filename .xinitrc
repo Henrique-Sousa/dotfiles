@@ -9,7 +9,8 @@ vol() {
 }
 
 kbd_layout() {
-    echo $(setxkbmap -query | awk -F':' '{print $2}' | tr -d ' ' | paste -s)
+    read rules model layout < <(setxkbmap -query | awk -F':' '{print $2}' | tr -d ' ' | paste -s)
+    echo ${layout};
 }
 
 get_date() {
@@ -22,7 +23,7 @@ bat_stat() {
 
 bat_cap() {
     cap="$(cat /sys/class/power_supply/BAT0/capacity)";
-    if (( $cap > 15 )); then
+    if (( ${cap} > 15 )); then
         echo 🔋 ${cap}%;
     else
         echo 🪫 ${cap}%;
