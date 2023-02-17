@@ -1,7 +1,7 @@
 #!/bins/sh
 
 is_muted() {
-    echo "$([ $(pactl -- get-sink-mute 0 | awk -F': ' '{print $2}') == yes ] && echo 🔇 || echo 🔊)";
+    [ $(pactl -- get-sink-mute 0 | awk -F': ' '{print $2}') == yes ] && echo 🔇 || echo 🔊;
 }
 
 vol() {
@@ -10,7 +10,7 @@ vol() {
 
 kbd_layout() {
     read rules model layout < <(setxkbmap -query | awk -F':' '{print $2}' | tr -d ' ' | paste -s)
-    echo ${layout};
+    echo "🖮 ${layout}";
 }
 
 get_date() {
@@ -23,15 +23,11 @@ bat_stat() {
 
 bat_cap() {
     cap="$(cat /sys/class/power_supply/BAT0/capacity)";
-    if (( ${cap} > 15 )); then
-        echo 🔋 ${cap}%;
-    else
-        echo 🪫 ${cap}%;
-    fi
+    (( ${cap} > 15 )) && echo "🔋 ${cap}%" || echo "🪫 ${cap}%";
 }
 
 while true; do
-    xsetroot -name "$(is_muted) $(vol) | 🖮 $(kbd_layout) | $(get_date) | $(bat_stat) $(bat_cap)";
+    xsetroot -name "$(is_muted) $(vol) | $(kbd_layout) | $(get_date) | $(bat_stat) $(bat_cap)";
     sleep 1;
 done &
 
