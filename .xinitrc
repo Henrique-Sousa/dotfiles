@@ -14,7 +14,7 @@ kbd_layout() {
 }
 
 get_date() {
-    echo $(date +"%T %Z - %a %h %d %Y");
+    echo $(date +"%H:%M - %a %h %d %Y");
 }
 
 bat_stat() {
