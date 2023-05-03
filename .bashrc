@@ -1,5 +1,5 @@
 export PS1='\[\033[1;94m\]\u@\h:\w\[\033[00m\]$ '
-export EDITOR='/usr/bin/vi'
+export EDITOR='/usr/bin/vim'
 export TERM='xterm-256color'
 export HISTCONTROL="ignoreboth:erasedups"
 export LESS='-R --use-color -Dd+r$Du+b'
