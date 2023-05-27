@@ -44,19 +44,8 @@ autocmd FileType json syntax match Comment +\/\*.\+\*\/+
 
 call plug#begin('~/.vim/plugged')
   Plug 'morhetz/gruvbox'
-"  Plug 'dense-analysis/ale'
-"  Plug 'neoclide/coc.nvim'
 call plug#end()
 
 colorscheme gruvbox
 
 let g:coc_global_extensions = [ 'coc-tsserver' ]
-
-hi CocFloating ctermbg=darkgray
-hi FgCocErrorFloatBgCocFloating ctermfg=white ctermbg=darkgray
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gR <Plug>(coc-references)
