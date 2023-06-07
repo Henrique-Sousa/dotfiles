@@ -7,6 +7,7 @@ set colorcolumn=80
 set bg=dark
 set laststatus=2
 set relativenumber
+set showcmd
 
 set expandtab
 
