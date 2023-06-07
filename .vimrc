@@ -19,6 +19,7 @@ set wildmenu
 
 set incsearch
 set hlsearch
+set nowrapscan
 
 set shortmess-=S
 
