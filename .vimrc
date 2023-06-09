@@ -49,5 +49,3 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 colorscheme gruvbox
-
-let g:coc_global_extensions = [ 'coc-tsserver' ]
