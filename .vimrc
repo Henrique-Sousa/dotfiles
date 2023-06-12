@@ -16,6 +16,7 @@ set splitright
 
 set path+=**
 set wildmenu
+set tags=./tags,./TAGS,tags;~,TAGS;~
 
 set incsearch
 set hlsearch
