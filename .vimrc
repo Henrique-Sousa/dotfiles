@@ -20,7 +20,7 @@ set tags=./tags,./TAGS,tags;~,TAGS;~
 
 set incsearch
 set hlsearch
-set nowrapscan
+"set nowrapscan
 
 set shortmess-=S
 
