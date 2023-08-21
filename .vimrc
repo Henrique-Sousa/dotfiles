@@ -44,6 +44,7 @@ imap jk <Esc>
 
 autocmd BufRead * let &l:modifiable = !&readonly
 autocmd FileType make setlocal noexpandtab
+autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
 " hide errors for comments in json files
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\*.\+\*\/+
