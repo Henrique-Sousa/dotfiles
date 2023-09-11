@@ -1,11 +1,13 @@
 #!/bins/sh
 
+sink=$(pactl list sinks | head -1 | sed 's/Sink #//g')
+
 is_muted() {
-    [ $(pactl -- get-sink-mute 0 | awk -F': ' '{print $2}') == yes ] && echo 🔇 || echo 🔊;
+    [ $(pactl -- get-sink-mute $sink | awk -F': ' '{print $2}') == yes ] && echo 🔇 || echo 🔊;
 }
 
 vol() {
-    echo "$(pactl -- get-sink-volume 0 | grep % | awk -F' / ' '{print $2}')";
+    echo "$(pactl -- get-sink-volume $sink | grep % | awk -F' / ' '{print $2}')";
 }
 
 kbd_layout() {
