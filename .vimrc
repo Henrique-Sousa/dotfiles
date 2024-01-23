@@ -32,6 +32,9 @@ set nrformats+=alpha
 
 set hidden
 
+set spell
+set dictionary=~/.vim/dictionaries/eng-466550.txt,~/.vim/dictionaries/br-sem-acentos.txt
+
 
 syntax on
 
