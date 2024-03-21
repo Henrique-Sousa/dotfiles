@@ -9,3 +9,4 @@
   s = status
   c = commit
   p = push
+  dt = difftool
