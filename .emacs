@@ -24,3 +24,5 @@
 (when (eq system-type 'windows-nt)
   (setq default-directory "C:/Users/sousa/")
   )
+
+(prefer-coding-system 'utf-8)
