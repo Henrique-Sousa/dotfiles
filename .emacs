@@ -20,9 +20,4 @@
 
 (global-display-line-numbers-mode)
 
-;; set default root path for finding files (C-x C-f)
-(when (eq system-type 'windows-nt)
-  (setq default-directory "C:/Users/sousa/")
-  )
-
 (prefer-coding-system 'utf-8)
