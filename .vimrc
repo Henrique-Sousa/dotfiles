@@ -1,5 +1,7 @@
 source ~/.exrc
 
+set statusline=%<%f\ %h%w%m%r%=%-14.(%l/%L,%c%)\ %P
+
 set encoding=utf-8
 
 set ruler
