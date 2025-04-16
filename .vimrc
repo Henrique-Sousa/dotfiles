@@ -12,6 +12,7 @@ set laststatus=2
 set showcmd
 
 set expandtab
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2
 
 set splitbelow
 set splitright
