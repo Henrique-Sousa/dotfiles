@@ -44,9 +44,7 @@ imap jk <Esc>
 
 syntax on
 
-if &filetype == 'markdown'
-    let g:markdown_fenced_languages = ['asm', 'c', 'cpp', 'java', 'python', 'javascript', 'typescript', 'php', 'ruby', 'perl', 'bash', 'sh', 'sed', 'awk', 'bc', 'vim', 'sql', 'html', 'xml', 'css', 'sass', 'less', 'lisp', 'scheme', 'haskell', 'dockerfile', 'yaml', 'json', 'tex', 'tmux', 'make']
-endif
+let g:markdown_fenced_languages = ['asm', 'c', 'cpp', 'java', 'python', 'javascript', 'typescript', 'php', 'ruby', 'perl', 'bash', 'sh', 'sed', 'awk', 'bc', 'vim', 'sql', 'html', 'xml', 'css', 'sass', 'less', 'lisp', 'scheme', 'haskell', 'dockerfile', 'yaml', 'json', 'tex', 'tmux', 'make']
 
 autocmd BufRead * let &l:modifiable = !&readonly
 autocmd FileType make setlocal noexpandtab
