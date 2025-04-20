@@ -1,3 +1,3 @@
 #!/bin/sh
 
-systemctl suspend; sleep 2; slock
+systemctl suspend; slock
