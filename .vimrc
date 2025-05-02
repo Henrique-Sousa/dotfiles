@@ -13,6 +13,8 @@ set showcmd
 
 set expandtab
 autocmd FileType cpp,fortran setlocal tabstop=2 shiftwidth=2
+"sintax highlight for algol 60 using pascal sintax higlight
+au BufRead,BufNewFile *.a60 set filetype=pascal
 
 set splitbelow
 set splitright
