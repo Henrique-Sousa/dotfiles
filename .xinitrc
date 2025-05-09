@@ -11,8 +11,12 @@ vol() {
 }
 
 kbd_layout() {
-    read rules model layout < <(setxkbmap -query | awk -F':' '{print $2}' | tr -d ' ' | paste -s)
-    echo "🖮 ${layout}";
+    read rules model layout variant options < <(setxkbmap -query | awk -F':' '{print $2}' | tr -d ' ' | paste -s)
+    if [ $variant = rus ]; then
+        echo "🖮 ${variant}";
+    else
+        echo "🖮 ${layout}";
+    fi
 }
 
 get_date() {
