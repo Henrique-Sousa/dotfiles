@@ -18,13 +18,8 @@ export LC_COLLATE="C"
 alias ls='ls --color --group-directories-first'
 alias grep='grep --color'
 
-if ! view --version &> /dev/null; then
-    alias view='vi -R'
-fi
-
-if ! vi --version &> /dev/null; then
-    alias vi='vim'
-fi
+! vi --version &> /dev/null && alias vi='vim'
+! view --version &> /dev/null && alias view='vi -R'
 
 shopt -s extglob;
 
