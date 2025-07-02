@@ -3,6 +3,12 @@ export PS1='\[\033[1;94m\]\u@\h:\w\[\033[00m\]$ '
 export HISTCONTROL="ignoreboth:erasedups"
 export EDITOR='/usr/bin/vim'
 
+# XDG base directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'
 export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
