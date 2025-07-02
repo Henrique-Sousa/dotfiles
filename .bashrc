@@ -32,4 +32,4 @@ shopt -s extglob;
 # disable terminal freezing with Ctrl + s, allowing to do a forward-search-history with Ctrl + s
 stty -ixon
 
-eval $(keychain --eval --quiet)
+eval $(keychain --eval --quiet --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
