@@ -1,16 +1,18 @@
-source ~/.exrc
-
 set statusline=%<%f\ %h%w%m%r%=%-14.(%l/%L,%c%)\ %P
 
 set encoding=utf-8
 
+set number
+"set relativenumber
 set ruler
 set colorcolumn=80
 set bg=dark
 set laststatus=2
-"set relativenumber
 set showcmd
 
+set tabstop=4
+set shiftwidth=4
+set autoindent
 set expandtab
 autocmd FileType cpp,fortran setlocal tabstop=2 shiftwidth=2
 "sintax highlight for algol 60 using pascal sintax higlight
@@ -23,6 +25,7 @@ set path+=**
 set wildmenu
 set tags=./tags,./TAGS,tags;~,TAGS;~
 
+set ignorecase
 set incsearch
 set hlsearch
 "set nowrapscan
