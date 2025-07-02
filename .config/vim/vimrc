@@ -57,7 +57,6 @@ autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\*.\+\*\/+
 
-"call plug#begin('~/.config/vim/plugged')
 call plug#begin('$XDG_CONFIG_HOME/vim/plugged')
   Plug 'morhetz/gruvbox'
 call plug#end()
