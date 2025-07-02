@@ -1,0 +1,10 @@
+#!/bin/sh
+while read file
+do
+        case "$1" in
+        "C-d")
+                mv "$file" ~/trash ;;
+        "C-r")
+                magick "$file" -rotate 90 "$file" ;;
+        esac
+done
