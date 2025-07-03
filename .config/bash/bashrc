@@ -17,6 +17,7 @@ export SQLITE_HISTORY=$XDG_STATE_HOME/sqlite_history
 export HISTFILE="$XDG_STATE_HOME"/bash/history
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'
