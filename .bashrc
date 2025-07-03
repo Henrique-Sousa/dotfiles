@@ -10,6 +10,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
 export SCREENDIR="${XDG_RUNTIME_DIR}/screen"
+export SQLITE_HISTORY=$XDG_STATE_HOME/sqlite_history
 
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'
