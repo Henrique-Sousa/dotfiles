@@ -1,4 +1,4 @@
-# /etc/bash.bashrc or /etc/bashrc should contain this line:
+# /etc/bash.bashrc or /etc/bashrc must contain this line:
 # source "$HOME"/.config/bash/bashrc
 
 export TERM='xterm-256color'
