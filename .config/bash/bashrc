@@ -1,5 +1,5 @@
 # /etc/bash.bashrc or /etc/bashrc should contain this line:
-# source .config/bash/bashrc
+# source "$HOME"/.config/bash/bashrc
 
 export TERM='xterm-256color'
 export PS1='\[\033[1;94m\]\u@\h:\w\[\033[00m\]$ '
