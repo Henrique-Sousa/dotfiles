@@ -1,1 +1,4 @@
+# /etc/profile should contain this line:
+# source .config/bash/bash_profile
+
 if [ -f ~/.config/bash/bashrc ]; then . ~/.config/bash/bashrc; fi
