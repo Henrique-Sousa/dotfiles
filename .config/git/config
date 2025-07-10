@@ -11,5 +11,3 @@
   c = commit
   p = push
   dt = difftool
-[status]
-	showUntrackedFiles = no
