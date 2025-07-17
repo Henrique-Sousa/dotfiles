@@ -17,6 +17,8 @@ set expandtab
 autocmd FileType cpp,fortran setlocal tabstop=2 shiftwidth=2
 "sintax highlight for algol 60 using pascal sintax higlight
 au BufRead,BufNewFile *.a60 set filetype=pascal
+autocmd FileType make setlocal noexpandtab
+autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
 
 set splitbelow
 set splitright
@@ -54,8 +56,7 @@ syntax on
 let g:markdown_fenced_languages = ['basic', 'asm', 'c', 'cpp', 'python', 'javascript', 'typescript', 'php', 'ruby', 'perl', 'bash', 'sh', 'sed', 'awk', 'bc', 'vim', 'sql', 'html', 'xml', 'css', 'sass', 'less', 'lisp', 'scheme', 'haskell', 'dockerfile', 'yaml', 'json', 'tex', 'tmux', 'make']
 
 autocmd BufRead * let &l:modifiable = !&readonly
-autocmd FileType make setlocal noexpandtab
-autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
+
 " hide errors for comments in json files
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\*.\+\*\/+
