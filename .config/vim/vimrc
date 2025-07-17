@@ -72,8 +72,8 @@ hi Search cterm=reverse ctermfg=74 ctermbg=234
 hi IncSearch cterm=reverse ctermfg=215 ctermbg=234
 hi Error cterm=bold,reverse ctermfg=167 ctermbg=235
 hi ErrorMsg cterm=bold ctermfg=235 ctermbg=167
-hi! link Structure Type     " c/c++ struct, class, etc. the same as int, float, etc.
-hi! link Statement Include
+autocmd FileType c,cpp hi! link Structure Type     " c/c++ struct, class, etc. the same as int, float, etc.
+autocmd FileType c,cpp hi! link Statement Include
 
 "colorscheme habamax
 "colorscheme sorbet 
