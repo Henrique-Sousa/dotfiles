@@ -69,8 +69,8 @@ hi ColorColumn ctermbg=237
 hi Visual cterm=reverse ctermfg=109 ctermbg=234
 hi Search cterm=reverse ctermfg=74 ctermbg=234
 hi IncSearch cterm=reverse ctermfg=215 ctermbg=234
-hi Error cterm=reverse ctermfg=131 ctermbg=234
-hi ErrorMsg cterm=reverse ctermfg=131 ctermbg=234
+hi Error cterm=bold,reverse ctermfg=167 ctermbg=235
+hi ErrorMsg cterm=bold ctermfg=235 ctermbg=167
 
 "colorscheme habamax
 "colorscheme sorbet 
