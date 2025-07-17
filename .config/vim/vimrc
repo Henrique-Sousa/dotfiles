@@ -59,7 +59,16 @@ autocmd BufRead * let &l:modifiable = !&readonly
 
 syntax on
 
-let g:markdown_fenced_languages = ['basic', 'asm', 'c', 'cpp', 'java', 'python', 'javascript', 'typescript', 'php', 'ruby', 'perl', 'bash', 'sh', 'sed', 'awk', 'bc', 'vim', 'sql', 'html', 'xml', 'css', 'sass', 'less', 'lisp', 'scheme', 'haskell', 'dockerfile', 'yaml', 'json', 'tex', 'tmux', 'make']
+let g:markdown_fenced_languages = ['asm', 'c', 'cpp']
+let g:markdown_fenced_languages += ['java']
+let g:markdown_fenced_languages += ['basic']
+let g:markdown_fenced_languages += ['javascript', 'typescript', 'php', 'ruby', 'python']
+let g:markdown_fenced_languages += ['perl', 'bash', 'sh', 'sed', 'awk', 'bc']
+let g:markdown_fenced_languages += ['vim']
+let g:markdown_fenced_languages += ['tex', 'html', 'css', 'sass', 'less']
+let g:markdown_fenced_languages += ['sql']
+let g:markdown_fenced_languages += ['lisp', 'scheme', 'haskell']
+let g:markdown_fenced_languages += ['tmux', 'make', 'dockerfile', 'xml', 'yaml', 'json']
 
 " hide errors for comments in json files
 autocmd FileType json syntax match Comment +\/\/.\+$+
