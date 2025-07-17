@@ -29,6 +29,7 @@ set wildmenu
 set tags=./tags,./TAGS,tags;~,TAGS;~
 
 set ignorecase
+set smartcase
 set incsearch
 set hlsearch
 "set nowrapscan
