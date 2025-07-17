@@ -40,7 +40,7 @@ set nrformats+=alpha
 
 set hidden
 
-set spell
+"set spell
 "set dictionary=~/.vim/dictionaries/eng-466550.txt,~/.vim/dictionaries/br-sem-acentos.txt
 
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
@@ -60,8 +60,8 @@ autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\*.\+\*\/+
 
-call plug#begin('$XDG_CONFIG_HOME/vim/plugged')
-  Plug 'morhetz/gruvbox'
-call plug#end()
-
-colorscheme gruvbox
+"colorscheme desert
+colorscheme habamax
+"colorscheme slate
+"colorscheme sorbet 
+"colorscheme wildcharm
