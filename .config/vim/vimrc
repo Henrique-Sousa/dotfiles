@@ -43,6 +43,8 @@ set nrformats+=alpha
 
 set hidden
 
+set formatoptions+=j
+
 "set spell
 "set dictionary=~/.vim/dictionaries/eng-466550.txt,~/.vim/dictionaries/br-sem-acentos.txt
 
