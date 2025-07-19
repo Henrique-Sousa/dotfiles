@@ -11,13 +11,11 @@ set bg=dark
 set laststatus=2
 set showcmd
 
+set autoindent
 set tabstop=4
 set shiftwidth=4
-set autoindent
 set expandtab
 autocmd FileType cpp,fortran setlocal tabstop=2 shiftwidth=2
-"sintax highlight for algol 60 using pascal sintax higlight
-au BufRead,BufNewFile *.a60 set filetype=pascal
 autocmd FileType make setlocal noexpandtab
 autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
 
@@ -29,12 +27,12 @@ set wildmenu
 set tags=./tags,./TAGS,tags;~,TAGS;~
 
 set ignorecase
-set smartcase
+set smartcase "case sensitive search if the search pattern contains upper case characters
 set incsearch
 set hlsearch
 "set nowrapscan
 
-set shortmess-=S
+set shortmess-=S "show search count message when searching
 
 set smartindent
 set foldmethod=indent
@@ -58,8 +56,9 @@ imap jk <Esc>
 autocmd BufRead * let &l:modifiable = !&readonly
 
 syntax on
+au BufRead,BufNewFile *.a60 set filetype=pascal "sintax highlight for algol 60 using pascal's one
 
-let g:markdown_fenced_languages = ['asm', 'c', 'cpp']
+let g:markdown_fenced_languages  = ['asm', 'c', 'cpp']
 let g:markdown_fenced_languages += ['java']
 let g:markdown_fenced_languages += ['basic']
 let g:markdown_fenced_languages += ['javascript', 'typescript', 'php', 'ruby', 'python']
@@ -70,7 +69,7 @@ let g:markdown_fenced_languages += ['sql']
 let g:markdown_fenced_languages += ['lisp', 'scheme', 'haskell']
 let g:markdown_fenced_languages += ['tmux', 'make', 'dockerfile', 'xml', 'yaml', 'json']
 
-" hide errors for comments in json files
+"hide errors for comments in json files
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\*.\+\*\/+
 
@@ -81,10 +80,10 @@ hi Search cterm=reverse ctermfg=74 ctermbg=234
 hi IncSearch cterm=reverse ctermfg=215 ctermbg=234
 hi Error cterm=bold,reverse ctermfg=167 ctermbg=235
 hi ErrorMsg cterm=bold ctermfg=235 ctermbg=167
-autocmd FileType c,cpp hi! link Structure Type     " c/c++ struct, class, etc. the same as int, float, etc.
+autocmd FileType c,cpp hi! link Structure Type "c/c++ struct, class, etc. the same as int, float, etc.
 autocmd FileType c,cpp hi! link Statement Include
 
 "colorscheme habamax
-"colorscheme sorbet 
+"dolorscheme sorbet 
 "colorscheme desert
 "colorscheme wildcharm
