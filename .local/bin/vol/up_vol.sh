@@ -1,2 +1,2 @@
-sink=$(pactl list sinks | head -1 | sed "s/Sink #//g")
+sink=$(pactl get-default-sink)
 pactl set-sink-volume $sink +5%    
