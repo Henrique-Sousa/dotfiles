@@ -1,2 +1,2 @@
 sink=$(pactl get-default-sink)
-pactl set-sink-mute   $sink toggle 
+pactl set-sink-mute $sink toggle 
