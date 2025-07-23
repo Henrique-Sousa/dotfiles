@@ -23,6 +23,7 @@ set splitbelow
 set splitright
 
 set path+=**
+set path+=$HOME/notas/**
 set wildmenu
 set tags=./tags,./TAGS,tags;~,TAGS;~
 
