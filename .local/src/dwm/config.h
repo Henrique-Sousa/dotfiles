@@ -68,10 +68,10 @@ static const char *down_vol[]     = { "/usr/bin/pactl", "set-sink-volume", "1", 
 static const char *default_vol[]  = { "/usr/bin/pactl", "set-sink-volume", "1", "100%",    NULL };
 static const char *mute_vol[]     = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
 */
-static const char *up_vol[]         = { "/home/user1/.local/bin/vol/up_vol.sh",       NULL };
-static const char *down_vol[]       = { "/home/user1/.local/bin/vol/down_vol.sh",     NULL };
-static const char *default_vol[]    = { "/home/user1/.local/bin/vol/default_vol.sh",  NULL };
-static const char *mute_vol[]       = { "/home/user1/.local/bin/vol/mute_vol.sh",     NULL };
+static const char *up_vol[]         = { "/home/user1/.local/bin/audio/up_vol.sh",       NULL };
+static const char *down_vol[]       = { "/home/user1/.local/bin/audio/down_vol.sh",     NULL };
+static const char *default_vol[]    = { "/home/user1/.local/bin/audio/default_vol.sh",  NULL };
+static const char *mute_vol[]       = { "/home/user1/.local/bin/audio/mute_vol.sh",     NULL };
 
 /* keyboard layout */
 //static const char *ch_kb_layout[] = { "/home/user1/toggle_keyboard_layout.sh", NULL };
@@ -107,8 +107,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,           quit,           {0} },
     { MODKEY,                       XK_minus,       spawn,          {.v = down_vol } },
 	{ MODKEY,                       XK_equal,       spawn,          {.v = up_vol } },
-	{ MODKEY|ShiftMask,             XK_equal,       spawn,          {.v = mute_vol } },
 	{ MODKEY|ShiftMask,             XK_minus,       spawn,          {.v = default_vol } },
+	{ MODKEY|ShiftMask,             XK_equal,       spawn,          {.v = mute_vol } },
     { 0,                            PrintScreenDWM, spawn,          {.v = screenshot } },
     { 0     |ShiftMask,             PrintScreenDWM, spawn,          {.v = screenshots_region } },
     { MODKEY,                       XK_s,           spawn,          {.v = suspendcmd } },
