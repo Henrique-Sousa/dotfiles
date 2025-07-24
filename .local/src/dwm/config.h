@@ -72,6 +72,8 @@ static const char *up_vol[]         = { "/home/user1/.local/bin/audio/up_vol.sh"
 static const char *down_vol[]       = { "/home/user1/.local/bin/audio/down_vol.sh",     NULL };
 static const char *default_vol[]    = { "/home/user1/.local/bin/audio/default_vol.sh",  NULL };
 static const char *mute_vol[]       = { "/home/user1/.local/bin/audio/mute_vol.sh",     NULL };
+static const char *laptop_audio[]   = { "/home/user1/.local/bin/audio/laptop_audio.sh", NULL };
+static const char *hdmi_audio[]     = { "/home/user1/.local/bin/audio/hdmi_audio.sh",   NULL };
 
 /* keyboard layout */
 //static const char *ch_kb_layout[] = { "/home/user1/toggle_keyboard_layout.sh", NULL };
@@ -109,6 +111,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_equal,       spawn,          {.v = up_vol } },
 	{ MODKEY|ShiftMask,             XK_minus,       spawn,          {.v = default_vol } },
 	{ MODKEY|ShiftMask,             XK_equal,       spawn,          {.v = mute_vol } },
+	{ MODKEY,                       XK_F9,          spawn,          {.v = laptop_audio } },
+	{ MODKEY|ShiftMask,             XK_F9,          spawn,          {.v = hdmi_audio } },
     { 0,                            PrintScreenDWM, spawn,          {.v = screenshot } },
     { 0     |ShiftMask,             PrintScreenDWM, spawn,          {.v = screenshots_region } },
     { MODKEY,                       XK_s,           spawn,          {.v = suspendcmd } },
