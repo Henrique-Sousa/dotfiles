@@ -51,7 +51,7 @@ set formatoptions+=j
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
 
-imap jk <Esc>
+" imap jk <Esc>
 
 
 autocmd BufRead * let &l:modifiable = !&readonly
