@@ -6,4 +6,7 @@
 "\e[1;5D": "" # disable ctrl + left arrow
 "\e[1;5C": "" # disable ctrl + right arrow
 
+"\e[1;3D": "" # disable alt + left arrow
+"\e[1;3C": "" # disable alt + right arrow
+
 "\e[3~": "" # disable delete
