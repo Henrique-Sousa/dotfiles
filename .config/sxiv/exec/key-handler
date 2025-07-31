@@ -3,7 +3,7 @@ while read file
 do
         case "$1" in
         "C-d")
-                [ ! -d ~/trash ] && mkdir ~/trash; mv "$file" ~/trash ;;
+            [ ! -d ~/.local/share/Trash ] && mkdir ~/.local/share/Trash/; mv "$file" ~/.local/share/Trash/ ;;
         "C-r")
                 magick "$file" -rotate 90 "$file" ;;
         esac
