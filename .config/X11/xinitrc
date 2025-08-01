@@ -3,11 +3,11 @@
 # wm=twm
 # wm=openbox
 # wm=qtile
-wm=i3
-# wm=dwm
+# wm=i3
+wm=dwm
 # wm=xmonad 
 
-if [ "$wm" == i3 ]; then
+if [ "$wm" == dwm ]; then
     sink=$(pactl list sinks | head -1 | sed 's/Sink #//g')
 
     is_muted() {
