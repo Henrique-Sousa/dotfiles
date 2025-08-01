@@ -205,3 +205,5 @@ bindsym $mod+s exec --no-startup-id ~/.local/bin/suspend.sh
 bindsym $mod+space exec --no-startup-id ~/.local/bin/toggle_keyboard_layout.sh
 bindsym $mod+e exec --no-startup-id "setxkbmap -layout gr -variant polytonic"
 bindsym $mod+u exec --no-startup-id "setxkbmap -layout us -variant rus"
+
+bindsym $mod+Tab exec --no-startup-id i3-msg workspace back_and_forth
