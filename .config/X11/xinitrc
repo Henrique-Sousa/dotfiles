@@ -1,40 +1,49 @@
 #!/bins/sh
 
-sink=$(pactl list sinks | head -1 | sed 's/Sink #//g')
+# wm=twm
+# wm=openbox
+# wm=qtile
+wm=i3
+# wm=dwm
+# wm=xmonad 
 
-is_muted() {
-    [ $(pactl -- get-sink-mute $sink | awk -F': ' '{print $2}') == yes ] && echo 🔇 || echo 🔊;
-}
+if [ "$wm" == i3 ]; then
+    sink=$(pactl list sinks | head -1 | sed 's/Sink #//g')
 
-vol() {
-    echo "$(pactl -- get-sink-volume $sink | grep % | awk -F' / ' '{print $2}')";
-}
+    is_muted() {
+        [ $(pactl -- get-sink-mute $sink | awk -F': ' '{print $2}') == yes ] && echo 🔇 || echo 🔊;
+    }
 
-kbd_layout() {
-    read rules model layout variant options < <(setxkbmap -query | awk -F':' '{print $2}' | tr -d ' ' | paste -s)
-    if [ $variant = rus ]; then
-        echo "🖮 ${variant}";
-    else
-        echo "🖮 ${layout}";
-    fi
-}
+    vol() {
+        echo "$(pactl -- get-sink-volume $sink | grep % | awk -F' / ' '{print $2}')";
+    }
 
-get_date() {
-    echo $(date +"%H:%M - %a %h %d %Y");
-}
+    kbd_layout() {
+        read rules model layout variant options < <(setxkbmap -query | awk -F':' '{print $2}' | tr -d ' ' | paste -s)
+        if [ $variant = rus ]; then
+            echo "🖮 ${variant}";
+        else
+            echo "🖮 ${layout}";
+        fi
+    }
 
-bat_stat() {
-    echo "$(cat /sys/class/power_supply/BAT0/status)";
-}
+    get_date() {
+        echo $(date +"%H:%M - %a %h %d %Y");
+    }
 
-bat_cap() {
-    cap="$(cat /sys/class/power_supply/BAT0/capacity)";
-    (( ${cap} > 15 )) && echo "🔋 ${cap}%" || echo "🪫 ${cap}%";
-}
+    bat_stat() {
+        echo "$(cat /sys/class/power_supply/BAT0/status)";
+    }
 
-while true; do
-    xsetroot -name "$(is_muted) $(vol) | $(kbd_layout) | $(get_date) | $(bat_stat) $(bat_cap)";
-    sleep 1;
-done &
+    bat_cap() {
+        cap="$(cat /sys/class/power_supply/BAT0/capacity)";
+        (( ${cap} > 15 )) && echo "🔋 ${cap}%" || echo "🪫 ${cap}%";
+    }
 
-exec dwm
+    while true; do
+        xsetroot -name "$(is_muted) $(vol) | $(kbd_layout) | $(get_date) | $(bat_stat) $(bat_cap)";
+        sleep 1;
+    done &
+fi
+
+exec "$wm"
