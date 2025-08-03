@@ -1,0 +1,61 @@
+! Font
+XTerm*faceName: Monospace
+XTerm*faceSize: 11
+
+! Scrollback
+XTerm*saveLines: 10000
+
+! Enable scrollbar on the right
+XTerm*scrollBar: true
+XTerm*rightScrollBar: true
+
+! Cursor
+XTerm*cursorBlink: true
+#XTerm*cursorColor: white 
+XTerm*cursorColor: black
+
+! Colors
+#XTerm*foreground: white
+#XTerm*background: black
+#XTerm*colorBD: yellow
+#XTerm*colorUL: cyan
+
+! Bell
+XTerm*bellIsUrgent: false 
+XTerm*visualBell: false 
+
+! UTF-8 support
+XTerm*utf8: 2
+XTerm*eightBitInput: false
+XTerm*eightBitOutput: true
+
+! Font
+URxvt.font: xft:Monospace:size=11
+
+! Scrollback lines
+URxvt.saveLines: 10000
+
+! Scrollbar
+URxvt.scrollBar: false 
+URxvt.scrollBar_right: false 
+URxvt.scrollstyle: false 
+
+! Cursor
+URxvt.cursorBlink: true
+URxvt.cursorColor: white 
+
+! Colors
+URxvt.foreground: white
+URxvt.background: black
+
+! Enable ISO 14755 (extended Unicode input)
+URxvt.iso14755: false
+
+! True transparency (requires a compositor like picom)
+#URxvt.transparent: true
+#URxvt.shading: 20
+#URxvt.depth: 32
+#URxvt.background: [90]#000000  ! 90% opacity
+
+! Input encoding
+URxvt.imLocale: en_US.UTF-8
