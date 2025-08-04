@@ -2,10 +2,11 @@
 
 # wm=twm
 # wm=openbox
-# wm=qtile
 # wm=i3
 wm=dwm
+# wm=bspwm
 # wm=xmonad 
+# wm=qtile
 
 if [ "$wm" == dwm ]; then
     sink=$(pactl list sinks | head -1 | sed 's/Sink #//g')
