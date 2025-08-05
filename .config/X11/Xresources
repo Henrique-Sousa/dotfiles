@@ -1,3 +1,5 @@
+! XTERM
+
 ! Font
 XTerm*faceName: Monospace
 XTerm*faceSize: 11
@@ -28,6 +30,12 @@ XTerm*visualBell: false
 XTerm*utf8: 2
 XTerm*eightBitInput: false
 XTerm*eightBitOutput: true
+
+XTerm.vt100.translations: #override \
+    Ctrl Shift <Key>C: select-end(CLIPBOARD, PRIMARY) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD, PRIMARY)
+
+! URXT
 
 ! Font
 URxvt.font: xft:Monospace:size=11
