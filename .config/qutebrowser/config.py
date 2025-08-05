@@ -657,11 +657,11 @@
 ##   - multiple-tabs: Show a confirmation if multiple tabs are opened.
 ##   - downloads: Show a confirmation if downloads are running
 ##   - never: Never show a confirmation.
-# c.confirm_quit = ['never']
+c.confirm_quit = ['always']
 
 ## Automatically start playing `<video>` elements.
 ## Type: Bool
-# c.content.autoplay = True
+c.content.autoplay = False 
 
 ## List of URLs to ABP-style adblocking rulesets.  Only used when Brave's
 ## ABP-style adblocker is used (see `content.blocking.method`).  You can
@@ -707,7 +707,7 @@
 ##   - adblock: Use Brave's ABP-style adblocker
 ##   - hosts: Use hosts blocking
 ##   - both: Use both hosts blocking and Brave's ABP-style adblocker
-# c.content.blocking.method = 'auto'
+c.content.blocking.method = 'both'
 
 ## A list of patterns that should always be loaded, despite being blocked
 ## by the ad-/host-blocker. Local domains are always exempt from
@@ -1930,11 +1930,11 @@
 
 ## Padding (in pixels) for tab indicators.
 ## Type: Padding
-# c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
+c.tabs.indicator.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
 
 ## Width (in pixels) of the progress indicator (0 to disable).
 ## Type: Int
-# c.tabs.indicator.width = 3
+c.tabs.indicator.width = 0
 
 ## How to behave when the last tab is closed. If the
 ## `tabs.tabs_are_windows` setting is set, this is ignored and the
@@ -2003,7 +2003,7 @@
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-# c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
+c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
 
 ## Force pinned tabs to stay at fixed URL.
 ## Type: Bool
@@ -2020,7 +2020,7 @@
 ##   - bottom
 ##   - left
 ##   - right
-# c.tabs.position = 'top'
+c.tabs.position = 'left'
 
 ## Which tab to select when the focused tab is removed.
 ## Type: SelectOnRemove
@@ -2099,7 +2099,7 @@
 ## Width (in pixels or as percentage of the window) of the tab bar if
 ## it's vertical.
 ## Type: PercOrInt
-# c.tabs.width = '15%'
+c.tabs.width = 17
 
 ## Wrap when changing tabs.
 ## Type: Bool
@@ -2154,7 +2154,28 @@
 ## the search engine name to the search term, e.g. `:open google
 ## qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {
+    'DEFAULT': 'https://duckduckgo.com/?q={}',
+    'w':  'https://www.wikipedia.org/search-redirect.php?family=wikipedia&language=en&search={}&language=en&go=Go',
+    'wt': 'https://en.wiktionary.org/?search={}',
+    'wr': 'https://www.wordreference.com/enpt/{}',
+    'a':  'https://www.aulete.com.br/{}',
+    'eo': 'https://etymonline.com/index.php?allowed_in_frame=0&search={}',
+    'aw': 'https://wiki.archlinux.org/index.php?title=Special%3ASearch&search={}',
+    'i':  'https://duckduckgo.com/?q={}&iar=images&iax=images&ia=images',
+    'yt': 'https://www.youtube.com/results?search_query={}',
+    'tw': 'https://twitter.com/{}',
+    'tws': 'https://twitter.com/search?q={}',
+    'x': 'https://x.com/{}',
+    'xs': 'https://x.com/search?q={}',
+    'ai': 'https://archive.is/search/?q={}',
+    'wms': 'https://web.archive.org/web/*/{}',
+    'wm': 'https://web.archive.org/web/{}',
+    'ao': 'https://archive.org/search/?query={}',
+    'scr': 'https://scribd.com/search?query={}',
+    #'sh': 'https://sci-hub.st/"{}"',
+    'pb': 'https://thepiratebay.zone/search/{}'
+}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
