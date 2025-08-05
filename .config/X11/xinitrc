@@ -2,8 +2,8 @@
 
 # wm=twm
 # wm=openbox
-# wm=i3
-wm=dwm
+wm=i3
+# wm=dwm
 # wm=bspwm
 # wm=xmonad 
 # wm=qtile
