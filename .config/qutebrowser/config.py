@@ -891,7 +891,7 @@ c.content.blocking.method = 'both'
 ##   - access: Allow reading from and writing to the clipboard.
 ##   - access-paste: Allow accessing the clipboard and pasting clipboard content.
 ##   - ask: Prompt when requested (grants 'access-paste' permission).
-# c.content.javascript.clipboard = 'ask'
+c.content.javascript.clipboard = 'access-paste'
 
 ## Enable JavaScript.
 ## Type: Bool
