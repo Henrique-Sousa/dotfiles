@@ -42,6 +42,8 @@ alias grep='grep --color'
 ! vi --version &> /dev/null && alias vi='vim'
 ! view --version &> /dev/null && alias view='vi -R'
 
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 shopt -s extglob;
 
 # disable terminal freezing with Ctrl + s, allowing to do a forward-search-history with Ctrl + s
