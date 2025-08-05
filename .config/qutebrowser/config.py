@@ -2156,25 +2156,26 @@ c.tabs.width = 17
 ## Type: Dict
 c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
-    'w':  'https://www.wikipedia.org/search-redirect.php?family=wikipedia&language=en&search={}&language=en&go=Go',
-    'wt': 'https://en.wiktionary.org/?search={}',
-    'wr': 'https://www.wordreference.com/enpt/{}',
-    'a':  'https://www.aulete.com.br/{}',
-    'eo': 'https://etymonline.com/index.php?allowed_in_frame=0&search={}',
-    'aw': 'https://wiki.archlinux.org/index.php?title=Special%3ASearch&search={}',
-    'i':  'https://duckduckgo.com/?q={}&iar=images&iax=images&ia=images',
-    'yt': 'https://www.youtube.com/results?search_query={}',
-    'tw': 'https://twitter.com/{}',
-    'tws': 'https://twitter.com/search?q={}',
-    'x': 'https://x.com/{}',
-    'xs': 'https://x.com/search?q={}',
-    'ai': 'https://archive.is/search/?q={}',
-    'wms': 'https://web.archive.org/web/*/{}',
-    'wm': 'https://web.archive.org/web/{}',
-    'ao': 'https://archive.org/search/?query={}',
-    'scr': 'https://scribd.com/search?query={}',
-    #'sh': 'https://sci-hub.st/"{}"',
-    'pb': 'https://thepiratebay.zone/search/{}'
+    'wp':    'https://www.wikipedia.org/search-redirect.php?family=wikipedia&language=en&search={}&language=en&go=Go',
+    'wt':   'https://en.wiktionary.org/?search={}',
+    'wr':   'https://www.wordreference.com/enpt/{}',
+    'au':   'https://www.aulete.com.br/{}',
+    'et':   'https://etymonline.com/index.php?allowed_in_frame=0&search={}',
+    'aw':   'https://wiki.archlinux.org/index.php?title=Special%3ASearch&search={}',
+    'ddi':  'https://duckduckgo.com/?q={}&iar=images&iax=images&ia=images',
+    'g':    'https://www.google.com/search?q={}',
+    'yt':   'https://www.youtube.com/results?search_query={}',
+    'tw':   'https://twitter.com/{}',
+    'tws':  'https://twitter.com/search?q={}',
+    'x':    'https://x.com/{}',
+    'xs':   'https://x.com/search?q={}',
+    'ais':  'https://archive.is/search/?q={}',
+    'wms':  'https://web.archive.org/web/*/{}', # wayback machine
+    'wm':   'https://web.archive.org/web/{}',   # wayback machine search
+    'a':    'https://archive.org/search/?query={}',
+    'scr':  'https://scribd.com/search?query={}',
+    #'sh':  'https://sci-hub.st/"{}"',
+    'pb':   'https://thepiratebay.zone/search/{}'
 }
 
 ## Page(s) to open at the start.
