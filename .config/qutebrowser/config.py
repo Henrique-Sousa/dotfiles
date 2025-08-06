@@ -10,9 +10,12 @@ c.content.blocking.adblock.lists = [
     'https://easylist.to/easylist/easyprivacy.txt',
     'https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt',
     'https://www.i-dont-care-about-cookies.eu/abp/',
-    'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt'
+    'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt',
+    'https://raw.github.com/rbrito/easylist-ptbr/master/adblock-rules.txt',
+    'https://easylist-downloads.adblockplus.org/easylistdutch.txt'
 ]
 
+config.set('content.javascript.enabled', False, 'https://veja.abril.com.br/*')
 
 c.content.javascript.clipboard = 'access-paste'
 
