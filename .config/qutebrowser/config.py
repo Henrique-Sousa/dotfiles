@@ -5,6 +5,14 @@ c.confirm_quit = ['always']
 c.content.autoplay = False 
 
 c.content.blocking.method = 'both'
+c.content.blocking.adblock.lists = [
+    'https://easylist.to/easylist/easylist.txt',
+    'https://easylist.to/easylist/easyprivacy.txt',
+    'https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt',
+    'https://www.i-dont-care-about-cookies.eu/abp/',
+    'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt'
+]
+
 
 c.content.javascript.clipboard = 'access-paste'
 
