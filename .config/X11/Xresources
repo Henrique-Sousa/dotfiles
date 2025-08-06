@@ -13,14 +13,14 @@ XTerm*rightScrollBar: true
 
 ! Cursor
 XTerm*cursorBlink: true
-#XTerm*cursorColor: white 
+!XTerm*cursorColor: white 
 XTerm*cursorColor: black
 
 ! Colors
-#XTerm*foreground: white
-#XTerm*background: black
-#XTerm*colorBD: yellow
-#XTerm*colorUL: cyan
+!XTerm*foreground: white
+!XTerm*background: black
+!XTerm*colorBD: yellow
+!XTerm*colorUL: cyan
 
 ! Bell
 XTerm*bellIsUrgent: false 
@@ -60,10 +60,10 @@ URxvt.background: black
 URxvt.iso14755: false
 
 ! True transparency (requires a compositor like picom)
-#URxvt.transparent: true
-#URxvt.shading: 20
-#URxvt.depth: 32
-#URxvt.background: [90]#000000  ! 90% opacity
+!URxvt.transparent: true
+!URxvt.shading: 20
+!URxvt.depth: 32
+!URxvt.background: [90]#000000  ! 90% opacity
 
 ! Input encoding
 URxvt.imLocale: en_US.UTF-8
