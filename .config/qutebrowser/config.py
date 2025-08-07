@@ -1,5 +1,7 @@
 config.load_autoconfig(False)
 
+c.downloads.location.directory = "$HOME/dwnlds/"
+
 c.confirm_quit = ['always']
 
 c.content.autoplay = False 
