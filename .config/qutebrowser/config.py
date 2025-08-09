@@ -17,6 +17,8 @@ c.content.blocking.adblock.lists = [
     'https://easylist-downloads.adblockplus.org/easylistdutch.txt'
 ]
 
+c.content.geolocation = False
+
 config.set('content.javascript.enabled', False, 'https://veja.abril.com.br/*')
 
 c.content.javascript.clipboard = 'access-paste'
