@@ -1,0 +1,60 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        color_bad = "#FF0000"
+        interval = 1
+}
+
+order += "wireless wlan0"
+order += "volume master"
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "memory"
+order += "tztime local"
+
+volume master {
+        format = "🔊 %volume"
+        format_muted = "🔊 muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+wireless wlan0 {
+        format_up = "🛜%quality, %bitrate"
+        format_down = "🛜 down"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 DIS"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        status_idle = "☻ IDLE"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+        threshold_type = "percentage"
+}
+
+cpu_temperature 0 {
+        format = "🌡 %degrees °C"
+}
+
+tztime local {
+        format = "📅 %a %h %d %Y ⏰ %H:%M:%S"
+}
+
+memory {
+        format = "RAM: %available %percentage_available"
+        threshold_degraded = "5%"
+        format_degraded = "RAM: %available %percentage_available"
+}

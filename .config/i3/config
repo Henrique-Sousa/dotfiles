@@ -194,7 +194,7 @@ hide_edge_borders smart
 # finds out, if available)
 bar {
         position top
-        status_command i3status
+        status_command $HOME/.local/bin/i3script.sh
 }
 
 bindsym --release Print exec "scrot dwnlds/screenshots/%Y-%m-%d-%H%M%S.png"
