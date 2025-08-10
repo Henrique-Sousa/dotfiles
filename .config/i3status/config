@@ -20,7 +20,7 @@ order += "memory"
 order += "tztime local"
 
 volume master {
-        format = "🔊 %volume"
+        format = "🔊 %devicename %volume"
         format_muted = "🔊 muted (%volume)"
         device = "default"
         mixer = "Master"
