@@ -32,8 +32,8 @@ XTerm*eightBitInput: false
 XTerm*eightBitOutput: true
 
 XTerm.vt100.translations: #override \
-    Ctrl Shift <Key>C: select-end(CLIPBOARD, PRIMARY) \n\
-    Ctrl Shift <Key>V: insert-selection(CLIPBOARD, PRIMARY)
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
 
 ! URXT
 
