@@ -47,6 +47,6 @@ if [ "$wm" == dwm ]; then
     done &
 fi
 
-xrdb -merge ~/.config/X11/Xresources
+xrdb -merge ~/.config/x11/xresources
 
 exec "$wm"
