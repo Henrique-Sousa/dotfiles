@@ -2,7 +2,7 @@ config.load_autoconfig(False)
 
 c.downloads.location.directory = "$HOME/dwnlds/"
 
-c.confirm_quit = ['always']
+config.bind('<Ctrl-Q>', 'quit --save')
 
 c.content.autoplay = False 
 
