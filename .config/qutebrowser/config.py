@@ -32,6 +32,7 @@ c.tabs.width = 17
 c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
     'wp':    'https://www.wikipedia.org/search-redirect.php?family=wikipedia&language=en&search={}&language=en&go=Go',
+    'ptwp':  'https://pt.wikipedia.org/w/index.php?go=Ir&search={}&title=Especial%3APesquisar&ns0=1',
     'wt':   'https://en.wiktionary.org/?search={}',
     'wr':   'https://www.wordreference.com/enpt/{}',
     'au':   'https://www.aulete.com.br/{}',
