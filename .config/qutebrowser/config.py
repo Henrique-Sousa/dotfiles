@@ -19,7 +19,7 @@ c.content.blocking.adblock.lists = [
 
 c.content.geolocation = False
 
-config.set('content.javascript.enabled', False, 'https://veja.abril.com.br/*')
+config.set('content.javascript.enabled', False, 'https://*.abril.com.br/*')
 
 c.content.javascript.clipboard = 'access-paste'
 
