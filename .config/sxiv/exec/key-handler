@@ -1,10 +1,17 @@
 #!/bin/sh
-while read file
-do
-        case "$1" in
-        "C-d")
-            [ ! -d ~/.local/share/Trash ] && mkdir ~/.local/share/Trash/; mv "$file" ~/.local/share/Trash/ ;;
-        "C-r")
-                magick "$file" -rotate 90 "$file" ;;
-        esac
-done
+case "$1" in
+    "C-d")
+        trash=~/.local/share/Trash;
+        mkdir -p "$trash"; 
+        while read file; do
+            mv "$file" "$trash"
+        done ;;
+    "C-r") 
+        magick "$file" -rotate 90 "$file" ;;
+    "C-m") 
+        target="$(printf "" | dmenu -p 'Move to directory:')"
+        mkdir -p "$target";
+        while read file; do
+            mv "$file" "$target"/
+        done ;;
+esac
