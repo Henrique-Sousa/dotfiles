@@ -209,7 +209,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym --release Print exec "scrot dwnlds/screenshots/%Y-%m-%d-%H%M%S.png"
 bindsym --release Shift+Print exec "scrot -s dwnlds/screenshots/%Y-%m-%d-%H%M%S.png"
 
-bindsym $mod+Shift+s exec --no-startup-id ~/.local/bin/suspend.sh
+bindsym $mod+Shift+s exec --no-startup-id systemctl suspend 
 
 bindsym $mod+space exec --no-startup-id ~/.local/bin/toggle_keyboard_layout.sh
 bindsym $mod+g exec --no-startup-id "setxkbmap -layout gr -variant polytonic"
