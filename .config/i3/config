@@ -211,6 +211,8 @@ bindsym --release Shift+Print exec "scrot -s dwnlds/screenshots/%Y-%m-%d-%H%M%S.
 
 bindsym $mod+Shift+s exec --no-startup-id systemctl suspend 
 
+bindsym $mod+b exec --no-startup-id qutebrowser "$(printf '' | dmenu)" 
+
 bindsym $mod+space exec --no-startup-id ~/.local/bin/toggle_keyboard_layout.sh
 bindsym $mod+g exec --no-startup-id "setxkbmap -layout gr -variant polytonic"
 bindsym $mod+u exec --no-startup-id "setxkbmap -layout us -variant rus"
