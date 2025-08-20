@@ -2,5 +2,5 @@
 
 url="$(printf '' | dmenu -p 'url:')"
 if [ -n "$url" ]; then
-    qutebrowser "$url";
+    qutebrowser "$url" --target window;
 fi
