@@ -1,8 +1,15 @@
 config.load_autoconfig(False)
 
+c.tabs.indicator.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
+c.tabs.indicator.width = 0
+c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
+c.tabs.position = 'left'
+c.tabs.width = 17
+
 c.downloads.location.directory = "$HOME/dwnlds/"
 
 c.auto_save.session = True
+
 
 c.content.autoplay = False 
 
@@ -19,12 +26,8 @@ c.content.blocking.adblock.lists = [
 
 c.content.geolocation = False
 
+c.content.pdfjs = True
+
 config.set('content.javascript.enabled', False, 'https://*.abril.com.br/*')
 
 c.content.javascript.clipboard = 'access-paste'
-
-c.tabs.indicator.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
-c.tabs.indicator.width = 0
-c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
-c.tabs.position = 'left'
-c.tabs.width = 17
