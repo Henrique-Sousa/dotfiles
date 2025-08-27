@@ -15,6 +15,9 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smartindent
+"set cinoptions+=:2
+filetype plugin indent on
 autocmd FileType cpp,fortran setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal noexpandtab
 autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
@@ -35,7 +38,6 @@ set hlsearch
 
 set shortmess-=S "show search count message when searching
 
-set smartindent
 set foldmethod=indent
 set foldlevelstart=20
 
@@ -53,14 +55,13 @@ set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
 " imap jk <Esc>
 
-
 autocmd BufRead * let &l:modifiable = !&readonly
 
 syntax on
 au BufRead,BufNewFile *.a60 set filetype=pascal "sintax highlight for algol 60 using pascal's one
 
 let g:markdown_fenced_languages  = ['asm', 'c', 'cpp']
-let g:markdown_fenced_languages += ['java']
+"let g:markdown_fenced_languages += ['java']
 let g:markdown_fenced_languages += ['basic']
 let g:markdown_fenced_languages += ['javascript', 'typescript', 'php', 'ruby', 'python']
 let g:markdown_fenced_languages += ['perl', 'bash', 'sh', 'sed', 'awk', 'bc']
@@ -74,17 +75,17 @@ let g:markdown_fenced_languages += ['tmux', 'make', 'dockerfile', 'xml', 'yaml',
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\*.\+\*\/+
 
-colorscheme slate
-hi ColorColumn ctermbg=237
-hi Visual cterm=reverse ctermfg=109 ctermbg=234
-hi Search cterm=reverse ctermfg=74 ctermbg=234
-hi IncSearch cterm=reverse ctermfg=215 ctermbg=234
-hi Error cterm=bold,reverse ctermfg=167 ctermbg=235
-hi ErrorMsg cterm=bold ctermfg=235 ctermbg=167
-autocmd FileType c,cpp hi! link Structure Type "c/c++ struct, class, etc. the same as int, float, etc.
-autocmd FileType c,cpp hi! link Statement Include
+" colorscheme slate
+" hi ColorColumn ctermbg=237
+" hi Visual cterm=reverse ctermfg=109 ctermbg=234
+" hi Search cterm=reverse ctermfg=74 ctermbg=234
+" hi IncSearch cterm=reverse ctermfg=215 ctermbg=234
+" hi Error cterm=bold,reverse ctermfg=167 ctermbg=235
+" hi ErrorMsg cterm=bold ctermfg=235 ctermbg=167
+" autocmd FileType c,cpp hi! link Structure Type "c/c++ struct, class, etc. the same as int, float, etc.
+" autocmd FileType c,cpp hi! link Statement Include
 
-"colorscheme habamax
+colorscheme habamax
 "dolorscheme sorbet 
 "colorscheme desert
-"colorscheme wildcharm
+" colorscheme wildcharm
