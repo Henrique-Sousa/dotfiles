@@ -31,3 +31,5 @@ c.content.pdfjs = True
 config.set('content.javascript.enabled', False, 'https://*.abril.com.br/*')
 
 c.content.javascript.clipboard = 'access-paste'
+
+config.set('content.register_protocol_handler', True, 'https://mail.google.com?extsrc=mailto&url=%25s')
