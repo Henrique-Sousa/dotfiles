@@ -26,6 +26,8 @@ c.content.blocking.adblock.lists = [
 
 c.content.geolocation = False
 
+c.content.notifications.enabled = False
+
 c.content.pdfjs = True
 
 config.set('content.javascript.enabled', False, 'https://*.abril.com.br/*')
