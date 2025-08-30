@@ -1,4 +1,0 @@
-# /etc/profile must contain this line:
-# source "$HOME"/.config/bash/bash_profile
-
-if [ -f ~/.config/bash/bashrc ]; then . ~/.config/bash/bashrc; fi

@@ -1,6 +1,3 @@
-# /etc/bash.bashrc or /etc/bashrc must contain this line:
-# source "$HOME"/.config/bash/bashrc
-
 #export TERM='xterm-256color'
 export PS1='\[\033[1;94m\]\u@\h:\w\[\033[00m\]$ '
 export HISTCONTROL="ignoreboth:erasedups"
