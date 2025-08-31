@@ -1,1 +1,1 @@
-if [ -f ~/.config/bash/bashrc ]; then . ~/.config/bash/bashrc; fi
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
