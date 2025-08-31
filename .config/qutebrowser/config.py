@@ -2,9 +2,12 @@ config.load_autoconfig(False)
 
 c.tabs.indicator.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
 c.tabs.indicator.width = 0
-c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
+c.tabs.padding = {'top': 1, 'bottom': 1, 'left': 1, 'right': 1}
 c.tabs.position = 'left'
 c.tabs.width = 17
+
+c.colors.tabs.selected.even.bg = 'red'
+c.colors.tabs.selected.odd.bg = 'red'
 
 c.downloads.location.directory = "$HOME/dwnlds/"
 
