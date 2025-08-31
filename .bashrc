@@ -15,11 +15,12 @@ export XSERVERRC="$XDG_CONFIG_HOME"/x11/xserverrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export SCREENDIR="${XDG_RUNTIME_DIR}/screen"
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+export W3M_DIR="$XDG_STATE_HOME"/w3m
 export SQLITE_HISTORY="$XDG_STATE_HOME"/sqlite_history
 export PYTHON_HISTORY="$XDG_STATE_HOME"/python_history
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME"/python
 export PYTHONUSERBASE="$XDG_DATA_HOME"/python
-export W3M_DIR="$XDG_STATE_HOME"/w3m
+export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
 
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'
