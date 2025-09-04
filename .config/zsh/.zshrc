@@ -13,6 +13,15 @@ bindkey '^[b' emacs-backward-word
 bindkey '^[f' emacs-forward-word
 bindkey '^u'  vi-kill-line
 
+my-backward-kill-word() {
+    local WORDCHARS="\`~!@#\$%&^*()-_=+[]{};:\"|,<.>/?'\\"
+    # local WORDCHARS='`~!@#$%&^*()-_=+[]{};:\"|,<.>/?\'\'
+    zle -f kill
+    zle .backward-kill-word
+}
+zle -N my-backward-kill-word
+bindkey '^W' my-backward-kill-word
+
 # automatically cd into typed directory.
 setopt autocd		
 
@@ -57,6 +66,7 @@ source "$ZDOTDIR"/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
     backward-kill-word
     kill-word
+    my-backward-kill-word
 )
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
