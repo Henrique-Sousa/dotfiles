@@ -31,6 +31,12 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="$XDG_STATE_HOME"/zsh/history
 setopt inc_append_history
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 # autoload -U compinit
 autoload -Uz compinit
