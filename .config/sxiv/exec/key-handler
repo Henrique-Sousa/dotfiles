@@ -9,7 +9,7 @@ case "$1" in
     "C-r") 
         magick "$file" -rotate 90 "$file" ;;
     "C-m") 
-        target="$(printf "" | dmenu -p 'Move to directory:')"
+        target="$(find . -type d | dmenu -p 'Move to directory:')"
         mkdir -p "$target";
         while read file; do
             mv "$file" "$target"/
