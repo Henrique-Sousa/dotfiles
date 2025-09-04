@@ -7,16 +7,11 @@ export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
 # emacs keybindings
 bindkey -e
 
-# bash-like word deletion behavior
-# bindkey '^[^?' vi-backward-kill-word    # alt+backspace: delete alphanumeric words
-# bindkey '^w'   backward-kill-word       # ctrl+w: delete until whitespace
-my-backward-kill-word () {
-   local WORDCHARS=''
-   zle -f kill
-   zle .backward-kill-word
-}
-zle -N my-backward-kill-word
-bindkey '\e^?' my-backward-kill-word
+# bash-like word movement and deletion behavior
+WORDCHARS='' 
+bindkey '^[b' emacs-backward-word
+bindkey '^[f' emacs-forward-word
+bindkey '^u'  vi-kill-line
 
 # automatically cd into typed directory.
 setopt autocd		
@@ -28,17 +23,44 @@ SAVEHIST=10000000
 HISTFILE="$XDG_STATE_HOME"/zsh/history
 setopt inc_append_history
 
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
+# autoload -U compinit
+autoload -Uz compinit
 compinit
+# zmodload zsh/complist
+
 _comp_options+=(globdots)   # include hidden files.
 
+# make completion smarter
+zstyle ':completion:*' menu select                      # show a menu you can navigate
+zstyle ':completion:*' matcher-list 'm:{a-z}={a-za-z}'  # case-insensitive
+zstyle ':completion:*' list-colors ''                   # use ls colors
+#zstyle ':completion:*' accept-exact true               # if you type an exact match, accept it
+zstyle ':completion:*' squeeze-slashes true             # treat multiple slashes as one
+
+# sort and prioritize by usage history
+zstyle ':completion:*' sort true
+zstyle ':completion:*' file-sort modification
+zstyle ':completion:*' completer _complete _match _approximate
+
+# bias toward recently used commands/paths
+zstyle ':completion:*:cd:*' tag-order local-directories path-directories
+zstyle ':completion:*:cd:*' group-order local-directories path-directories
+
+# autoload predict-on
+# autoload -Uz predict-on
+# predict-on
+
+source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source "$ZDOTDIR"/zsh-autosuggestions/zsh-autosuggestions.zsh
+# killing more than one word and pasting will paste all the words in sequence
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
     backward-kill-word
-    vi-backward-kill-word
-    unix-word-rubout
-    my-backward-kill-word
+    kill-word
 )
-source "$ZDOTDIR"/zsh-autosuggestions/zsh-autosuggestions.zsh
-source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# source "$ZDOTDIR/fzf-tab/fzf-tab.plugin.zsh"
+# zstyle ':fzf-tab:*' switch-group ',' '.'  # group navigation keys
+# zstyle ':completion:*' menu yes select
