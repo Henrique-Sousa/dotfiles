@@ -1,27 +1,5 @@
 source "$HOME/.config/shell/base.sh"
 
-autoload -U colors && colors
-
-export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
-
-# emacs keybindings
-bindkey -e
-
-# bash-like word movement and deletion behavior
-WORDCHARS='' 
-bindkey '^[b' emacs-backward-word
-bindkey '^[f' emacs-forward-word
-bindkey '^u' backward-kill-line 
-
-my-backward-kill-word() {
-    local WORDCHARS="\`~!@#\$%&^*()-_=+[]{};:\"|,<.>/?'\\"
-    # local WORDCHARS='`~!@#$%&^*()-_=+[]{};:\"|,<.>/?\'\'
-    zle -f kill
-    zle .backward-kill-word
-}
-zle -N my-backward-kill-word
-bindkey '^w' my-backward-kill-word
-
 # automatically cd into typed directory.
 setopt autocd		
 
@@ -37,6 +15,48 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
+
+autoload -U colors
+colors
+
+
+source "$ZDOTDIR"/zsh-autosuggestions/zsh-autosuggestions.zsh
+# make zsh-autosuggestions not mess up the keybindings
+# preserve:
+#   killing more than one word and then pasting will paste all the killed words in sequence
+#   yank-pop (M-y): rotate the kill-ring, and yank the new top
+ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
+    kill-word           # alt + d
+    backward-kill-word  # alt + backspace
+    unix-word-rubout    # ctrl + w
+    backward-kill-line  # ctrl + u
+    yank                # ctrl + y
+    yank-pop            # alt + y
+)
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+
+# emacs keybindings
+bindkey -e
+
+# bash-like word movement and deletion behavior
+WORDCHARS='' 
+bindkey '^[b' emacs-backward-word
+bindkey '^[f' emacs-forward-word
+bindkey '^u' backward-kill-line 
+
+unix-word-rubout() {
+    local WORDCHARS="\`~!@#\$%&^*()-_=+[]{};:\"|,<.>/?'\\"
+    # local WORDCHARS='`~!@#$%&^*()-_=+[]{};:\"|,<.>/?\'\'
+    zle -f kill
+    zle .backward-kill-word
+}
+zle -N unix-word-rubout
+bindkey '^w' unix-word-rubout
+
+
+# Completion System
 
 # autoload -U compinit
 autoload -Uz compinit
@@ -65,19 +85,11 @@ zstyle ':completion:*:cd:*' group-order local-directories path-directories
 # autoload -Uz predict-on
 # predict-on
 
-source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source "$ZDOTDIR"/zsh-autosuggestions/zsh-autosuggestions.zsh
-# killing more than one word and pasting will paste all the words in sequence
-ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
-    backward-kill-word
-    kill-word
-    my-backward-kill-word
-    backward-kill-line
-)
-
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
 # source "$ZDOTDIR/fzf-tab/fzf-tab.plugin.zsh"
 # zstyle ':fzf-tab:*' switch-group ',' '.'  # group navigation keys
 # zstyle ':completion:*' menu yes select
+
+
+export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
+
+source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
