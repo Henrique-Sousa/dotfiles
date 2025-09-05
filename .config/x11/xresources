@@ -1,24 +1,48 @@
+/* !! gruvbox: */
+*.color0: #1d2021 
+*.color1: #cc241d 
+*.color2: #98971a 
+*.color3: #d79921 
+*.color4: #458588 
+*.color5: #b16286 
+*.color6: #689d6a 
+*.color7: #a89984 
+*.color8: #928374 
+*.color9: #fb4934 
+*.color10: #b8bb26 
+*.color11: #fabd2f 
+*.color12: #83a598 
+*.color13: #d3869b 
+*.color14: #8ec07c 
+*.color15: #ebdbb2 
+*.color256: #1d2021 
+*.color257: #ebdbb2 
+
+! *.alpha: 0.8
+*.font: monospace:size=10
+
+
 ! XTERM
 
 ! Font
-XTerm*faceName: Monospace
-XTerm*faceSize: 11
+! XTerm*faceName: Monospace
+! XTerm*faceSize: 11
 
 ! Scrollback
 XTerm*saveLines: 10000
 
-! Enable scrollbar on the right
-XTerm*scrollBar: true
-XTerm*rightScrollBar: true
+! Disable scrollbar on the right
+XTerm*scrollBar: false 
+XTerm*rightScrollBar: false 
 
 ! Cursor
-XTerm*cursorBlink: true
-!XTerm*cursorColor: white 
-XTerm*cursorColor: black
+XTerm*cursorBlink: false 
+XTerm*cursorColor: white 
+! XTerm*cursorColor: black
 
 ! Colors
-!XTerm*foreground: white
-!XTerm*background: black
+! XTerm*foreground: white
+! XTerm*background: black
 !XTerm*colorBD: yellow
 !XTerm*colorUL: cyan
 
