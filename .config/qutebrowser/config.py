@@ -5,13 +5,15 @@ c.tabs.indicator.width = 0
 c.tabs.padding = {'top': 1, 'bottom': 1, 'left': 1, 'right': 1}
 c.tabs.position = 'left'
 c.tabs.width = 17
-
 c.colors.tabs.selected.even.bg = 'red'
 c.colors.tabs.selected.odd.bg = 'red'
 
 c.downloads.location.directory = "$HOME/dwnlds/"
 
 c.auto_save.session = True
+
+
+config.bind('cm', 'clear-messages')
 
 
 c.content.autoplay = False 
@@ -28,13 +30,8 @@ c.content.blocking.adblock.lists = [
 ]
 
 c.content.geolocation = False
-
 c.content.notifications.enabled = False
-
 c.content.pdfjs = True
-
 config.set('content.javascript.enabled', False, 'https://*.abril.com.br/*')
-
 c.content.javascript.clipboard = 'access-paste'
-
 config.set('content.register_protocol_handler', True, 'https://mail.google.com?extsrc=mailto&url=%25s')
