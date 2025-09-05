@@ -34,8 +34,8 @@ export LC_COLLATE="C"
 alias ls='ls --color --group-directories-first'
 alias grep='grep --color=auto'
 
-! vi --version &> /dev/null && alias vi='vim'
-! view --version &> /dev/null && alias view='vi -R'
+# ! vi --version &> /dev/null && alias vi='vim'
+! view --version &> /dev/null && alias view='vim -R'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
