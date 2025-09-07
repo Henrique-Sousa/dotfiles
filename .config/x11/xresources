@@ -19,14 +19,14 @@
 *.color257: #ebdbb2 
 
 ! *.alpha: 0.8
-*.font: monospace:size=10
+! *.font: monospace:size=10
 
 
 ! XTERM
 
 ! Font
-! XTerm*faceName: Monospace
-! XTerm*faceSize: 11
+XTerm*faceName: Monospace
+XTerm*faceSize: 10
 
 ! Scrollback
 XTerm*saveLines: 10000
@@ -41,8 +41,8 @@ XTerm*cursorColor: white
 ! XTerm*cursorColor: black
 
 ! Colors
-! XTerm*foreground: white
-! XTerm*background: black
+XTerm*foreground: white
+XTerm*background: #1c1c1c
 !XTerm*colorBD: yellow
 !XTerm*colorUL: cyan
 
