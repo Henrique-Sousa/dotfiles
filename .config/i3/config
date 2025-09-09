@@ -206,6 +206,12 @@ hide_edge_borders smart
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# wallpaper
+exec_always --no-startup-id feh --bg-scale ~/imgs/jan-folwarczny-ZXBPMnNVtlE-unsplash.jpg
+
+# enable transparency
+exec_always --no-startup-id picom --fade-in-step=1 --fade-out-step=1
+
 bindsym --release Print exec "scrot dwnlds/screenshots/%Y-%m-%d-%H%M%S.png"
 bindsym --release Shift+Print exec "scrot -s dwnlds/screenshots/%Y-%m-%d-%H%M%S.png"
 
