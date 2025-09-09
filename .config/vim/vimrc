@@ -47,8 +47,9 @@ set hidden
 
 set formatoptions+=j
 
-"set spell
+" set spell
 "set dictionary=~/.vim/dictionaries/eng-466550.txt,~/.vim/dictionaries/br-sem-acentos.txt
+set dictionary=$XDG_CONFIG_HOME/vim/dictionaries/br-utf8.txt
 
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
