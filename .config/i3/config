@@ -202,6 +202,11 @@ bindsym $mod+r mode "resize"
 
 for_window [class="^.*"] border pixel 1
 hide_edge_borders smart
+# Focused window border color
+# client.focused   #ff0000  #ff0000  #ffffff  #ffffff
+# Unfocused window border color (optional)
+# client.unfocused #444444  #444444  #cccccc  #cccccc
+
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
