@@ -51,7 +51,11 @@ set formatoptions+=j
 "set dictionary=~/.vim/dictionaries/eng-466550.txt,~/.vim/dictionaries/br-sem-acentos.txt
 set dictionary=$XDG_CONFIG_HOME/vim/dictionaries/br-utf8.txt
 
-set viminfofile=$XDG_STATE_HOME/vim/viminfo
+" completion for programming languages
+" using a syntax file, with ctrl-x ctrl-o
+setlocal omnifunc=syntaxcomplete#Complete
+" completion for tags with ctrl-n
+set complete+=t
 
 
 " imap jk <Esc>
