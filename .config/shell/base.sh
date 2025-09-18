@@ -19,6 +19,7 @@ export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME"/python
 export PYTHONUSERBASE="$XDG_DATA_HOME"/python
 export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'
