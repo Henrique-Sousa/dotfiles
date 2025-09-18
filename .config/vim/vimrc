@@ -48,8 +48,7 @@ set hidden
 set formatoptions+=j
 
 " set spell
-"set dictionary=~/.vim/dictionaries/eng-466550.txt,~/.vim/dictionaries/br-sem-acentos.txt
-set dictionary=$XDG_CONFIG_HOME/vim/dictionaries/br-utf8.txt
+set dictionary=$XDG_STATE_HOME/dictionaries/br-utf8.txt
 
 " completion for programming languages
 " using a syntax file, with ctrl-x ctrl-o
