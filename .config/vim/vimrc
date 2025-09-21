@@ -44,6 +44,7 @@ set foldlevelstart=20
 set nrformats+=alpha
 
 set hidden
+set noswapfile
 
 set formatoptions+=j
 
