@@ -39,32 +39,6 @@ return require('packer').startup(function(use)
   -- use 'vim-airline/vim-airline'
   -- use 'ap/vim-css-color'
  
-  use {
-      "ThePrimeagen/refactoring.nvim",
-      requires = {
-          {"nvim-lua/plenary.nvim"},
-          {"nvim-treesitter/nvim-treesitter"}
-      }
-  }
+  use {'neoclide/coc.nvim', branch = 'release'}
 
-  -- use 'neovim/nvim-lspconfig'   -- LSP client config
-  use 'williamboman/mason.nvim' -- LSP installer
-  use 'williamboman/mason-lspconfig.nvim'
-  use {
-     'mfussenegger/nvim-jdtls',
-     requires = { {'hrsh7th/cmp-nvim-lsp' } }
-  }
-  
-  use 'L3MON4D3/LuaSnip'         -- Snippet engine
-  use 'saadparwaiz1/cmp_luasnip' -- Snippet engine adapter
-  use 'hrsh7th/cmp-nvim-lsp'     -- Source for LSP completion
-  use {
-    'hrsh7th/nvim-cmp',
-    version = false, -- Ignore tags because nvim-cmp has a very old tag
-    dependencies = {
-        'L3MON4D3/LuaSnip',         -- Snippet engine
-        'saadparwaiz1/cmp_luasnip', -- Snippet engine adapter
-        'hrsh7th/cmp-nvim-lsp',     -- Source for LSP completion
-    },
-}
 end)
