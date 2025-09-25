@@ -48,6 +48,8 @@ set noswapfile
 
 set formatoptions+=j
 
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
+
 " set spell
 set dictionary=$XDG_STATE_HOME/dictionaries/br-utf8.txt
 
