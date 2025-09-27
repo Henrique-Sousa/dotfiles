@@ -14,3 +14,6 @@
 [branch "coc-nvim"]
 	remote = origin
 	merge = refs/heads/coc-nvim
+[branch "lazyvim"]
+	remote = origin
+	merge = refs/heads/lazyvim
