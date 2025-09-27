@@ -40,5 +40,11 @@ return require('packer').startup(function(use)
   -- use 'ap/vim-css-color'
  
   use {'neoclide/coc.nvim', branch = 'release'}
-
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+}
 end)
