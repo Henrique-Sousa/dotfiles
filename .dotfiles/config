@@ -11,6 +11,3 @@
 	merge = refs/heads/master
 [status]
 	showUntrackedFiles = no
-[branch "coc-nvim"]
-	remote = origin
-	merge = refs/heads/coc-nvim
