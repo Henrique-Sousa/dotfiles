@@ -8,3 +8,7 @@ vim.keymap.set({ "n", "x" }, "<leader>riv", function() return require('refactori
 
 vim.keymap.set({ "n", "x" }, "<leader>rb", function() return require('refactoring').refactor('Extract Block') end, { expr = true })
 vim.keymap.set({ "n", "x" }, "<leader>rbf", function() return require('refactoring').refactor('Extract Block To File') end, { expr = true })
+
+
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
+vim.keymap.set({"n","v"}, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })

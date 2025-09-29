@@ -40,6 +40,16 @@ require'nvim-treesitter.configs'.setup {
   },
 
   textobjects = {
+    select = {
+      enable = true,
+      lookahead = true, -- jump forward to textobject
+      keymaps = {
+        ["af"] = "@function.outer", -- around function
+        ["if"] = "@function.inner", -- inner function
+        ["ac"] = "@class.outer",    -- around class
+        ["ic"] = "@class.inner",    -- inner class
+      },
+    },
     move = {
       enable = true,
       set_jumps = true,
