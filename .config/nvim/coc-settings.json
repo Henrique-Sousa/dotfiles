@@ -1,3 +1,15 @@
 {
-  "java.jdt.ls.vmargs": "-Xmx512m -XX:+UseG1GC -XX:+UseStringDeduplication"
+  "java.jdt.ls.vmargs": "-Xmx512m -XX:+UseG1GC -XX:+UseStringDeduplication",
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "initializationOptions": {
+          "cache": {
+            "directory": "/tmp/ccls"
+          }
+        }
+    }
+  }
 }
