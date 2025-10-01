@@ -1,18 +1,29 @@
 {
-  "java.jdt.ls.vmargs": "-Xmx512m -XX:+UseG1GC -XX:+UseStringDeduplication",
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "h"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-      "initializationOptions": {
-          "cache": {
-            "directory": "/tmp/ccls"
-          },
-          "clang": {
-              "extraArgs": ["-std=c++20"]
-          }
+    "java.jdt.ls.vmargs": "-Xmx512m -XX:+UseG1GC -XX:+UseStringDeduplication",
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "h"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                },
+                "clang": {
+                    "extraArgs": ["-std=c++20"]
+                }
+            }
+        }
+    },
+    "Lua": {
+        "workspace": {
+            "library": [
+                "/usr/share/nvim/runtime",
+                "/usr/share/nvim/runtime/lua",
+                "/usr/share/nvim/runtime/lua/vim",
+                "/usr/share/nvim/runtime/lua/vim/lsp"
+            ]
         }
     }
-  }
+
 }
