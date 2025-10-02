@@ -28,6 +28,7 @@ set splitright
 set path+=**
 set path+=$HOME/notas/**
 set wildmenu
+set wildmode=full:noselect
 set tags=./tags,./TAGS,tags;~,TAGS;~
 
 set ignorecase
