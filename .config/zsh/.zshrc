@@ -1,5 +1,8 @@
 source "$HOME/.config/shell/base.sh"
 
+# globs like bash
+setopt +o nomatch
+
 # automatically cd into typed directory.
 setopt autocd		
 
