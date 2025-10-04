@@ -44,7 +44,7 @@ vim.opt.splitright = true
 vim.opt.path:append '**' 
 vim.opt.path:append '$HOME/notas/**'
 vim.opt.wildmenu = true
-vim.opt.wildmode = "full:noselect"
+vim.opt.wildmode = "longest,full:noselect"
 vim.opt.tags = './tags,./TAGS,tags;~,TAGS;~'
 
 vim.opt.ignorecase = true
