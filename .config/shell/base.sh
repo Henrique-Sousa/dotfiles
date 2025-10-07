@@ -17,9 +17,12 @@ export SQLITE_HISTORY="$XDG_STATE_HOME"/sqlite_history
 export PYTHON_HISTORY="$XDG_STATE_HOME"/python_history
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME"/python
 export PYTHONUSERBASE="$XDG_DATA_HOME"/python
-export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export NVM_DIR="$XDG_DATA_HOME"/nvm
 
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'

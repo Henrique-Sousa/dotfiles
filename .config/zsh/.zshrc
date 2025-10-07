@@ -96,3 +96,6 @@ zstyle ':completion:*:cd:*' group-order local-directories path-directories
 export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
 
 source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# bun completions
+[ -s "/home/user1/.bun/_bun" ] && source "/home/user1/.bun/_bun"
