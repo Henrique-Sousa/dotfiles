@@ -20,7 +20,7 @@ export PYTHONUSERBASE="$XDG_DATA_HOME"/python
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
-export BUN_INSTALL="$HOME/.bun"
+export BUN_INSTALL="$XDG_DATA_HOME"/bun
 export PATH="$BUN_INSTALL/bin:$PATH"
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 

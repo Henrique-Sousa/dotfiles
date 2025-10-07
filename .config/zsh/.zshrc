@@ -98,4 +98,4 @@ export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
 source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # bun completions
-[ -s "/home/user1/.bun/_bun" ] && source "/home/user1/.bun/_bun"
+[ -s "$BUN_INSTALL"/_bun ] && source "$BUN_INSTALL"/_bun
