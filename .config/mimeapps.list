@@ -8,3 +8,4 @@ image/jp2=sxiv.desktop
 image/png=sxiv.desktop;
 image/gif=sxiv.desktop;
 application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/webcal=google-chrome.desktop
