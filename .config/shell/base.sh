@@ -1,17 +1,16 @@
 #export TERM='xterm-256color'
 export EDITOR='/usr/bin/vim'
 
-
 # XDG base directory
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_CACHE_HOME="$HOME"/.cache
+export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_STATE_HOME="$HOME"/.local/state
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 export XINITRC="$XDG_CONFIG_HOME"/x11/xinitrc
 export XSERVERRC="$XDG_CONFIG_HOME"/x11/xserverrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-export SCREENDIR="${XDG_RUNTIME_DIR}/screen"
+export SCREENDIR="${XDG_RUNTIME_DIR}"/screen
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
 export W3M_DIR="$XDG_STATE_HOME"/w3m
 export SQLITE_HISTORY="$XDG_STATE_HOME"/sqlite_history
@@ -26,7 +25,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-export PUB_CACHE="$XDG_CACHE_HOME/dart/pub"
+export PUB_CACHE="$XDG_CACHE_HOME"/dart/pub
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
 #export LESS='-R --use-color -Dd+r$Du+b'
