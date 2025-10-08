@@ -1,6 +1,7 @@
 #export TERM='xterm-256color'
 export EDITOR='/usr/bin/vim'
 
+
 # XDG base directory
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -23,6 +24,10 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export BUN_INSTALL="$XDG_DATA_HOME"/bun
 export PATH="$BUN_INSTALL/bin:$PATH"
 export NVM_DIR="$XDG_DATA_HOME"/nvm
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export PUB_CACHE="$XDG_CACHE_HOME/dart/pub"
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'
