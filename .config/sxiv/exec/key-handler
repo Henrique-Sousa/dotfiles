@@ -1,10 +1,14 @@
 #!/bin/sh
 case "$1" in
     "C-d")
-        trash=~/.local/share/Trash;
-        mkdir -p "$trash"; 
         while read file; do
-            mv "$file" "$trash"
+            if command -v trash-put > /dev/null 2>&1; then
+                trash-put "$file"
+            else
+                trash=~/.local/share/Trash/files;
+                mkdir -p "$trash"; 
+                mv "$file" "$trash"
+            fi
         done ;;
     "C-r") 
         magick "$file" -rotate 90 "$file" ;;
