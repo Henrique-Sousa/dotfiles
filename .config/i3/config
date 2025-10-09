@@ -228,8 +228,8 @@ exec_always --no-startup-id feh --bg-scale ~/imgs/jan-folwarczny-ZXBPMnNVtlE-uns
 # enable transparency
 # exec_always --no-startup-id picom --fade-in-step=1 --fade-out-step=1
 
-bindsym --release Print exec "maim dwnlds/screenshots/$(date -Iseconds).png"
-bindsym --release Shift+Print exec "maim -s dwnlds/screenshots/$(date -Iseconds).png"
+bindsym --release Print exec "maim ~/dwnlds/screenshots/$(date -Iseconds).png"
+bindsym --release Shift+Print exec "maim -s ~/dwnlds/screenshots/$(date -Iseconds).png"
 
 bindsym $mod+Shift+s exec --no-startup-id systemctl suspend 
 
