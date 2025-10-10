@@ -40,26 +40,39 @@ require'nvim-treesitter.configs'.setup {
   },
 
   textobjects = {
+    select = {
+      enable = true,
+      lookahead = true, -- jump forward to textobject
+      keymaps = {
+        ["af"] = "@function.outer", -- around function
+        ["if"] = "@function.inner", -- inner function
+        ["ac"] = "@class.outer",    -- around class
+        ["ic"] = "@class.inner",    -- inner class
+        ["aC"] = "@conditional.outer", -- includes while, if, etc
+        ["iC"] = "@conditional.inner", -- block without keyword
+        ["aL"] = "@loop.outer",        -- for, while, etc.
+        ["iL"] = "@loop.inner",
+      },
+    },
     move = {
       enable = true,
       set_jumps = true,
       goto_next_start = {
-        ["]m"] = "@function.outer",
+        ["]f"] = "@function.outer",
         ["]c"] = "@class.outer",
       },
       goto_next_end = {
-        ["]M"] = "@function.outer",
+        ["]F"] = "@function.outer",
         ["]C"] = "@class.outer",
       },
       goto_previous_start = {
-        ["[m"] = "@function.outer",
+        ["[f"] = "@function.outer",
         ["[c"] = "@class.outer",
       },
       goto_previous_end = {
-        ["[M"] = "@function.outer",
+        ["[F"] = "@function.outer",
         ["[C"] = "@class.outer",
       },
     },
   },
 }
-
