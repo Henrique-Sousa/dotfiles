@@ -1,9 +1,11 @@
 #!/bin/bash
 
 DIRS=(
-    "$HOME/dev"
-    "$HOME/docs"
     "$HOME/notas"
+    "$HOME/dev"
+    "$HOME/docs/livros"
+    "$HOME/.config"
+    "$HOME/.local"
     "$HOME"
 )
 
