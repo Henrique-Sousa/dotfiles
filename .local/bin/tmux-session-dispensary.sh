@@ -2,7 +2,12 @@
 
 DIRS=(
     "$HOME/notas"
+    "$HOME/notas/learn"
     "$HOME/dev"
+    "$HOME/dev/github"
+    "$HOME/tmp"
+    "$HOME/tmp/github"
+    "$HOME/tmp/github/dotfiles"
     "$HOME/docs/livros"
     "$HOME/.config"
     "$HOME/.local"
