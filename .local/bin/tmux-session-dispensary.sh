@@ -3,6 +3,7 @@
 DIRS=(
     "$HOME/notas"
     "$HOME/notas/learn"
+    "$HOME/notas/learn/comput"
     "$HOME/dev"
     "$HOME/dev/github"
     "$HOME/tmp"
