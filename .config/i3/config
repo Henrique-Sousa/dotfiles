@@ -239,6 +239,9 @@ bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
 bindsym $mod+space exec --no-startup-id ~/.local/bin/toggle_keyboard_layout.sh
 bindsym $mod+g exec --no-startup-id "setxkbmap -layout gr -variant polytonic"
 bindsym $mod+u exec --no-startup-id "setxkbmap -layout us -variant rus"
+bindsym $mod+c exec --no-startup-id "setxkbmap -layout us -variant colemak"
+# programmer dvorak
+bindsym $mod+p exec --no-startup-id "setxkbmap -layout us -variant dvp"
 
 
 bindsym $mod+Tab exec --no-startup-id i3-msg workspace back_and_forth
