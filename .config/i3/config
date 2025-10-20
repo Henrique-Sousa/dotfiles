@@ -237,6 +237,6 @@ bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
 # bindsym $mod+n exec --no-startup-id ~/.local/bin/browser-launcher-window.sh
 
 bindsym $mod+space exec --no-startup-id ~/.local/bin/toggle_keyboard_layout.sh
-bindsym $mod+Shift+space exec --no-startup-id ~/.local/bin/toggle_keyboard_layout_reverse.sh
+bindsym $mod+i exec --no-startup-id ~/.local/bin/keyboard-dmenu.sh
 
 bindsym $mod+Tab exec --no-startup-id i3-msg workspace back_and_forth
