@@ -6,7 +6,7 @@ rus
 greek
 colemak
 dvp (programmer dvorak)
-" | awk -F ' ' '{print $1}' | dmenu -l 10)
+" | rofi -dmenu -l 10 -p Keyboard Layout | awk -F ' ' '{print $1}')
 
 
 case "$option" in
