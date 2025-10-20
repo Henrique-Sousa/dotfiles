@@ -18,13 +18,13 @@ case "$1" in
             files="$file $files"
         done
         while true; do
-            open=$(ls -a -F | grep '/'| dmenu)
+            open=$(ls -a -F | grep '/'| rofi -dmenu)
             if [ "$open" = "./" ]; then
-                for file in "$files"; do
+                for file in $files; do
                     file=$(echo "$file" | sed 's/^ \{1,\}//g; s/ \{1,\}$//g;')
                     mv "$file" $(pwd) -i
-                    exit 0
                 done
+                exit 0
             elif [ -d "$open" ]; then
                 cd "$open"
             else
