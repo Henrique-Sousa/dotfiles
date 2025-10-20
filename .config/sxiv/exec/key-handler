@@ -13,9 +13,23 @@ case "$1" in
     "C-r") 
         magick "$file" -rotate 90 "$file" ;;
     "C-m") 
-        target="$(find . -type d | dmenu -p 'Move to directory:')"
-        mkdir -p "$target";
         while read file; do
-            mv "$file" "$target"/
-        done ;;
+            file=$(realpath "$file")
+            files="$file $files"
+        done
+        while true; do
+            open=$(ls -a -F | grep '/'| dmenu)
+            if [ "$open" = "./" ]; then
+                for file in "$files"; do
+                    file=$(echo "$file" | sed 's/^ \{1,\}//g; s/ \{1,\}$//g;')
+                    mv "$file" $(pwd) -i
+                    exit 0
+                done
+            elif [ -d "$open" ]; then
+                cd "$open"
+            else
+                exit 0
+            fi
+        done
+        ;;
 esac
