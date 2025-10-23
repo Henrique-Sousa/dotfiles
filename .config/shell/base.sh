@@ -40,7 +40,7 @@ export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 
 export LC_COLLATE="C"
 
-alias ls='ls --color --group-directories-first'
+alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 
 # ! vi --version &> /dev/null && alias vi='vim'
