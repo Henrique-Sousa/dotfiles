@@ -7,6 +7,7 @@ wm=i3
 # wm=bspwm
 # wm=xmonad 
 # wm=qtile
+# wm=awesome
 
 if [ "$wm" == dwm ]; then
     $HOME/.local/bin/dwm-bar.sh
@@ -14,4 +15,8 @@ fi
 
 xrdb -merge ~/.config/x11/xresources
 
-exec "$wm"
+if [ "$wm" == qtile ]; then
+    qtile start 
+else
+    exec "$wm"
+fi
