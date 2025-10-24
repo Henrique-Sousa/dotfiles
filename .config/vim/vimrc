@@ -63,6 +63,15 @@ set complete+=t
 
 " imap jk <Esc>
 
+let mapleader = " "
+nnoremap <Leader>w :w <CR>
+nnoremap <Leader>g :silent w !git add % > /dev/null && git c -m . > /dev/null && git p > /dev/null & <CR> :redraw! <CR> :echo "git command executed" <CR>
+
+nnoremap <Leader>c :w !gcc % && ./a.out <CR>
+nnoremap <Leader>p :w <CR> :w !g++ % && ./a.out <CR>
+nnoremap <Leader>j :w <CR> :w !javac % && java <C-r>=substitute(expand('%'), '\.java$', '', '')<CR><CR>
+
+
 autocmd BufRead * let &l:modifiable = !&readonly
 
 syntax on
