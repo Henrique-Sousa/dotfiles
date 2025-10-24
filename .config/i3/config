@@ -240,3 +240,12 @@ bindsym $mod+space exec --no-startup-id ~/.local/bin/toggle_keyboard_layout.sh
 bindsym $mod+i exec --no-startup-id ~/.local/bin/keyboard-dmenu.sh
 
 bindsym $mod+Tab exec --no-startup-id i3-msg workspace back_and_forth
+
+assign [class="Alacritty"] 1
+assign [class="Google-chrome"] 2
+assign [class="KeePassXC"] 3
+assign [class="mpv"] 4
+assign [class="vlc"] 4
+assign [class="Zathura"] 5 
+assign [class="Sxiv"] 5
+assign [class="Anki"] 6
