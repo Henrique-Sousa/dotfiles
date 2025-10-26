@@ -1,6 +1,7 @@
 #!/bin/sh
 
-url="$(printf '' | dmenu -p 'url:')"
+url="$(printf '' | rofi -dmenu -p 'url:')"
+
 if [ -n "$url" ]; then
-    qutebrowser "$url" --target window;
+    google-chrome-stable --new-window "$url";
 fi
