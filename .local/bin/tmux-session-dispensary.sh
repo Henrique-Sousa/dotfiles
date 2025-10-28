@@ -4,6 +4,7 @@ DIRS=(
     "$HOME/notas"
     "$HOME/notas/learn"
     "$HOME/notas/learn/comput"
+    "$HOME/notas/learn/comput/programming/"
     "$HOME/dev"
     "$HOME/dev/github"
     "$HOME/tmp"
@@ -18,9 +19,13 @@ DIRS=(
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(fd . "${DIRS[@]}" --type=dir --max-depth=1 --full-path --base-directory $HOME \
+    selected=$(
+        cat \
+            <(fd . "${DIRS[@]}" --type=dir --max-depth=1 --full-path --base-directory $HOME) \
+            <(echo "$HOME/notas/learn/comput/linux/anotacoes/") \
         | sed "s|^$HOME/||" \
-        | fzf --no-separator --no-scrollbar --border=none --cycle --margin 10% --color="bw")
+        | fzf --no-separator --no-scrollbar --border=none --cycle --margin 10% --color="bw"
+    )
 
     [[ $selected ]] && selected="$HOME/$selected"
 fi
