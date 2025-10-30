@@ -64,8 +64,13 @@ set complete+=t
 " imap jk <Esc>
 
 let mapleader = " "
+
 nnoremap <Leader>w :w <CR>
 nnoremap <Leader>g :silent w ! { git add % &> /dev/null && git c -m . &> /dev/null && git p &> /dev/null ; } & <CR> :redraw! <CR> :echo "git command executed" <CR>
+nnoremap <Leader>q :q <CR>
+nnoremap <Leader>n :bn <CR>
+nnoremap <Leader>p :bp <CR>
+nnoremap <Leader>f :find 
 
 autocmd FileType c nnoremap <Leader>r :w !gcc % && ./a.out <CR>
 autocmd FileType cpp nnoremap <Leader>r :w <CR> :w !g++ % && ./a.out <CR>
