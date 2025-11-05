@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   use {'neoclide/coc.nvim', branch = 'release'}
+  -- use {'puremourning/vimspector'}
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
