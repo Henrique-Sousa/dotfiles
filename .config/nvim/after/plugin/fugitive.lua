@@ -1,1 +1,6 @@
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+-- vim.keymap.set('n', '<leader>gs', ':Git status<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>gh', ':Ghdiffsplit<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>gw', ':Git add %<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', { noremap = true, silent = true })
