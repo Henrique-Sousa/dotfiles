@@ -1,7 +1,8 @@
 function Color(color)
 	-- color = color or "rose-pine"
 	-- color = color or "gruvbox"
-	color = color or "habamax"
+	-- color = color or "habamax"
+	color = color or "vague"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

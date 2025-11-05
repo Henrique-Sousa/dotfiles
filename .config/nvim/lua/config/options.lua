@@ -86,3 +86,5 @@ vim.api.nvim_create_autocmd("BufRead", {
 --     'lisp', 'scheme', 'haskell',
 --     'tmux', 'make', 'dockerfile', 'xml', 'yaml', 'json'
 -- }
+
+-- vim.cmd.colorscheme("vague")
