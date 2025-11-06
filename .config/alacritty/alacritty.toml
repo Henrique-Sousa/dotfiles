@@ -3,3 +3,13 @@ size = 9.5
 
 [window]
 opacity = 1
+
+[[keyboard.bindings]]
+key = "Escape"
+action = "None"
+
+[[keyboard.bindings]]
+key = "LBracket"
+mods = "Control"
+chars = "\u001b"
+
