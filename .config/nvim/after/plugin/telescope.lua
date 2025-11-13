@@ -1,5 +1,16 @@
 local builtin = require('telescope.builtin')
 
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<Up>"] = require('telescope.actions').cycle_history_prev,
+        ["<Down>"] = require('telescope.actions').cycle_history_next,
+      },
+    },
+  },
+}
+
 vim.keymap.set('n', '<leader>tf', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>tl', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>tb', builtin.buffers, { desc = 'Telescope buffers' })
