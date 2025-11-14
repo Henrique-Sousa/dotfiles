@@ -30,6 +30,7 @@ set wildmenu
 " set wildmode=longest,full:noselect
 set tags=./tags,./TAGS,tags;~,TAGS;~
 set wildignore+=*.class
+set grepprg=grep\ -rni\ $*
 
 set ignorecase
 set smartcase "case sensitive search if the search pattern contains upper case characters
