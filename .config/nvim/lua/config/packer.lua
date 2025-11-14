@@ -67,5 +67,14 @@ return require('packer').startup(function(use)
   -- <p class="important">
   --   <em>Hello</em> world!
   -- </p>
+  --
+  --
+  -- changing tags:
+  -- <p>This is a paragraph.</p>
+  -- typing cst<div> will change it to:
+  -- <div>This is a paragraph.</div>
+  --
+  -- Replacing tag while keeping attributes has been added to Surround.vim
+  -- cst<p> replaces whole tag, while cst<p (without closing bracket) keeps attributes.
 
 end)
