@@ -72,7 +72,7 @@ nnoremap <Leader>q :q <CR>
 nnoremap <Leader>n :bn <CR>
 nnoremap <Leader>p :bp <CR>
 nnoremap <Leader>f :find 
-nnoremap <Leader>g :grep 
+nnoremap <Leader>r :grep 
 nnoremap <Leader>m :make <CR>
 
 autocmd FileType c nnoremap <Leader>e :w !gcc % && ./a.out <CR>
