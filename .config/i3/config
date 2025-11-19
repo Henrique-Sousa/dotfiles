@@ -248,6 +248,7 @@ assign [class="mpv"] 4
 assign [class="vlc"] 4
 assign [class="Zathura"] 5 
 assign [class="MuPDF"] 5 
+assign [class="FBReader"] 5 
 assign [class="Sxiv"] 5
 assign [class="Anki"] 6
 assign [class="gajim"] 9
