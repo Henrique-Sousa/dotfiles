@@ -13,7 +13,6 @@ export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export SCREENDIR="${XDG_RUNTIME_DIR}"/screen
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
 export W3M_DIR="$XDG_STATE_HOME"/w3m
-export SQLITE_HISTORY="$XDG_STATE_HOME"/sqlite_history
 export PYTHON_HISTORY="$XDG_STATE_HOME"/python_history
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME"/python
 export PYTHONUSERBASE="$XDG_DATA_HOME"/python
@@ -27,6 +26,14 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export PUB_CACHE="$XDG_CACHE_HOME"/dart/pub
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+export SQLITE_HISTORY="$XDG_STATE_HOME"/sqlite_history
+export PSQLRC="$XDG_CONFIG_HOME"/pg/psqlrc
+export PSQL_HISTORY="$XDG_STATE_HOME"/psql_history
+export PGPASSFILE="$XDG_CONFIG_HOME"/pg/pgpass
+export PGSERVICEFILE="$XDG_CONFIG_HOME"/pg/pg_service.conf
+
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
 
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'
