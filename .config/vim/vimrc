@@ -74,6 +74,7 @@ nnoremap <Leader>p :bp <CR>
 nnoremap <Leader>f :find 
 nnoremap <Leader>r :grep 
 nnoremap <Leader>m :make <CR>
+nnoremap <Leader>h :noh <CR>
 
 autocmd FileType c nnoremap <Leader>e :w !gcc % && ./a.out <CR>
 autocmd FileType cpp nnoremap <Leader>e :w <CR> :w !g++ % && ./a.out <CR>
