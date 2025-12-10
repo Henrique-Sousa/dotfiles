@@ -2,6 +2,8 @@ source "$HOME/.config/shell/base.sh"
 
 # globs like bash
 setopt +o nomatch
+setopt extended_glob
+setopt KSH_GLOB
 
 # automatically cd into typed directory.
 setopt autocd		
