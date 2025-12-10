@@ -1,20 +1,24 @@
 #!/bin/bash
 
-DIRS=(
+DIRS1=(
     "$HOME/notas"
-    "$HOME/notas/learn"
-    "$HOME/notas/learn/comput"
-    "$HOME/notas/learn/comput/programming/"
+#    "$HOME/notas/learn"
+#    "$HOME/notas/learn/comput"
+#    "$HOME/notas/learn/comput/programming/"
     "$HOME/dev"
-    "$HOME/dev/github"
+#    "$HOME/dev/github"
+    "$HOME/code"
     "$HOME/tmp"
-    "$HOME/tmp/github"
-    "$HOME/tmp/github/dotfiles"
+#    "$HOME/tmp/github"
+#    "$HOME/tmp/github/dotfiles"
     "$HOME/docs"
-    "$HOME/docs/livros"
+#    "$HOME/docs/livros"
+)
+
+DIRS2=(
+    "$HOME"
     "$HOME/.config"
     "$HOME/.local"
-    "$HOME"
 )
 
 if [[ $# -eq 1 ]]; then
@@ -22,8 +26,8 @@ if [[ $# -eq 1 ]]; then
 else
     selected=$(
         cat \
-            <(fd . "${DIRS[@]}" --type=dir --max-depth=1 --full-path --base-directory $HOME) \
-            <(echo "$HOME/notas/learn/comput/linux/anotacoes/") \
+            <(fd . "${DIRS1[@]}" --type=dir --full-path --base-directory $HOME) \
+            <(fd . "${DIRS2[@]}" --type=dir --max-depth=1 --full-path --base-directory $HOME) \
         | sed "s|^$HOME/||" \
         | fzf --no-separator --no-scrollbar --border=none --cycle --margin 10% --color="bw"
     )
