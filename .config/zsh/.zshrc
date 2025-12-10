@@ -101,3 +101,33 @@ source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # bun completions
 [ -s "$BUN_INSTALL"/_bun ] && source "$BUN_INSTALL"/_bun
+
+eval "$(zoxide init zsh)"
+alias cd='z'
+alias ci='zi'
+alias ls='eza --group-directories-first --color=always'
+alias cat='bat'
+
+# fzf | xargs -o vim
+# alias f='vim $(fd -tf | fzf)'
+f() {
+    file=$(fd -tf | sk)
+    if [ "$file" ]; then
+        vim "$file";
+    fi
+}
+# fzf | xargs -o vim -R
+# alias r='vim -R $(fd -tf | fzf)'
+r() {
+    file=$(fd -tf | sk)
+    if [ "$file" ]; then
+        vim -R "$file";
+    fi
+}
+# alias d='cd $(fd -td | fzf)'
+d() {
+    dir=$(fd -td | sk)
+    if [ "$dir" ]; then
+        cd "$dir";
+    fi
+}
