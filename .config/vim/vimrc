@@ -53,7 +53,6 @@ set formatoptions+=j
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
 " set spell
-set dictionary=$XDG_DATA_HOME/dictionaries/br-utf8.txt
 
 " completion for programming languages
 " using a syntax file, with ctrl-x ctrl-o
