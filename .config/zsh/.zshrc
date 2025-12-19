@@ -102,32 +102,41 @@ source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # bun completions
 [ -s "$BUN_INSTALL"/_bun ] && source "$BUN_INSTALL"/_bun
 
-eval "$(zoxide init zsh)"
-alias cd='z'
-alias ci='zi'
 alias ls='eza --group-directories-first --color=always'
 alias cat='bat'
 
-# fzf | xargs -o vim
-# alias f='vim $(fd -tf | fzf)'
-f() {
+eval "$(fasd --init auto)"
+alias v='f -e vim'
+alias vr="f -e 'vim -R'"
+alias j='fasd_cd -d'
+alias jj='fasd_cd -d -i'
+
+unalias z 
+unalias zz
+eval "$(zoxide init zsh)"
+alias cd='z'
+alias ci='zi'
+
+# fuzzy-find and (open in) vim
+fv() {
     file=$(fd -tf | sk)
     if [ "$file" ]; then
         vim "$file";
     fi
 }
-# fzf | xargs -o vim -R
-# alias r='vim -R $(fd -tf | fzf)'
-r() {
+
+# fuzzy-find and (open in vim) read-only mode
+fr() {
     file=$(fd -tf | sk)
     if [ "$file" ]; then
         vim -R "$file";
     fi
 }
-# alias d='cd $(fd -td | fzf)'
-d() {
+
+# fuzzy-find and cd
+fcd() {
     dir=$(fd -td | sk)
     if [ "$dir" ]; then
-        cd "$dir";
+        \cd "$dir";
     fi
 }
