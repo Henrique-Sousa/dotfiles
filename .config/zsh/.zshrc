@@ -24,6 +24,10 @@ setopt HIST_SAVE_NO_DUPS
 autoload -U colors
 colors
 
+export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
+
+
+# Suggestions
 
 source "$ZDOTDIR"/zsh-autosuggestions/zsh-autosuggestions.zsh
 # make zsh-autosuggestions not mess up the keybindings
@@ -42,7 +46,7 @@ ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
-# emacs keybindings
+# Emacs keybindings
 bindkey -e
 
 # bash-like word movement and deletion behavior
@@ -94,28 +98,39 @@ zstyle ':completion:*:cd:*' group-order local-directories path-directories
 # zstyle ':fzf-tab:*' switch-group ',' '.'  # group navigation keys
 # zstyle ':completion:*' menu yes select
 
+# bun completions
+[ -s "$BUN_INSTALL"/_bun ] && source "$BUN_INSTALL"/_bun
 
-export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
 
 source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# bun completions
-[ -s "$BUN_INSTALL"/_bun ] && source "$BUN_INSTALL"/_bun
+
+# Aliases and functions
 
 alias ls='eza --group-directories-first --color=always'
 alias cat='bat'
 
 eval "$(fasd --init auto)"
-alias v='f -e vim'
-alias vr="f -e 'vim -R'"
 alias j='fasd_cd -d'
 alias jj='fasd_cd -d -i'
+# Search recent files and open in nvim
+v() {
+  local file
+  file="$(fasd -f -lR "$@" | fzf-tmux -p 80% --query="$*" --select-1 --exit-0)"
+  [ -n "$file" ] && ${EDITOR:-vim} "$file"
+}
+vr() {
+  local file
+  file="$(fasd -f -lR "$@" | fzf-tmux -p 80% --query="$*" --select-1 --exit-0)"
+  [ -n "$file" ] && vim -R "$file"
+}
 
 unalias z 
 unalias zz
 eval "$(zoxide init zsh)"
 alias cd='z'
 alias ci='zi'
+alias zz='zi'
 
 # fuzzy-find and (open in) vim
 fv() {
@@ -126,7 +141,7 @@ fv() {
 }
 
 # fuzzy-find and (open in vim) read-only mode
-fr() {
+fvr() {
     file=$(fd -tf | sk)
     if [ "$file" ]; then
         vim -R "$file";
