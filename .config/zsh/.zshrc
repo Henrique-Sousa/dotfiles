@@ -113,12 +113,13 @@ alias cat='bat'
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 alias jj='fasd_cd -d -i'
-# Search recent files and open in nvim
+# open "frecent" files in vim, interactively if tow or more matches
 v() {
   local file
   file="$(fasd -f -lR "$@" | fzf-tmux -p 80% --query="$*" --select-1 --exit-0)"
   [ -n "$file" ] && ${EDITOR:-vim} "$file"
 }
+# open "frecent" files in vim, read-only mode, interactively if two or more matches
 vr() {
   local file
   file="$(fasd -f -lR "$@" | fzf-tmux -p 80% --query="$*" --select-1 --exit-0)"
@@ -128,11 +129,13 @@ vr() {
 unalias z 
 unalias zz
 eval "$(zoxide init zsh)"
+# cd into "frecent" directories
 alias cd='z'
+# cd into "frecent" directories, interactively
 alias ci='zi'
 alias zz='zi'
 
-# fuzzy-find and (open in) vim
+# fuzzy-find (interactively) and (open in) vim
 fv() {
     file=$(fd -tf | sk)
     if [ "$file" ]; then
@@ -140,7 +143,7 @@ fv() {
     fi
 }
 
-# fuzzy-find and (open in vim) read-only mode
+# fuzzy-find (interactively) and (open in vim) read-only mode
 fvr() {
     file=$(fd -tf | sk)
     if [ "$file" ]; then
@@ -148,7 +151,7 @@ fvr() {
     fi
 }
 
-# fuzzy-find and cd
+# fuzzy-find (interactively) and cd
 fcd() {
     dir=$(fd -td | sk)
     if [ "$dir" ]; then
