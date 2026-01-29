@@ -1,4 +1,4 @@
-set statusline=%<%F\ %y%w%m%r\ Buf\ %n\ %=%-7.(%b\ %B\ %o\ %O%)\ %=%-14.(%l/%L,%c%)\ %P
+set statusline=%<%F\ %y%w%m%r\ [Buf\ %n]\ %=%-7.(%b\ %B\ %o\ %O%)\ %=%-14.(%l/%L,%c%)\ %P
 
 set encoding=utf-8
 
