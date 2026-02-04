@@ -140,6 +140,7 @@ fv() {
     file=$(fd -tf | sk)
     if [ "$file" ]; then
         vim "$file";
+        fasd --add "$file";
     fi
 }
 
@@ -148,6 +149,7 @@ fvr() {
     file=$(fd -tf | sk)
     if [ "$file" ]; then
         vim -R "$file";
+        fasd --add "$file";
     fi
 }
 
