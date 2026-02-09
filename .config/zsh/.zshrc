@@ -3,7 +3,7 @@ source "$HOME/.config/shell/base.sh"
 # globs like bash
 setopt +o nomatch
 setopt extended_glob
-setopt KSH_GLOB
+setopt ksh_glob
 
 # automatically cd into typed directory.
 setopt autocd		
@@ -14,12 +14,12 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="$XDG_STATE_HOME"/zsh/history
 setopt inc_append_history
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_find_no_dups
+setopt hist_save_no_dups
 
 autoload -U colors
 colors
@@ -71,6 +71,9 @@ bindkey '^w' unix-word-rubout
 autoload -Uz compinit
 compinit
 # zmodload zsh/complist
+
+# insert first match instead of listing possibilities
+setopt menu_complete
 
 _comp_options+=(globdots)   # include hidden files.
 
