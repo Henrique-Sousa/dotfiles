@@ -32,8 +32,8 @@ export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
+# source /usr/share/nvm/nvm.sh
+# source /usr/share/nvm/bash_completion
 
 #export LESS='-R --use-color -Dd+r$Du+b'
 export LESS='-R'
@@ -49,10 +49,8 @@ export LC_COLLATE="C"
 
 alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
-
 # ! vi --version &> /dev/null && alias vi='vim'
 ! view --version &> /dev/null && alias view='vim -R'
-
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # disable terminal freezing with ctrl + s, allowing to do a forward-search-history with ctrl + s
