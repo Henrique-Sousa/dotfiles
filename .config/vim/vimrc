@@ -70,6 +70,8 @@ nnoremap <Leader>g :silent w ! { git add % &> /dev/null && git c -m . &> /dev/nu
 nnoremap <Leader>q :q <CR>
 nnoremap <Leader>n :bn <CR>
 nnoremap <Leader>p :bp <CR>
+nnoremap <Leader>cn :cn <CR>
+nnoremap <Leader>cp :cp <CR>
 nnoremap <Leader>f :find 
 nnoremap <Leader>r :grep 
 nnoremap <Leader>m :make <CR>
