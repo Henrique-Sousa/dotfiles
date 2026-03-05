@@ -52,9 +52,10 @@
   'org-babel-load-languages
   '((emacs-lisp . t)
     (python     . t)
+    (ruby       . t)
     (shell      . t)
     ;; add more as needed
     ))
-(setq org-babel-python-command "python3")
+;; (setq org-babel-python-command "python3")
 ;; disable confirmation for runing code with C-c C-c, for all languages
 (setq org-confirm-babel-evaluate nil)

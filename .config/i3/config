@@ -252,4 +252,6 @@ assign [class="FBReader"] 5
 assign [class="Sxiv"] 6
 assign [class="Nsxiv"] 6
 assign [class="Anki"] 7
+assign [class="transmission"] 8
+assign [class="SoulseekQt"] 8
 assign [class="gajim"] 9
