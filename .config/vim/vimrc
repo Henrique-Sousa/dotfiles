@@ -22,8 +22,8 @@ autocmd FileType cpp,fortran setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal noexpandtab
 autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
 
-set splitbelow
-set splitright
+" set splitbelow
+" set splitright
 
 set path+=**
 set wildmenu
@@ -118,3 +118,17 @@ colorscheme habamax
 "dolorscheme sorbet 
 "colorscheme desert
 " colorscheme wildcharm
+
+let g:netrw_banner = 0
+let g:netrw_keepdir = 0
+let g:netrw_winsize = 20
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+
+" Use vertical split for preview
+let g:netrw_preview = 1
+
+" Open vertical splits to the right
+let g:netrw_altv = 0
+nmap <Leader>l :Lexplore<CR> <C-w>p
+autocmd FileType netrw nmap <buffer> p <CR><C-w>p
