@@ -117,7 +117,7 @@ alias cat='bat'
 eval "$(fasd --init auto)"
 alias j='fasd_cd -d'
 alias jj='fasd_cd -d -i'
-# open "frecent" files in vim, interactively if tow or more matches
+# open "frecent" files in vim, interactively if two or more matches
 v() {
   local file
   file="$(fasd -f -lR "$@" | fzf-tmux -p 80% --query="$*" --select-1 --exit-0)"
