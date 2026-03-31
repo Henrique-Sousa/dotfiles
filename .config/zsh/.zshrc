@@ -115,6 +115,7 @@ alias ls='eza --group-directories-first --color=always'
 alias cat='bat'
 
 eval "$(fasd --init auto)"
+# fasd is more cumbersome (for directories) than zoxide, but let's define some aliases to it
 alias j='fasd_cd -d'
 alias jj='fasd_cd -d -i'
 # open "frecent" files in vim, interactively if two or more matches
@@ -130,6 +131,7 @@ vr() {
   [ -n "$file" ] && vim -R "$file"
 }
 
+# z is a function defined by zoxide; z and zz are aliases defined by fasd
 unalias z 
 unalias zz
 eval "$(zoxide init zsh)"
