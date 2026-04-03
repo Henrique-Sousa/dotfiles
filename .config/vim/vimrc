@@ -18,7 +18,7 @@ set expandtab
 set smartindent
 "set cinoptions+=:2
 filetype plugin indent on
-autocmd FileType cpp,fortran setlocal tabstop=2 shiftwidth=2
+autocmd FileType cpp,fortran,javascriptreact setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal noexpandtab
 autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
 
