@@ -65,17 +65,17 @@ set complete+=t
 
 let mapleader = " "
 
-nnoremap <Leader>w :w <CR>
-nnoremap <Leader>g :silent w ! { git add % &> /dev/null && git c -m . &> /dev/null && git p &> /dev/null ; } & <CR> :redraw! <CR> :echo "git command executed" <CR>
-nnoremap <Leader>q :q <CR>
-nnoremap <Leader>n :bn <CR>
-nnoremap <Leader>p :bp <CR>
-nnoremap <Leader>cn :cn <CR>
-nnoremap <Leader>cp :cp <CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>g :silent w ! { git add % &> /dev/null && git c -m . &> /dev/null && git p &> /dev/null ; } &<CR>:redraw!<CR>:echo "git command executed"<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>cn :cn<CR>
+nnoremap <Leader>cp :cp<CR>
 nnoremap <Leader>f :find 
 nnoremap <Leader>r :grep 
-nnoremap <Leader>m :make <CR>
-nnoremap <Leader>h :noh <CR>
+nnoremap <Leader>m :make<CR>
+nnoremap <Leader>h :noh<CR>
 
 autocmd FileType c nnoremap <Leader>e :w !gcc % && ./a.out <CR>
 autocmd FileType cpp nnoremap <Leader>e :w <CR> :w !g++ % && ./a.out <CR>
