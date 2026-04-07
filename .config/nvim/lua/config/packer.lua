@@ -4,10 +4,9 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim' -- Packer can manage itself
 
-  use "vague2k/vague.nvim"
+  use "vague2k/vague.nvim" -- color theme
 
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -17,12 +16,13 @@ return require('packer').startup(function(use)
   use 'preservim/nerdtree'
   use ('theprimeagen/harpoon')
   use ('mbbill/undotree')
-  use ('tpope/vim-fugitive')
+  use ('tpope/vim-fugitive') -- git
  
   use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use ('nvim-treesitter/playground')
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
+  -- LSP and refactoring
   use {'neoclide/coc.nvim', branch = 'release'}
   -- use {'puremourning/vimspector'}
   use {
