@@ -54,6 +54,8 @@ alias grep='grep --color=auto'
 # ! vi --version &> /dev/null && alias vi='vim'
 ! view --version &> /dev/null && alias view='vim -R'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias nvls='nvim --cmd "let g:coc_start_at_startup = 1"'
+alias nvim='nvim --cmd "let g:coc_start_at_startup = 0"'
 
 # disable terminal freezing with ctrl + s, allowing to do a forward-search-history with ctrl + s
 stty -ixon

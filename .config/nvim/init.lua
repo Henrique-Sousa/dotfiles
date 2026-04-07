@@ -35,3 +35,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 --     end, 500) -- 500ms delay to ensure Coc/diagnostics are fully loaded
 --   end,
 -- })
+
+if os.getenv("DISABLE_COC") == "1" then
+    vim.g.coc_enabled = 0
+end
