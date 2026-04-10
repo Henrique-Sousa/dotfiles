@@ -26,6 +26,7 @@ autocmd BufNewFile,BufRead *.tsv setlocal noexpandtab
 " set splitright
 
 set path+=**
+set path+=$HOME/notas/**
 set wildmenu
 " set wildmode=longest,full:noselect
 set tags=./tags,./TAGS,tags;~,TAGS;~

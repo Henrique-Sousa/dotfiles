@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'preservim/nerdtree'
-  use ('theprimeagen/harpoon')
+  -- use ('theprimeagen/harpoon')
   use ('mbbill/undotree')
   use ('tpope/vim-fugitive') -- git
  
