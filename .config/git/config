@@ -1,15 +1,22 @@
 [user]
   name = Henrique-Sousa
   email = 29417378+Henrique-Sousa@users.noreply.github.com
+
 [diff]
   tool = vimdiff
+
 [difftool]
   prompt = false
+
 [alias]
   a = add
   s = status
   c = commit
   p = push
   dt = difftool
+
 [credential]
 	helper = cache --timeout=86400
+
+[help]
+    autocorrect = prompt
