@@ -67,7 +67,7 @@ set complete+=t
 let mapleader = " "
 
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>g :silent w ! { git add % &> /dev/null && git c -m . &> /dev/null && git p &> /dev/null ; } &<CR>:redraw!<CR>:echo "git command executed"<CR>
+nnoremap <Leader>g :silent w ! { if [[ $PWD == $HOME/notas* ]]; then git add % &> /dev/null && git c -m . &> /dev/null && git p &> /dev/null ; fi ; } &<CR>:redraw!<CR>:echo "git command executed"<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
