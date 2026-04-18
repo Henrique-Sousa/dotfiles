@@ -1,4 +1,4 @@
-#export TERM='xterm-256color'
+# export TERM='xterm-256color'
 export EDITOR='/usr/bin/vim'
 
 # XDG base directory
@@ -38,7 +38,7 @@ export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 # source /usr/share/nvm/bash_completion
 
 #export LESS='-R --use-color -Dd+r$Du+b'
-export LESS='-R'
+LESS='-R'
 export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
 export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
@@ -46,6 +46,11 @@ export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
 export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+
+# smart case as default for less
+LESS+=' -i'
+
+export LESS
 
 export LC_COLLATE="C"
 
