@@ -8,6 +8,16 @@ require('telescope').setup{
         ["<Down>"] = require('telescope.actions').cycle_history_next,
       },
     },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      --"--smart-case", -- Change to "--case-sensitive" for strict matching
+      "--case-sensitive"
+    }
   },
 }
 
