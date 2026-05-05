@@ -111,8 +111,7 @@ source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Aliases and functions
 
-alias ls='eza --group-directories-first --color=always'
-alias cat='bat'
+# cd and vim by recency/frequency: fasd, zoxide
 
 eval "$(fasd --init auto)"
 # fasd is more cumbersome (for directories) than zoxide, but let's define some aliases to it
@@ -131,7 +130,7 @@ vr() {
   [ -n "$file" ] && vim -R "$file"
 }
 
-# z is a function defined by zoxide; z and zz are aliases defined by fasd
+# z and zz are aliases defined by fasd; z clashes with z, a function defined by zoxide
 unalias z 
 unalias zz
 eval "$(zoxide init zsh)"
