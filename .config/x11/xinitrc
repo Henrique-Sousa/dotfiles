@@ -18,5 +18,5 @@ xrdb -merge ~/.config/x11/xresources
 if [ "$wm" == qtile ]; then
     qtile start 
 else
-    exec "$wm"
+    exec dbus-launch --sh-syntax --exit-with-session "$wm"
 fi
