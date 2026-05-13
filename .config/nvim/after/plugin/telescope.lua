@@ -15,8 +15,8 @@ require('telescope').setup{
       "--with-filename",
       "--line-number",
       "--column",
-      --"--smart-case", -- Change to "--case-sensitive" for strict matching
-      "--case-sensitive"
+      "--smart-case", -- Change to "--case-sensitive" for strict matching
+      -- "--case-sensitive"
     }
   },
 }
