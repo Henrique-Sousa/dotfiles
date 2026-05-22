@@ -94,7 +94,7 @@ syntax on
 au BufRead,BufNewFile *.a60 set filetype=pascal "sintax highlight for algol 60 using pascal's one
 
 let g:markdown_fenced_languages  = ['asm', 'c', 'cpp']
-"let g:markdown_fenced_languages += ['java']
+let g:markdown_fenced_languages += ['java']
 let g:markdown_fenced_languages += ['basic']
 let g:markdown_fenced_languages += ['js=javascript', 'javascript', 'typescript', 'php', 'ruby', 'python', 'lua']
 let g:markdown_fenced_languages += ['perl', 'bash', 'sh', 'sed', 'awk', 'bc']
