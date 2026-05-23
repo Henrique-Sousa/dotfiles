@@ -1,5 +1,7 @@
 source "$HOME/.config/shell/base.sh"
 
+setopt autopushd
+
 # globs like bash
 setopt +o nomatch
 setopt extended_glob
