@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
   use ('tpope/vim-fugitive') -- git
  
   use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
-  use ('nvim-treesitter/playground')
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- LSP and refactoring
