@@ -14,6 +14,3 @@
 [branch "mason"]
 	remote = origin
 	merge = refs/heads/mason
-[branch "lazy"]
-	remote = origin
-	merge = refs/heads/lazy
