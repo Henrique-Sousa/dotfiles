@@ -2,6 +2,10 @@ local on_attach = function(client, bufnr)
   local jdtls = require('jdtls')
   local opts = { buffer = bufnr, remap = false }
 
+  -- Disable LSP semantic tokens for jdtls to prevent syntax highlighting bugs.
+  -- (I'm using treesitter for syntax higlighting instead)
+    client.server_capabilities.semanticTokensProvider = nil
+
   -- Java Specific Mappings
   vim.keymap.set('n', '<leader>i', jdtls.organize_imports, { desc = 'Organize Imports', buffer = bufnr })
   vim.keymap.set('v', '<leader>em',
