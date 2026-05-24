@@ -1,173 +1,51 @@
--- return {
---   "nvim-treesitter/nvim-treesitter",
---   build = ":TSUpdate",
---   dependencies = {
---     "nvim-treesitter/nvim-treesitter-textobjects",
---     -- "nvim-treesitter/playground",
---   },
---   config = function()
---     -- Explicitly verify the module is available before calling setup
---     local status, configs = pcall(require, "nvim-treesitter.configs")
---     if not status then
---       print("Treesitter configs not found!")
---       return
---     end
---
---     configs.setup({
---       -- ensure_installed = { "c", "lua", "vim", "vimdoc", "query" }, -- Start with minimal
---       ensure_installed = { 
---         "c",
---         "cpp",
---         "java",
---         "bash",
---         "python",
---         "lua",
---         "javascript",
---         "typescript",
---         "vim",
---         "vimdoc",
---         "query",
---         "markdown",
---         "markdown_inline",
---       },
---       sync_install = false,
---       auto_install = true,
---       highlight = {
---         enable = true,
---       },
---       textobjects = {
---         select = {
---           enable = true,
---           lookahead = true, -- jump forward to textobject
---           keymaps = {
---             ["af"] = "@function.outer", -- around function
---             ["if"] = "@function.inner", -- inner function
---             ["ac"] = "@class.outer",    -- around class
---             ["ic"] = "@class.inner",    -- inner class
---             ["aC"] = "@conditional.outer", -- includes while, if, etc
---             ["iC"] = "@conditional.inner", -- block without keyword
---             ["aL"] = "@loop.outer",        -- for, while, etc.
---             ["iL"] = "@loop.inner",
---           },
---         },
---         move = {
---           enable = true,
---           set_jumps = true,
---           goto_next_start = {
---             ["]f"] = "@function.outer",
---             ["]c"] = "@class.outer",
---           },
---           goto_next_end = {
---             ["]F"] = "@function.outer",
---             ["]C"] = "@class.outer",
---           },
---           goto_previous_start = {
---             ["[f"] = "@function.outer",
---             ["[c"] = "@class.outer",
---           },
---           goto_previous_end = {
---             ["[F"] = "@function.outer",
---             ["[C"] = "@class.outer",
---           },
---         },
---       },
---     })
---   end
--- }
-
 return {
-  "nvim-treesitter/nvim-treesitter",
-  lazy = false,
-  build = ":TSUpdate",
-  -- main = "nvim-treesitter.configs",
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    -- "nvim-treesitter/playground",
-  },
-  opts = {
-    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-    ensure_installed = { 
-      "c",
-      "cpp",
-      "java",
-      "bash",
-      "python",
-      "lua",
-      "javascript",
-      "typescript",
-      "vim",
-      "vimdoc",
-      "query",
-      "markdown",
-      "markdown_inline",
-    },
-    -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
-
-    -- Automatically install missing parsers when entering buffer
-    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-    auto_install = true,
-
-    -- List of parsers to ignore installing (or "all")
-    -- ignore_install = { "javascript" },
-
-    ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-    -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
-    highlight = {
-      enable = true,
-
-      -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-      -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-      -- the name of the parser)
-      -- list of language that will be disabled
-      -- disable = { "c", "rust" },
-      -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-      disable = function(lang, buf)
-        local max_filesize = 100 * 1024 -- 100 KB
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        if ok and stats and stats.size > max_filesize then
-          return true
+  {
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
+    config = function()
+      local parser_list = {
+        "c", "cpp", "java", "bash", "python", "lua",
+        "javascript", "typescript", "vim", "vimdoc", "query",
+        "markdown", "markdown_inline",
+      }
+      local installed = require("nvim-treesitter.config").get_installed()
+      local to_install = vim.tbl_filter(function(p)
+        for _, inst in ipairs(installed) do
+          if inst == p then return false end
         end
-      end,
-      additional_vim_regex_highlighting = false,
-    },
+        return true
+      end, parser_list)
+      if #to_install > 0 then
+        vim.schedule(function()
+          require("nvim-treesitter.install").install(to_install, { force = false, summary = true })
+        end)
+      end
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    config = function()
+      local select = require("nvim-treesitter-textobjects.select")
+      local move = require("nvim-treesitter-textobjects.move")
 
-    textobjects = {
-      select = {
-        enable = true,
-        lookahead = true, -- jump forward to textobject
-        keymaps = {
-          ["af"] = "@function.outer", -- around function
-          ["if"] = "@function.inner", -- inner function
-          ["ac"] = "@class.outer",    -- around class
-          ["ic"] = "@class.inner",    -- inner class
-          ["aC"] = "@conditional.outer", -- includes while, if, etc
-          ["iC"] = "@conditional.inner", -- block without keyword
-          ["aL"] = "@loop.outer",        -- for, while, etc.
-          ["iL"] = "@loop.inner",
-        },
-      },
-      move = {
-        enable = true,
-        set_jumps = true,
-        goto_next_start = {
-          ["]f"] = "@function.outer",
-          ["]c"] = "@class.outer",
-        },
-        goto_next_end = {
-          ["]F"] = "@function.outer",
-          ["]C"] = "@class.outer",
-        },
-        goto_previous_start = {
-          ["[f"] = "@function.outer",
-          ["[c"] = "@class.outer",
-        },
-        goto_previous_end = {
-          ["[F"] = "@function.outer",
-          ["[C"] = "@class.outer",
-        },
-      },
-    },
+      vim.keymap.set({"o", "x"}, "af", function() select.select_textobject("@function.outer") end, { desc = "around function" })
+      vim.keymap.set({"o", "x"}, "if", function() select.select_textobject("@function.inner") end, { desc = "inner function" })
+      vim.keymap.set({"o", "x"}, "ac", function() select.select_textobject("@class.outer") end, { desc = "around class" })
+      vim.keymap.set({"o", "x"}, "ic", function() select.select_textobject("@class.inner") end, { desc = "inner class" })
+      vim.keymap.set({"o", "x"}, "aC", function() select.select_textobject("@conditional.outer") end, { desc = "around conditional" })
+      vim.keymap.set({"o", "x"}, "iC", function() select.select_textobject("@conditional.inner") end, { desc = "inner conditional" })
+      vim.keymap.set({"o", "x"}, "aL", function() select.select_textobject("@loop.outer") end, { desc = "around loop" })
+      vim.keymap.set({"o", "x"}, "iL", function() select.select_textobject("@loop.inner") end, { desc = "inner loop" })
+
+      vim.keymap.set("n", "]f", function() move.goto_next_start("@function.outer") end, { desc = "next function start" })
+      vim.keymap.set("n", "]c", function() move.goto_next_start("@class.outer") end, { desc = "next class start" })
+      vim.keymap.set("n", "]F", function() move.goto_next_end("@function.outer") end, { desc = "next function end" })
+      vim.keymap.set("n", "]C", function() move.goto_next_end("@class.outer") end, { desc = "next class end" })
+      vim.keymap.set("n", "[f", function() move.goto_previous_start("@function.outer") end, { desc = "prev function start" })
+      vim.keymap.set("n", "[c", function() move.goto_previous_start("@class.outer") end, { desc = "prev class start" })
+      vim.keymap.set("n", "[F", function() move.goto_previous_end("@function.outer") end, { desc = "prev function end" })
+      vim.keymap.set("n", "[C", function() move.goto_previous_end("@class.outer") end, { desc = "prev class end" })
+    end,
   },
 }
