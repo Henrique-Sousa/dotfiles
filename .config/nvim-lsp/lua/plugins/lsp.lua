@@ -1,6 +1,12 @@
 return {
   -- Install the package manager 
-  { "williamboman/mason.nvim" },
+  { 
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end
+    -- Alternatively, replacing the config block with `opts = {}` achieves the same result.
+  },
 
   -- Setup the Language Server
   {
@@ -10,14 +16,33 @@ return {
 
   -- Get code completion 
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     version = false, -- Ignore tags because nvim-cmp has a very old tag
     dependencies = {
       'L3MON4D3/LuaSnip',         -- Snippet engine
       'saadparwaiz1/cmp_luasnip', -- Snippet engine adapter
       'hrsh7th/cmp-nvim-lsp',     -- Source for LSP completion
     },
+    config = function()
+      require('cmp').setup({
+        snippet = {
+          expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+          end
+        },
+        mapping = {
+          ['<C-c>'] = require('cmp').mapping.abort(),
+          ['<CR>']  = require('cmp').mapping.confirm(),
+          ['<C-n>'] = require('cmp').mapping.select_next_item(),
+          ['<C-p>'] = require('cmp').mapping.select_prev_item(),
+        },
+        sources = {
+          { name = 'nvim_lsp' },
+        },
+      })
+    end
   },
+
   -- Native LSP config
   {
     "neovim/nvim-lspconfig",
@@ -36,6 +61,7 @@ return {
 
           -- Navigation
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', 'gc', vim.lsp.buf.declaration, opts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
           vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
