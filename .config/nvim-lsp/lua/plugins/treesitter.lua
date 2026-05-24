@@ -1,0 +1,173 @@
+-- return {
+--   "nvim-treesitter/nvim-treesitter",
+--   build = ":TSUpdate",
+--   dependencies = {
+--     "nvim-treesitter/nvim-treesitter-textobjects",
+--     -- "nvim-treesitter/playground",
+--   },
+--   config = function()
+--     -- Explicitly verify the module is available before calling setup
+--     local status, configs = pcall(require, "nvim-treesitter.configs")
+--     if not status then
+--       print("Treesitter configs not found!")
+--       return
+--     end
+--
+--     configs.setup({
+--       -- ensure_installed = { "c", "lua", "vim", "vimdoc", "query" }, -- Start with minimal
+--       ensure_installed = { 
+--         "c",
+--         "cpp",
+--         "java",
+--         "bash",
+--         "python",
+--         "lua",
+--         "javascript",
+--         "typescript",
+--         "vim",
+--         "vimdoc",
+--         "query",
+--         "markdown",
+--         "markdown_inline",
+--       },
+--       sync_install = false,
+--       auto_install = true,
+--       highlight = {
+--         enable = true,
+--       },
+--       textobjects = {
+--         select = {
+--           enable = true,
+--           lookahead = true, -- jump forward to textobject
+--           keymaps = {
+--             ["af"] = "@function.outer", -- around function
+--             ["if"] = "@function.inner", -- inner function
+--             ["ac"] = "@class.outer",    -- around class
+--             ["ic"] = "@class.inner",    -- inner class
+--             ["aC"] = "@conditional.outer", -- includes while, if, etc
+--             ["iC"] = "@conditional.inner", -- block without keyword
+--             ["aL"] = "@loop.outer",        -- for, while, etc.
+--             ["iL"] = "@loop.inner",
+--           },
+--         },
+--         move = {
+--           enable = true,
+--           set_jumps = true,
+--           goto_next_start = {
+--             ["]f"] = "@function.outer",
+--             ["]c"] = "@class.outer",
+--           },
+--           goto_next_end = {
+--             ["]F"] = "@function.outer",
+--             ["]C"] = "@class.outer",
+--           },
+--           goto_previous_start = {
+--             ["[f"] = "@function.outer",
+--             ["[c"] = "@class.outer",
+--           },
+--           goto_previous_end = {
+--             ["[F"] = "@function.outer",
+--             ["[C"] = "@class.outer",
+--           },
+--         },
+--       },
+--     })
+--   end
+-- }
+
+return {
+  "nvim-treesitter/nvim-treesitter",
+  lazy = false,
+  build = ":TSUpdate",
+  -- main = "nvim-treesitter.configs",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    -- "nvim-treesitter/playground",
+  },
+  opts = {
+    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+    ensure_installed = { 
+      "c",
+      "cpp",
+      "java",
+      "bash",
+      "python",
+      "lua",
+      "javascript",
+      "typescript",
+      "vim",
+      "vimdoc",
+      "query",
+      "markdown",
+      "markdown_inline",
+    },
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+
+    -- Automatically install missing parsers when entering buffer
+    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+    auto_install = true,
+
+    -- List of parsers to ignore installing (or "all")
+    -- ignore_install = { "javascript" },
+
+    ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+    -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+    highlight = {
+      enable = true,
+
+      -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+      -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+      -- the name of the parser)
+      -- list of language that will be disabled
+      -- disable = { "c", "rust" },
+      -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+      disable = function(lang, buf)
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+          return true
+        end
+      end,
+      additional_vim_regex_highlighting = false,
+    },
+
+    textobjects = {
+      select = {
+        enable = true,
+        lookahead = true, -- jump forward to textobject
+        keymaps = {
+          ["af"] = "@function.outer", -- around function
+          ["if"] = "@function.inner", -- inner function
+          ["ac"] = "@class.outer",    -- around class
+          ["ic"] = "@class.inner",    -- inner class
+          ["aC"] = "@conditional.outer", -- includes while, if, etc
+          ["iC"] = "@conditional.inner", -- block without keyword
+          ["aL"] = "@loop.outer",        -- for, while, etc.
+          ["iL"] = "@loop.inner",
+        },
+      },
+      move = {
+        enable = true,
+        set_jumps = true,
+        goto_next_start = {
+          ["]f"] = "@function.outer",
+          ["]c"] = "@class.outer",
+        },
+        goto_next_end = {
+          ["]F"] = "@function.outer",
+          ["]C"] = "@class.outer",
+        },
+        goto_previous_start = {
+          ["[f"] = "@function.outer",
+          ["[c"] = "@class.outer",
+        },
+        goto_previous_end = {
+          ["[F"] = "@function.outer",
+          ["[C"] = "@class.outer",
+        },
+      },
+    },
+  },
+}
