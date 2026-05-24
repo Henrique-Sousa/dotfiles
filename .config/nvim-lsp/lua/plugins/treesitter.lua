@@ -4,23 +4,18 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
-      local parser_list = {
+      local languages = {
         "c", "cpp", "java", "bash", "python", "lua",
         "javascript", "typescript", "vim", "vimdoc", "query",
         "markdown", "markdown_inline",
       }
-      local installed = require("nvim-treesitter.config").get_installed()
-      local to_install = vim.tbl_filter(function(p)
-        for _, inst in ipairs(installed) do
-          if inst == p then return false end
-        end
-        return true
-      end, parser_list)
-      if #to_install > 0 then
-        vim.schedule(function()
-          require("nvim-treesitter.install").install(to_install, { force = false, summary = true })
-        end)
-      end
+
+      require("nvim-treesitter").install(languages) 
+
+      vim.api.nvim_create_autocmd('FileType', {
+          pattern = languages,
+          callback = function() vim.treesitter.start() end,
+      })
     end,
   },
   {
