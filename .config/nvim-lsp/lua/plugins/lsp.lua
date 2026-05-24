@@ -34,15 +34,23 @@ return {
           local bufnr = args.buf
           local opts = { buffer = bufnr, remap = false }
 
-          -- Standard LSP Mappings
+          -- Navigation
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+          vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
+
+          -- Interaction
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
           vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-          vim.keymap.set('n', '<leader>=', vim.lsp.buf.format, opts)
+          vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts)
+          vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
+
+          -- Diagnostics
+          vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+          vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
         end,
       })
     end,
