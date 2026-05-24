@@ -55,9 +55,11 @@ export LC_COLLATE="C"
 
 alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 # ! vi --version &> /dev/null && alias vi='vim'
 ! view --version &> /dev/null && alias view='vim -R'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias nvcoc='NVIM_APPNAME=nvim-coc nvim --cmd "let g:coc_start_at_startup = 1"'
 alias nvnoc='NVIM_APPNAME=nvim-coc nvim --cmd "let g:coc_start_at_startup = 0"'
