@@ -16,8 +16,8 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.keymap.set('n', '<leader>=', function()
-    local view = vim.fn.winsaveview()
-    vim.cmd("keepjumps normal! gg=G")
-    vim.fn.winrestview(view)
-end, { desc = "Format entire file without moving cursor/scroll" })
+-- vim.keymap.set('n', '<leader>=', function()
+--     local view = vim.fn.winsaveview()
+--     vim.cmd("keepjumps normal! gg=G")
+--     vim.fn.winrestview(view)
+-- end, { desc = "Format entire file without moving cursor/scroll" })

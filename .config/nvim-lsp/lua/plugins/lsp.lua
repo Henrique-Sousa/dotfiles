@@ -18,30 +18,33 @@ return {
       'hrsh7th/cmp-nvim-lsp',     -- Source for LSP completion
     },
   },
-  -- --
-  -- -- Java plugin (Managed separately)
-  -- { "mfussenegger/nvim-jdtls" },
-  --
-  -- -- Native LSP config
-  -- {
-    --   "neovim/nvim-lspconfig",
-    --   config = function()
-      --     local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      --
-      --     vim.lsp.config("lua_ls", { capabilities = capabilities })
-      --     vim.lsp.config("pyright", { capabilities = capabilities })
-      --
-      --     vim.lsp.enable({ "lua_ls", "pyright" })
-      --
-      --     vim.api.nvim_create_autocmd("LspAttach", {
-        --       callback = function(ev)
-          --         local opts = { buffer = ev.buf }
-          --         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-          --         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          --         vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-          --         vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
-          --       end,
-          --     })
-          --   end,
-          -- },
+  -- Native LSP config
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      vim.lsp.config("lua_ls", { capabilities = capabilities })
+      vim.lsp.config("pyright", { capabilities = capabilities })
+
+      vim.lsp.enable({ "lua_ls", "pyright" })
+
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          local bufnr = args.buf
+          local opts = { buffer = bufnr, remap = false }
+
+          -- Standard LSP Mappings
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+          vim.keymap.set('n', '<leader>=', vim.lsp.buf.format, opts)
+        end,
+      })
+    end,
+  },
 }
