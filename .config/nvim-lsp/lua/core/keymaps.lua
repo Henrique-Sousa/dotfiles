@@ -5,8 +5,8 @@ vim.keymap.set("n", "<leader>w", ':w<CR>')
 vim.keymap.set("n", "<leader>n", ':bn<CR>')
 vim.keymap.set("n", "<leader>p", ':bp<CR>')
 vim.keymap.set("n", "<leader>h", ':noh<CR>')
--- vim.keymap.set("n", "<leader>cn", ':cn<CR>')
--- vim.keymap.set("n", "<leader>cp", ':cp<CR>')
+vim.keymap.set("n", "<leader>cn", ':cn<CR>')
+vim.keymap.set("n", "<leader>cp", ':cp<CR>')
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "qf",
