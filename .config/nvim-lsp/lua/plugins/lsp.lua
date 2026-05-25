@@ -5,32 +5,27 @@ return {
     ft = "lua",
     opts = {}
   },
-
   -- Install the package manager
   {
     "williamboman/mason.nvim",
     opts = {}
     -- Alternatively, replacing the config block with `opts = {}` achieves the same result.
   },
-
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { "ts_ls", "lua_ls" } -- Ensures your servers are auto-installed
     },
-
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
       "neovim/nvim-lspconfig"
-    },
+    }
   },
-
   -- Setup the Language Server
   {
     'mfussenegger/nvim-jdtls',
     dependencies = 'hrsh7th/cmp-nvim-lsp'
   },
-
   -- Get code completion
   {
     "hrsh7th/nvim-cmp",
@@ -85,7 +80,7 @@ return {
 
           -- Navigation
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-          vim.keymap.set('n', 'gc', vim.lsp.buf.declaration, opts)
+          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
           vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
@@ -98,14 +93,19 @@ return {
           vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts)
           vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
 
-           -- Diagnostics (Updated for Neovim v0.11+)
+          -- Diagnostics (Updated for Neovim v0.11+)
+          vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts)
+          vim.keymap.set('n', '<space>cl', vim.diagnostic.setqflist, opts)
+
           vim.keymap.set('n', '[d', function()
             vim.diagnostic.jump({ count = -1, float = true })
-          end, opts)
+          end, opts
+          )
 
           vim.keymap.set('n', ']d', function()
             vim.diagnostic.jump({ count = 1, float = true })
-          end, opts)
+          end, opts
+          )
         end
       })
     end
