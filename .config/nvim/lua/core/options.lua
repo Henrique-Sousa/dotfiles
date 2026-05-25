@@ -73,16 +73,3 @@ vim.api.nvim_create_autocmd("BufRead", {
     vim.opt_local.modifiable = not vim.opt_local.readonly:get()
   end,
 })
-
--- vim.g.markdown_fenced_languages  = {
---     'asm', 'c', 'cpp',
---     'java',
---     'basic',
---     'javascript', 'typescript', 'php', 'ruby', 'python',
---     'perl', 'bash', 'sh', 'sed', 'awk', 'bc',
---     'vim',
---     'tex', 'html', 'css', 'sass', 'less',
---     'sql',
---     'lisp', 'scheme', 'haskell',
---     'tmux', 'make', 'dockerfile', 'xml', 'yaml', 'json'
--- }
