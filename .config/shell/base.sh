@@ -63,7 +63,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias nvcoc='NVIM_APPNAME=nvim-coc nvim --cmd "let g:coc_start_at_startup = 1"'
 alias nvnoc='NVIM_APPNAME=nvim-coc nvim --cmd "let g:coc_start_at_startup = 0"'
-alias nvlsp='NVIM_APPNAME=nvim-lsp nvim'
+# alias nvlsp='NVIM_APPNAME=nvim-lsp nvim'
 alias nvsy='NVIM_APPNAME=nvim-sylvan nvim'
 alias nview='nvim -R'
 

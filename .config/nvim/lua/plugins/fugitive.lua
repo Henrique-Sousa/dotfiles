@@ -7,5 +7,6 @@ return {
     { "<leader>gh", "<cmd>Ghdiffsplit<cr>", desc = "Git diff split (horizontal)" },
     { "<leader>ga", "<cmd>Git add %<cr>", desc = "Git add current file" },
     { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git commit" },
+    { "<leader>gp", "<cmd>Git push<cr>", desc = "Git push" },
   },
 }

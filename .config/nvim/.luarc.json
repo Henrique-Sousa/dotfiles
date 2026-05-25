@@ -1,0 +1,17 @@
+{
+    "runtime": {
+        "version": "LuaJIT"
+    },
+    "workspace": {
+        "checkThirdParty": false,
+        "library": [
+            "$VIMRUNTIME/lua",
+            "${3rd}/luv/library",
+            "$XDG_DATA_HOME/nvim/lazy",
+            "~/.local/share/nvim/lazy"
+        ]
+    },
+    "diagnostics": {
+        "globals": ["vim"]
+    }
+}
