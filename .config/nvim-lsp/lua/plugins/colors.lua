@@ -11,7 +11,7 @@ return {
         -- 1. Apply Transparency
         -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
         -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        
+
         -- 2. Modify Comments
         vim.api.nvim_set_hl(0, "Comment", { fg = "#888888", italic = false })
 
@@ -26,7 +26,7 @@ return {
    	-- color = color or "rose-pine"
    	-- color = color or "gruvbox"
    	-- color = color or "habamax"
-   	color = color or "vague"
+   	local color = "vague"
    	vim.cmd.colorscheme(color)
   end
 }

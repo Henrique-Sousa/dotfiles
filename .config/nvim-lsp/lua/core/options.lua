@@ -17,7 +17,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "cpp", "fortran", "javascript", "typescript", "javascriptreact", "typescriptreact", "json" },
+  pattern = { "cpp", "fortran", "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "lua" },
   callback = function()
     vim.opt_local.tabstop = 2
     vim.opt_local.shiftwidth = 2
@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.path:append '**' 
+vim.opt.path:append '**'
 vim.opt.path:append(vim.env.HOME .. "/notas/**")
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest,full:noselect"

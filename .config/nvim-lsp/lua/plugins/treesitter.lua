@@ -10,7 +10,7 @@ return {
         "markdown", "markdown_inline",
       }
 
-      require("nvim-treesitter").install(languages) 
+      require("nvim-treesitter").install(languages)
 
       vim.api.nvim_create_autocmd('FileType', {
           pattern = languages,
