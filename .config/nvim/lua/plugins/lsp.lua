@@ -15,7 +15,10 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "ts_ls", "lua_ls" } -- Ensures your servers are auto-installed
+      ensure_installed = {
+        -- "lua_ls",
+        "ts_ls"
+      }
     },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
@@ -65,7 +68,7 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- vim.lsp.config("pyright", { capabilities = capabilities })
-      vim.lsp.config("lua_ls", { capabilities = capabilities })
+      -- vim.lsp.config("lua_ls", { capabilities = capabilities })
       vim.lsp.config('tsserver', {
         -- Make sure this is on your path
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
@@ -74,8 +77,11 @@ return {
         capabilities = capabilities
       })
 
-      -- vim.lsp.enable({ "lua_ls", "pyright" })
-      vim.lsp.enable({ "lua_ls", "tsserver" })
+      vim.lsp.enable({
+        -- "lua_ls",
+        -- "pyright",
+        "tsserver"
+      })
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
