@@ -4,28 +4,37 @@ local on_attach = function(client, bufnr)
 
   -- Disable LSP semantic tokens for jdtls to prevent syntax highlighting bugs.
   -- (I'm using treesitter for syntax higlighting instead)
-    client.server_capabilities.semanticTokensProvider = nil
+  client.server_capabilities.semanticTokensProvider = nil
 
   -- Java Specific Mappings
-  vim.keymap.set('n', '<leader>i', jdtls.organize_imports, { desc = 'Organize Imports', buffer = bufnr })
-  vim.keymap.set('v', '<leader>em',
-    [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
-    { desc = 'Extract Method', buffer = bufnr })
-  vim.keymap.set('n', '<leader>ev', jdtls.extract_variable, { desc = 'Extract Variable', buffer = bufnr })
-  vim.keymap.set('n', '<leader>ec', jdtls.extract_constant, { desc = 'Extract Constant', buffer = bufnr })
+  vim.keymap.set('n', '<leader>i', jdtls.organize_imports, opts)
+  vim.keymap.set('n', '<leader>ev', jdtls.extract_variable, opts)
+  vim.keymap.set('n', '<leader>ec', jdtls.extract_constant, opts)
+  vim.keymap.set('v', '<leader>em', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]], opts)
 end
 
 local config = {
   cmd = {
-    vim.fn.expand"$HOME/.local/share/nvim-lsp/mason/bin/jdtls",
+    vim.fn.expand "$HOME/.local/share/nvim-lsp/mason/bin/jdtls",
     "-Xms256m",
     "-Xmx512m",
 
     -- Add Lombok Support
-    ("--jvm-arg=-javaagent:%s"):format(vim.fn.expand"$HOME/.local/share/nvim-lsp/mason/packages/jdtls/lombok.jar")
- },
+    ("--jvm-arg=-javaagent:%s"):format(vim.fn.expand "$HOME/.local/share/nvim-lsp/mason/packages/jdtls/lombok.jar")
+  },
+
   -- connect nvim-jdtls with nvim-cmp by adding completion capabilities
-  capabilities = require"cmp_nvim_lsp".default_capabilities(),
+  capabilities = require "cmp_nvim_lsp".default_capabilities(),
+
+  -- Debugger
+  init_options = {
+    bundles = {
+      vim.fn.expand(
+        '$HOME/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar'
+      )
+    }
+  },
+
   on_attach = on_attach,
 }
 

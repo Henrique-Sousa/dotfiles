@@ -9,6 +9,7 @@ vim.opt.colorcolumn = '80'
 vim.opt.cursorline = true
 vim.opt.laststatus = 2
 vim.opt.showcmd = true
+vim.o.background = "dark"
 
 vim.opt.autoindent = true
 vim.opt.tabstop = 4

@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "tpope/vim-surround",
-  -- {"puremourning/vimspector"} -- debugging (on top of DAP)
 
   -- Import all files from the lua/plugins/ directory
   { import = "plugins" }

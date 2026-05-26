@@ -23,9 +23,9 @@ return {
     })
 
     -- Execute the colorscheme (this triggers the autocommand defined above)
-   	-- color = color or "rose-pine"
-   	-- color = color or "gruvbox"
-   	-- color = color or "habamax"
+   	-- local color = color or "rose-pine"
+   	-- local color = color or "gruvbox"
+   	-- local color = color or "habamax"
    	local color = "vague"
    	vim.cmd.colorscheme(color)
   end

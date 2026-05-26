@@ -5,12 +5,13 @@ return {
     ft = "lua",
     opts = {}
   },
+
   -- Install the package manager
   {
     "williamboman/mason.nvim",
     opts = {}
-    -- Alternatively, replacing the config block with `opts = {}` achieves the same result.
   },
+
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
@@ -21,11 +22,13 @@ return {
       "neovim/nvim-lspconfig"
     }
   },
+
   -- Setup the Language Server
   {
     'mfussenegger/nvim-jdtls',
     dependencies = 'hrsh7th/cmp-nvim-lsp'
   },
+
   -- Get code completion
   {
     "hrsh7th/nvim-cmp",
@@ -54,6 +57,7 @@ return {
       })
     end
   },
+
   -- Native LSP config
   {
     "neovim/nvim-lspconfig",
@@ -109,5 +113,5 @@ return {
         end
       })
     end
-  }
+  },
 }
