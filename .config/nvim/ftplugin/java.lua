@@ -16,8 +16,12 @@ end
 local config = {
   cmd = {
     vim.fn.expand "$HOME/.local/share/nvim-lsp/mason/bin/jdtls",
-    "-Xms256m",
-    "-Xmx512m",
+    "-Xms128m",                  -- Lower initial heap to save RAM on startup
+    "-Xmx512m",                  -- Keep max heap at 512MB
+    "-XX:+UseSerialGC",          -- Crucial: Uses much less memory than default G1GC
+    "-XX:MaxMetaspaceSize=256m", -- Caps the memory used for class metadata
+    "-XX:CICompilerCount=2",     -- Reduces JIT compiler threads and their memory overhead
+    "-Xss256k",                  -- Reduces memory allocated per thread stack
 
     -- Add Lombok Support
     ("--jvm-arg=-javaagent:%s"):format(vim.fn.expand "$HOME/.local/share/nvim-lsp/mason/packages/jdtls/lombok.jar")
