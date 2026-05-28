@@ -72,36 +72,40 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local bufnr = args.buf
-          local opts = { buffer = bufnr, remap = false }
+
+          local base_opts = { buffer = bufnr, remap = false }
+
+          -- Helper to add a description to base options
+          local function opts(desc)
+            return vim.tbl_extend("force", base_opts, { desc = desc })
+          end
 
           -- Navigation
-          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-          vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-          vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts("LSP: Go to definition"))
+          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts("LSP: Go to declaration"))
+          vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts("LSP: Show references"))
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts("LSP: Go to implementation"))
+          vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts("LSP: Go to type definition"))
 
           -- Interaction
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-          vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts)
-          vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts("LSP: Show hover information"))
+          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts("LSP: Show signature help"))
+          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts("LSP: Rename symbol"))
+          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts("LSP: Code action"))
+          vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts("LSP: Workspace symbol"))
+          vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts("LSP: Format code"))
 
-          -- Diagnostics (Updated for Neovim v0.11+)
-          vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts)
-          vim.keymap.set('n', '<space>cl', vim.diagnostic.setqflist, opts)
+          -- Diagnostics
+          vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts("Diagnostics: Open float"))
+          vim.keymap.set('n', '<space>cl', vim.diagnostic.setqflist, opts("Diagnostics: Set quickfix list"))
 
           vim.keymap.set('n', '[d', function()
             vim.diagnostic.jump({ count = -1, float = true })
-          end, opts
-          )
+          end, opts("Diagnostics: Jump to previous"))
 
           vim.keymap.set('n', ']d', function()
             vim.diagnostic.jump({ count = 1, float = true })
-          end, opts
-          )
+          end, opts("Diagnostics: Jump to next"))
         end
       })
     end
