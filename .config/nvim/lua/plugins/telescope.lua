@@ -1,5 +1,10 @@
 return {
   "nvim-telescope/telescope.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-web-devicons",
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  },
   config = function()
     local actions = require('telescope.actions')
     require('telescope').setup({
@@ -23,7 +28,6 @@ return {
       },
     })
   end,
-  dependencies = { "nvim-lua/plenary.nvim" },
   keys = {
     { "<leader>tf", "<cmd>Telescope find_files<cr>", desc = "Telescope find files" },
     { "<leader>tl", "<cmd>Telescope live_grep<cr>", desc = "Telescope live grep" },

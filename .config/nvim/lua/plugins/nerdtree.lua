@@ -1,5 +1,10 @@
 return {
   "preservim/nerdtree",
+  dependencies = {
+    "ryanoasis/vim-devicons",
+    "Xuyuanp/nerdtree-git-plugin",
+    "tiagofumo/vim-nerdtree-syntax-highlight",
+  },
   keys = {
     -- { "<leader>lf", "<cmd>NERDTreeFocus<cr>", desc = "NERDTree Focus" },
     -- { "<leader>ll", "<cmd>NERDTree<cr>", desc = "NERDTree Open" },
