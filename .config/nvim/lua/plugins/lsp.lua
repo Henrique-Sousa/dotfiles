@@ -55,7 +55,7 @@ return {
 
       -- vim.lsp.config("pyright", { capabilities = capabilities })
       -- vim.lsp.config("lua_ls", { capabilities = capabilities })
-      vim.lsp.config('tsserver', {
+      vim.lsp.config('ts_ls', {
         -- Make sure this is on your path
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
         -- This is a hint to tell nvim to find your project root from a file within the tree
@@ -66,7 +66,7 @@ return {
       vim.lsp.enable({
         -- "lua_ls",
         -- "pyright",
-        "tsserver"
+        "ts_ls"
       })
 
       vim.api.nvim_create_autocmd('LspAttach', {
