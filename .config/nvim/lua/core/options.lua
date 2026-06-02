@@ -10,6 +10,8 @@ vim.opt.cursorline = true
 vim.opt.laststatus = 2
 vim.opt.showcmd = true
 vim.o.background = "dark"
+vim.opt.signcolumn = "yes" -- always show the sign column to prevent jumping 
+
 
 vim.opt.autoindent = true
 vim.opt.tabstop = 4
