@@ -75,3 +75,5 @@
 ;; they are implemented.
 
 (setq confirm-kill-emacs nil)
+(setq auto-save-list-file-prefix "~/.local/state/emacs/auto-save-list/.saves-")
+(startup-redirect-eln-cache "~/.cache/emacs/eln-cache")
