@@ -75,5 +75,10 @@
 ;; they are implemented.
 
 (setq confirm-kill-emacs nil)
+
+;; ruler at column 80
+(setq-default fill-column 79)
+(global-display-fill-column-indicator-mode 1)
+
 (setq auto-save-list-file-prefix "~/.local/state/emacs/auto-save-list/.saves-")
 (startup-redirect-eln-cache "~/.cache/emacs/eln-cache")
