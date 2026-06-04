@@ -32,6 +32,7 @@ export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
 export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+export DOOMDIR="$XDG_CONFIG_HOME/doom"
 
 # source /usr/share/nvm/nvm.sh
 # source /usr/share/nvm/bash_completion
@@ -66,6 +67,8 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # alias nvlsp='NVIM_APPNAME=nvim-lsp nvim'
 alias nvsy='NVIM_APPNAME=nvim-sylvan nvim'
 alias nview='nvim -R'
+
+alias doom="doom emacs -nw"
 
 # disable terminal freezing with ctrl + s, allowing to do a forward-search-history with ctrl + s
 stty -ixon
