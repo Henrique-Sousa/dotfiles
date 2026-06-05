@@ -7,15 +7,18 @@ return {
     -- immediately and re-triggers on any future theme changes.
     vim.api.nvim_create_autocmd("ColorScheme", {
       pattern = "*",
-      callback = function()
-        -- 1. Apply Transparency
+      callback = function(_, opts)
+        -- apply Transparency
         -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
         -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
-        -- 2. Modify Comments
-        vim.api.nvim_set_hl(0, "Comment", { fg = "#888888", italic = false })
+        -- modify comments
+        vim.api.nvim_set_hl(0, "Comment", { fg = "#606079", italic = false })
 
-        -- 3. Remove undercurl in informational diagnostics
+        -- remove italics
+        vim.api.nvim_set_hl(0, "String", { fg = "#e8b589", italic = false })
+
+        -- remove undercurl in informational diagnostics
         vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", {
           undercurl = false,
         })
@@ -24,9 +27,9 @@ return {
 
     -- Execute the colorscheme (this triggers the autocommand defined above)
    	-- local color = "habamax"
-   	-- local color = "vague"
+   	local color = "vague"
     -- local colocar = "catppuccin"
-    local color = "slate"
+    -- local color = "slate"
    	vim.cmd.colorscheme(color)
   end
 }
