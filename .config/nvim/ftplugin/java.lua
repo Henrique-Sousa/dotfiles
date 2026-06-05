@@ -34,7 +34,8 @@ local config = {
   init_options = {
     bundles = {
       vim.fn.expand(
-        '$HOME/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar'
+        -- '$HOME/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar'
+        '/usr/bin/jdtls'
       )
     }
   },
