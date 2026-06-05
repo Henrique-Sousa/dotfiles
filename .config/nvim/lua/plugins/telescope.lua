@@ -8,6 +8,11 @@ return {
   config = function()
     local actions = require('telescope.actions')
     require('telescope').setup({
+      pickers = {
+        colorscheme = {
+          enable_preview = true, -- Enables live previewing
+        }
+      },
       defaults = {
         mappings = {
           i = {
