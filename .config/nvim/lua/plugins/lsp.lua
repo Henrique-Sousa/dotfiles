@@ -28,20 +28,42 @@ return {
       'hrsh7th/cmp-nvim-lsp'      -- Source for LSP completion
     },
     config = function()
-      require('cmp').setup({
+      local cmp = require('cmp')
+      local luasnip = require('luasnip')
+
+      cmp.setup({
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
           end
         },
         mapping = {
-          ['<C-c>'] = require('cmp').mapping.abort(),
-          ['<CR>'] = require('cmp').mapping.confirm(),
-          ['<C-n>'] = require('cmp').mapping.select_next_item(),
-          ['<C-p>'] = require('cmp').mapping.select_prev_item()
+          ['<C-c>'] = cmp.mapping.abort(),
+          ['<CR>'] =  cmp.mapping.confirm(),
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+
+          -- Jump to the next argument / snippet placeholder
+          ['<Tab>'] = cmp.mapping(function(fallback)
+            if luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+
+          -- Jump to the previous argument / snippet placeholder
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if luasnip.jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
         },
         sources = {
-          { name = 'nvim_lsp' }
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' }
         }
       })
     end
@@ -56,6 +78,7 @@ return {
       -- vim.lsp.config("pyright", { capabilities = capabilities })
       -- vim.lsp.config("lua_ls", { capabilities = capabilities })
       vim.lsp.config('ts_ls', {
+        cmd = { "/usr/bin/typescript-language-server", "--stdio" },
         -- Make sure this is on your path
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
         -- This is a hint to tell nvim to find your project root from a file within the tree
@@ -63,10 +86,17 @@ return {
         capabilities = capabilities
       })
 
+      vim.lsp.config('clangd', {
+        cmd = { '/usr/bin/clangd' },
+        filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
+      })
+
+      -- -- Start the language server automatically on target filetypes
       vim.lsp.enable({
+        "clangd",
+        "ts_ls",
         -- "lua_ls",
         -- "pyright",
-        "ts_ls"
       })
 
       vim.api.nvim_create_autocmd('LspAttach', {
