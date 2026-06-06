@@ -66,6 +66,11 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # alias nvnoc='NVIM_APPNAME=nvim-coc nvim --cmd "let g:coc_start_at_startup = 0"'
 # alias nvlsp='NVIM_APPNAME=nvim-lsp nvim'
 alias nvsy='NVIM_APPNAME=nvim-sylvan nvim'
+
+alias lunarvim='nvim -u ~/code/LunarVim/init.lua'
+alias lazyvim='XDG_CONFIG_HOME=~/code/LazyVim/ XDG_DATA_HOME=/tmp/lazyvim-data XDG_CACHE_HOME=/tmp/lazyvim-cache nvim'
+alias nvchad='XDG_CONFIG_HOME=~/code/NvChad XDG_DATA_HOME=/tmp/nvchad-data XDG_CACHE_HOME=/tmp/nvchad-cache nvim'
+
 alias nview='nvim -R'
 
 alias doom="doom emacs -nw"
