@@ -120,14 +120,15 @@ return {
           -- Interaction
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts("LSP: Show hover information"))
           vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts("LSP: Show signature help"))
-          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts("LSP: Rename symbol"))
+          vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, opts("LSP: Rename symbol"))
           vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts("LSP: Code action"))
-          vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts("LSP: Workspace symbol"))
-          vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts("LSP: Format code"))
+          vim.keymap.set('n', '<leader>cs', vim.lsp.buf.workspace_symbol, opts("LSP: Workspace symbol"))
+          vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format, opts("LSP: Format code"))
 
           -- Diagnostics
-          vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts("Diagnostics: Open float"))
-          vim.keymap.set('n', '<space>cl', vim.diagnostic.setqflist, opts("Diagnostics: Set quickfix list"))
+          vim.keymap.set('n', '<space>co', vim.diagnostic.open_float, opts("Diagnostics: Open float"))
+          vim.keymap.set('n', '<space>cq', vim.diagnostic.setqflist, opts("Diagnostics: Set quickfix list"))
+          vim.keymap.set('n', '<space>cl', vim.diagnostic.setloclist, opts("Diagnostics: Set location list"))
 
           vim.keymap.set('n', '[d', function()
             vim.diagnostic.jump({ count = -1, float = true })

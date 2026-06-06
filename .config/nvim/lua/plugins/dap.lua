@@ -30,7 +30,7 @@ return {
       -- }
 
       vim.keymap.set("n", "<space>b", dap.toggle_breakpoint, { desc = "DAP: toggle breakpoint" })
-      vim.keymap.set("n", "<space>gb", dap.run_to_cursor, { desc = "DAP: run to cursor" }) 
+      -- vim.keymap.set("n", "<space>gb", dap.run_to_cursor, { desc = "DAP: run to cursor" }) 
 
       -- Eval var under cursor
       vim.keymap.set("n", "<space>?", function()

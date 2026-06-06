@@ -7,10 +7,10 @@ local on_attach = function(client, bufnr)
   client.server_capabilities.semanticTokensProvider = nil
 
   -- Java Specific Mappings
-  vim.keymap.set('n', '<leader>i', jdtls.organize_imports, opts)
-  vim.keymap.set('n', '<leader>ev', jdtls.extract_variable, opts)
-  vim.keymap.set('n', '<leader>ec', jdtls.extract_constant, opts)
-  vim.keymap.set('v', '<leader>em', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]], opts)
+  vim.keymap.set('n', '<leader>ci', jdtls.organize_imports, opts)
+  vim.keymap.set('n', '<leader>cev', jdtls.extract_variable, opts)
+  vim.keymap.set('n', '<leader>cec', jdtls.extract_constant, opts)
+  vim.keymap.set('v', '<leader>cem', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]], opts)
 end
 
 local config = {
