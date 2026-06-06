@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "tpope/vim-surround",
+  "sindrets/diffview.nvim",
 
   -- Import all files from the lua/plugins/ directory
   { import = "plugins" }
