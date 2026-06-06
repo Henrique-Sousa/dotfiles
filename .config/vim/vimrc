@@ -68,15 +68,15 @@ let mapleader = " "
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>g :silent w ! { if [[ $PWD == $HOME/notas* ]]; then git add % &> /dev/null && git c -m . &> /dev/null && git p &> /dev/null ; fi ; } &<CR>:redraw!<CR>:echo "git command executed"<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>n :bn<CR>
-nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>qq :q<CR>
+nnoremap <Leader>bn :bn<CR>
+nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>cn :cn<CR>
 nnoremap <Leader>cp :cp<CR>
 nnoremap <Leader>f :find 
 nnoremap <Leader>r :grep 
 nnoremap <Leader>m :make<CR>
-nnoremap <Leader>h :noh<CR>
+nnoremap <Leader>nh :noh<CR>
 
 " Format entire file and preserve cursor/scroll position
 nnoremap <Leader>= :let v=winsaveview() <bar> execute "keepjumps normal! gg=G" <bar> call winrestview(v) <CR>
