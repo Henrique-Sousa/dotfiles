@@ -1,0 +1,112 @@
+@define-color background #282A2E;
+@define-color background-alt #373B41;
+@define-color foreground #C5C8C6;
+@define-color primary #F0C674;
+@define-color secondary #8ABEB7;
+@define-color alert #A54242;
+@define-color disabled #707880;
+
+* {
+    font-family: monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+}
+
+/* Simulate Polybar Separator */
+#language, #custom-sink, #pulseaudio, #battery, #disk, #memory, #cpu, #network, #clock {
+    border-left: 1px solid @disabled;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    color: @foreground;
+    background-color: transparent;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: @background-alt;
+    border-bottom: 3px solid @primary;
+}
+
+/*
+ * when I open an application that will open on a workspace different from the
+ * one I'm on, the number of the workspace the application is opened in turns
+ * white with a red background
+ */
+#workspaces button.urgent {
+    background-image: none;
+    background-color: @alert;
+    color: #FFFFFF;
+    border-bottom: 3px solid transparent;
+}
+
+#mode {
+    background-color: #e60053;
+    padding: 0 8px;
+}
+
+#window {
+    color: @primary;
+    padding: 0 8px;
+}
+
+/* Module Specific Coloring */
+#disk {
+    color: @primary; 
+}
+
+#pulseaudio {
+    color: @primary;
+}
+
+#pulseaudio.muted {
+    color: @disabled;
+}
+
+#language {
+    color: @primary;
+    min-width: 30px; /* give some space so it can show the language properly */
+}
+
+#custom-keyboard {
+    color: @primary;
+}
+
+#memory, #cpu, #clock {
+    color: @primary;
+}
+
+#memory.warning, #cpu.warning {
+    background-color: @alert;
+    color: @foreground;
+}
+
+#network {
+    color: @primary;
+}
+
+#network.disconnected {
+    background-color: @alert;
+    color: @foreground;
+}
+
+#battery.discharging {
+    background-color: @disabled;
+    color: @foreground;
+}
+
+#battery.critical {
+    background-color: @alert;
+    color: @foreground;
+}

@@ -1,0 +1,101 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 21,
+    "spacing": 4,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "custom/layout",
+        "sway/window"
+    ],
+    "modules-right": [
+        "custom/keyboard",
+        "custom/sink",
+        "pulseaudio",
+        "battery",
+        "disk",
+        "memory",
+        "cpu",
+        "network",
+        "clock"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "activate-on-urgency": false
+    },
+    "sway/mode": {
+        "format": "{}"
+    },
+    "custom/layout": {
+        "exec": "~/.local/bin/polybar/window-layout.sh",
+        "interval": 1,
+        "format": "{}"
+    },
+    "sway/window": {
+        "format": "{app_id}",
+        "max-length": 20
+    },
+    "sway/language": {
+        "format": "{shortDescription}",
+        "tooltip": false
+    },
+    "custom/keyboard": {
+        "exec": "swaymsg -t get_inputs 2>/dev/null | jq -r '.[] | select(.type==\"keyboard\") | .xkb_active_layout_name' | head -n1",
+        "interval": 1,
+        "format": "{}"
+    },
+    "custom/sink": {
+        "exec": "~/.local/bin/polybar/pulseaudio-sink.sh",
+        "interval": 1,
+        "format": "{}"
+    },
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "muted"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "ADP1",
+        "interval": 1,
+        "full-at": 95,
+        "states": {
+            "critical": 10
+        },
+        "format": "{capacity}%",
+        "format-charging": "Charging {capacity}%",
+        "format-discharging": "Discharging {capacity}%",
+        "format-full": "Fully charged {capacity}%",
+        "format-critical": "BATTERY LOW {capacity}%"
+    },
+    "disk": {
+        "interval": 25,
+        "format": "/ {percentage_used}%",
+        "path": "/"
+    },
+    "memory": {
+        "interval": 1,
+        "format": "RAM {percentage}%",
+        "states": {
+            "warning": 85
+        }
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "CPU {usage}%",
+        "states": {
+            "warning": 80
+        }
+    },
+    "network": {
+        "interface": "wlan0",
+        "format-wifi": "{essid}",
+        "format-disconnected": "{ifname} not connected"
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%Y-%m-%d %a %H:%M:%S}"
+    }
+}

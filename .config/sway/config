@@ -1,0 +1,69 @@
+include ~/.config/i3/config
+
+set $mod Mod4
+
+font pango:monospace 9
+
+unbindsym $mod+Shift+c
+bindsym $mod+Shift+c reload
+
+unbindsym $mod+Shift+e
+bindsym $mod+Shift+e exec swaynag -t warning -m "Exit Sway?" -B "Yes" "swaymsg exit"
+
+unbindsym --release Print 
+unbindsym --release Shift+Print 
+bindsym --release Print exec grim ~/dwnlds/screenshots/$(date -Iseconds).png
+bindsym --release Shift+Print exec grim -g "$(slurp)" ~/dwnlds/screenshots/$(date -Iseconds).png
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | wl-copy
+
+unbindsym $mod+Shift+s
+bindsym $mod+Shift+s exec "swaylock -f --daemonize && systemctl suspend"
+
+
+bar {
+    swaybar_command waybar
+}
+
+unbindsym $mod+space
+bindsym $mod+space exec --no-startup-id ~/.local/bin/sway/toggle_keyboard_layout.sh
+
+unbindsym $mod+i
+bindsym $mod+i exec --no-startup-id ~/.local/bin/sway/keyboard-dmenu.sh
+
+# Workspaces
+
+# make every application urgent so when I open them a red alert is displayed
+# on the workspace it was open in
+for_window [app_id=".*"] urgent enable
+
+# 1: terminal
+assign [app_id="Alacritty"] workspace number 1
+
+# 2: browser 
+assign [app_id="google-chrome"] workspace number 2
+
+# 3: password manager 
+assign [app_id="KeePassXC"] workspace number 3
+
+# 4: video 
+assign [app_id="mpv"] workspace number 4
+assign [app_id="vlc"] workspace number 4
+
+# 5: pdf
+assign [app_id="org.pwmt.zathura"] workspace number 5 
+# assign [app_id="MuPDF"] workspace number 5 
+assign [app_id="sioyek"] workspace number 5 
+assign [app_id="FBReader"] workspace number 5 
+
+# 6: image viewer
+assign [app_id="imv"] workspace number 6
+
+# 7: anki
+assign [app_id="anki"] workspace number 7
+
+# 8: download
+assign [app_id="transmission-qt"] workspace number 8
+# assign [app_id="SoulseekQt"] workspace number 8
+
+# 9: other
+assign [app_id="gajim"] workspace number 9
