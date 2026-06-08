@@ -60,7 +60,7 @@
         "bat": "BAT0",
         "adapter": "ADP1",
         "interval": 1,
-        "full-at": 95,
+        "full-at": 100,
         "states": {
             "critical": 10
         },
