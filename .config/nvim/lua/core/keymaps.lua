@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
 
 vim.keymap.set("n", "<leader>bn", ':bn<CR>')
 vim.keymap.set("n", "<leader>bp", ':bp<CR>')
-vim.keymap.set("n", "<leader>nh", ':noh<CR>')
+vim.keymap.set("n", "<leader>h", ':noh<CR>')
 vim.keymap.set("n", "<leader>cn", ':cn<CR>')
 vim.keymap.set("n", "<leader>cp", ':cp<CR>')
 

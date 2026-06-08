@@ -41,11 +41,10 @@ return {
     { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Telescope git files" },
     { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Telescope oldfiles" },
 
-    { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "Telescope live grep" },
     { "<leader>rg", "<cmd>Telescope live_grep<cr>", desc = "Telescope live grep" },
-    { "<leader>ss", "<cmd>Telescope grep_string<cr>", desc = "Telescope grep string" },
+    { "<leader>ts", "<cmd>Telescope grep_string<cr>", desc = "Telescope grep string" },
     { 
-      "<leader>sw", 
+      "<leader>tw", 
       function()
         local word = vim.fn.expand("<cword>")
         require('telescope.builtin').grep_string({ search = word })
@@ -53,13 +52,12 @@ return {
       desc = "Telescope grep word under cursor" 
     },
 
-    { "<leader>sf", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Telescope current buffer fuzzy find" },
-    { "<leader>sf", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Telescope current buffer fuzzy find" },
+    { "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Telescope current buffer fuzzy find" },
 
     { "<leader>cd", "<cmd>Telescope diagnostics<cr>", desc = "Telescope diagnostics" },
-    { "<leader>sr", "<cmd>Telescope lsp_references<cr>", desc = "Telescope lsp references" },
-    { "<leader>si", "<cmd>Telescope lsp_implementations<cr>", desc = "Telescope lsp implementations" },
-    { "<leader>sT", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Telescope lsp type definitions" },
+    { "<leader>lr", "<cmd>Telescope lsp_references<cr>", desc = "Telescope lsp references" },
+    { "<leader>li", "<cmd>Telescope lsp_implementations<cr>", desc = "Telescope lsp implementations" },
+    { "<leader>lt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Telescope lsp type definitions" },
 
     { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "Telescope buffers" },
 
@@ -67,10 +65,10 @@ return {
     { "<leader>gr", "<cmd>Telescope git_commits<cr>", desc = "Telescope git commits" },
     { "<leader>gb", "<cmd>Telescope git_bcommits<cr>", desc = "Telescope git bcommits" },
 
-    { "<leader>ht", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
-    { "<leader>hk", "<cmd>Telescope keymaps<cr>", desc = "Telescope keymaps" },
-    { "<leader>hc", "<cmd>Telescope commands<cr>", desc = "Telescope commands" },
-    { "<leader>hm", "<cmd>Telescope man_pages<cr>", desc = "Telescope man pages" },
-    { "<leader>ho", "<cmd>Telescope vim_options<cr>", desc = "Telescope vim options" },
+    { "<leader>th", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
+    { "<leader>tk", "<cmd>Telescope keymaps<cr>", desc = "Telescope keymaps" },
+    { "<leader>tc", "<cmd>Telescope commands<cr>", desc = "Telescope commands" },
+    { "<leader>tm", "<cmd>Telescope man_pages<cr>", desc = "Telescope man pages" },
+    { "<leader>to", "<cmd>Telescope vim_options<cr>", desc = "Telescope vim options" },
   }
 }

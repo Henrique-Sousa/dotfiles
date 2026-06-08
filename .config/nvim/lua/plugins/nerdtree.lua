@@ -12,8 +12,8 @@ return {
     { "<leader>ef", "<cmd>NERDTreeFind<cr>", desc = "NERDTree Find" },
     { "<leader>nt", "<cmd>NERDTreeToggle<cr>", desc = "NERDTree Toggle" },
     { "<leader>nf", "<cmd>NERDTreeFind<cr>", desc = "NERDTree Find" },
-    { "<leader>lt", "<cmd>NERDTreeToggle<cr>", desc = "NERDTree Toggle" },
-    { "<leader>lf", "<cmd>NERDTreeFind<cr>", desc = "NERDTree Find" },
+    -- { "<leader>lt", "<cmd>NERDTreeToggle<cr>", desc = "NERDTree Toggle" },
+    -- { "<leader>lf", "<cmd>NERDTreeFind<cr>", desc = "NERDTree Find" },
     -- ou <leader>n ou <leader>t ou <leader>l
   },
   init = function()
