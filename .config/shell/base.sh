@@ -73,6 +73,7 @@ alias nvchad='XDG_CONFIG_HOME=~/code/NvChad XDG_DATA_HOME=/tmp/nvchad-data XDG_C
 
 alias nview='nvim -R'
 
+export PATH="$HOME/code/doomemacs/bin/:$PATH"
 alias doom="doom emacs -nw"
 
 # disable terminal freezing with ctrl + s, allowing to do a forward-search-history with ctrl + s
