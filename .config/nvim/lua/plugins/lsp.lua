@@ -73,6 +73,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      -- Tell Neovim where Mason stores its binaries so "texlab" can execute
+      vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
+
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- vim.lsp.config("pyright", { capabilities = capabilities })
@@ -91,10 +94,35 @@ return {
         filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
       })
 
+      vim.lsp.config("texlab", {
+        cmd = { "texlab" },
+        filetypes = { "tex", "bib" },
+        root_dir = function(bufnr, on_dir)
+          local path = vim.api.nvim_buf_get_name(bufnr)
+          local root = vim.fs.root(path, { '.git', 'main.tex', 'latexmkrc' })
+          on_dir(root or vim.fs.dirname(path))
+        end,
+        settings = {
+          texlab = {
+            build = {
+              executable = "latexmk",
+              args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+              onSave = true,
+            },
+            forwardSearch = {
+              executable = "zathura",
+              args = { "--synctex-forward", "%l:1:%f", "%p" },
+            },
+          },
+        },
+        capabilities = capabilities
+      })
+
       -- -- Start the language server automatically on target filetypes
       vim.lsp.enable({
         "clangd",
         "ts_ls",
+        "texlab",
         -- "lua_ls",
         -- "pyright",
       })
