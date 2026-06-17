@@ -14,8 +14,9 @@ local on_attach = function(client, bufnr)
 end
 
 local config = {
+
   cmd = {
-    "/usr/bin/jdtls",
+    vim.fn.expand "$HOME/.local/share/nvim/mason/bin/jdtls",
     "--jvm-arg=-Xms128m",                  -- Lower initial heap to save RAM on startup
     "--jvm-arg=-Xmx512m",                  -- Keep max heap at 512MB
     "--jvm-arg=-XX:+UseSerialGC",          -- Crucial: Uses much less memory than default G1GC
@@ -24,7 +25,7 @@ local config = {
     "--jvm-arg=-Xss256k",                  -- Reduces memory allocated per thread stack
 
     -- Add Lombok Support
-    "--jvm-arg=-javaagent:/usr/share/java/lombok/lombok.jar"
+    ("--jvm-arg=-javaagent:%s"):format(vim.fn.expand "$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar")
   },
 
   -- connect nvim-jdtls with nvim-cmp by adding completion capabilities
@@ -33,9 +34,11 @@ local config = {
   -- Debugger
   init_options = {
     bundles = {
-      "/usr/share/java-debug"
-      }
-    },
+      vim.fn.expand(
+        '$HOME/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar'
+      )
+    }
+  },
 
     on_attach = on_attach,
   }
