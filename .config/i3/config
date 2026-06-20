@@ -230,6 +230,7 @@ exec_always --no-startup-id feh --bg-scale ~/imgs/jan-folwarczny-ZXBPMnNVtlE-uns
 
 bindsym --release Print exec "maim ~/dwnlds/screenshots/$(date -Iseconds).png"
 bindsym --release Shift+Print exec "maim -s ~/dwnlds/screenshots/$(date -Iseconds).png"
+bindsym $mod+Shift+Print exec maim -s | xclip -selection clipboard -t image/png
 
 bindsym $mod+Shift+s exec --no-startup-id systemctl suspend 
 
