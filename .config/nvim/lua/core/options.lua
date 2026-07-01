@@ -20,7 +20,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "cpp", "fortran", "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "lua" },
+  pattern = { "cpp", "fortran", "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "lua", "less" },
   callback = function()
     vim.opt_local.tabstop = 2
     vim.opt_local.shiftwidth = 2

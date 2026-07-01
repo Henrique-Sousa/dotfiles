@@ -13,11 +13,16 @@ vim.keymap.set("n", "<leader>h", ':noh<CR>')
 vim.keymap.set("n", "<leader>cn", ':cn<CR>')
 vim.keymap.set("n", "<leader>cp", ':cp<CR>')
 
-vim.keymap.set('n', '<leader>=', function()
-  local view = vim.fn.winsaveview()
-  vim.cmd("keepjumps normal! gg=G")
-  vim.fn.winrestview(view)
-end, { desc = "Format entire file without moving cursor/scroll" })
+vim.keymap.set("n", "-", '<C-W>-')
+vim.keymap.set("n", "+", '<C-W>+')
+vim.keymap.set("n", "<M->>", '<C-W>>')
+vim.keymap.set("n", "<M-<>", '<C-W><')
+
+-- vim.keymap.set('n', '<leader>=', function()
+--   local view = vim.fn.winsaveview()
+--   vim.cmd("keepjumps normal! gg=G")
+--   vim.fn.winrestview(view)
+-- end, { desc = "Format entire file without moving cursor/scroll" })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "qf",
