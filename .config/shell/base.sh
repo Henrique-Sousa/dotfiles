@@ -33,6 +33,7 @@ export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
+export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
 
 # source /usr/share/nvm/nvm.sh
 # source /usr/share/nvm/bash_completion
@@ -79,6 +80,4 @@ stty -ixon
 
 eval $(keychain --eval --quiet --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
