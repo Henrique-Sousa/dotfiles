@@ -276,6 +276,7 @@ assign [class="Anki"] 7
 # 8: download
 assign [class="transmission"] 8
 assign [class="SoulseekQt"] 8
+assign [class="org.nicotine_plus.Nicotine"] 8
 
 # 9: other
 assign [class="gajim"] 9
