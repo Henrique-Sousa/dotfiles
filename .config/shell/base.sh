@@ -61,16 +61,13 @@ alias grep='grep --color=auto'
 # ! vi --version &> /dev/null && alias vi='vim'
 ! view --version &> /dev/null && alias view='vim -R'
 
-# alias nvcoc='NVIM_APPNAME=nvim-coc nvim --cmd "let g:coc_start_at_startup = 1"'
-# alias nvnoc='NVIM_APPNAME=nvim-coc nvim --cmd "let g:coc_start_at_startup = 0"'
-# alias nvlsp='NVIM_APPNAME=nvim-lsp nvim'
+alias nview='nvim -R'
+
 alias nvsy='NVIM_APPNAME=nvim-sylvan nvim'
 
 alias lunarvim='nvim -u ~/code/LunarVim/init.lua'
 alias lazyvim='XDG_CONFIG_HOME=~/code/LazyVim/ XDG_DATA_HOME=/tmp/lazyvim-data XDG_CACHE_HOME=/tmp/lazyvim-cache nvim'
 alias nvchad='XDG_CONFIG_HOME=~/code/NvChad XDG_DATA_HOME=/tmp/nvchad-data XDG_CACHE_HOME=/tmp/nvchad-cache nvim'
-
-alias nview='nvim -R'
 
 export PATH="$HOME/code/doomemacs/bin/:$PATH"
 alias doom="doom emacs -nw"
