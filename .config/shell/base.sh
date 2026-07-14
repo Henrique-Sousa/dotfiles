@@ -22,7 +22,7 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export BUN_INSTALL="$XDG_DATA_HOME/bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export BUN_INSTALL_CACHE_DIR="/tmp/bun-cache"
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
@@ -34,6 +34,8 @@ export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
 export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
+
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # source /usr/share/nvm/nvm.sh
 # source /usr/share/nvm/bash_completion
