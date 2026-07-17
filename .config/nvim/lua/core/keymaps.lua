@@ -13,10 +13,16 @@ vim.keymap.set("n", "<leader>h", ':noh<CR>')
 vim.keymap.set("n", "<leader>cn", ':cn<CR>')
 vim.keymap.set("n", "<leader>cp", ':cp<CR>')
 
+-- resize windows
 vim.keymap.set("n", "-", '<C-W>-')
 vim.keymap.set("n", "+", '<C-W>+')
 vim.keymap.set("n", "<M->>", '<C-W>>')
 vim.keymap.set("n", "<M-<>", '<C-W><')
+
+-- keep your text selected after indenting
+vim.keymap.set("x", "<", "<gv")
+vim.keymap.set("x", ">", ">gv")
+
 
 -- vim.keymap.set('n', '<leader>=', function()
 --   local view = vim.fn.winsaveview()
