@@ -4,19 +4,14 @@ set $mod Mod4
 
 font pango:monospace 9
 
-unbindsym $mod+Shift+c
 bindsym $mod+Shift+c reload
 
-unbindsym $mod+Shift+e
 bindsym $mod+Shift+e exec swaynag -t warning -m "Exit Sway?" -B "Yes" "swaymsg exit"
 
-unbindsym --release Print 
-unbindsym --release Shift+Print 
 bindsym --release Print exec grim ~/dwnlds/screenshots/$(date -Iseconds).png
 bindsym --release Shift+Print exec grim -g "$(slurp)" ~/dwnlds/screenshots/$(date -Iseconds).png
 bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
-unbindsym $mod+Shift+s
 bindsym $mod+Shift+s exec "swaylock -f --daemonize && systemctl suspend"
 
 
@@ -24,10 +19,8 @@ bar {
     swaybar_command waybar
 }
 
-unbindsym $mod+space
 bindsym $mod+space exec --no-startup-id ~/.local/bin/sway/toggle_keyboard_layout.sh
 
-unbindsym $mod+i
 bindsym $mod+i exec --no-startup-id ~/.local/bin/sway/keyboard-dmenu.sh
 
 # Workspaces
