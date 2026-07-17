@@ -269,6 +269,7 @@ assign [class="Sxiv"] 6
 assign [class="Nsxiv"] 6
 assign [class="imv"] 6
 assign [class="Thunar"] 6
+assign [class="Gimp"] 6
 
 # 7: anki
 assign [class="Anki"] 7
