@@ -37,9 +37,18 @@ return {
     { "<leader>tt", "<cmd>Telescope builtin<cr>", desc = "Telescope builtin" },
 
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Telescope find files" },
-    { "<leader>fd", "<cmd>Telescope fd<cr>", desc = "Telescope fd" },
+    -- { "<leader>fd", "<cmd>Telescope fd<cr>", desc = "Telescope fd" },
     { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Telescope git files" },
     { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Telescope oldfiles" },
+    { 
+      "<leader>fd",
+      function()
+        require('telescope.builtin').find_files({
+          cwd = vim.fn.expand('%:p:h') -- Expands to the directory of the current active buffer
+        })
+      end,
+      desc = "Search files in current buffer's directory"
+    },
 
     { "<leader>rg", "<cmd>Telescope live_grep<cr>", desc = "Telescope live grep" },
     { "<leader>ts", "<cmd>Telescope grep_string<cr>", desc = "Telescope grep string" },
@@ -53,6 +62,14 @@ return {
     },
 
     { "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Telescope current buffer fuzzy find" },
+    { 
+      "<leader>rd",
+      function()
+        require('telescope.builtin').live_grep({ cwd = vim.fn.expand('%:p:h') -- Expands to the directory of the current active buffer
+        })
+      end,
+      desc = "Grep files in current buffer's directory"
+    },
 
     { "<leader>cd", "<cmd>Telescope diagnostics<cr>", desc = "Telescope diagnostics" },
     { "<leader>lr", "<cmd>Telescope lsp_references<cr>", desc = "Telescope lsp references" },
