@@ -15,19 +15,6 @@ return {
       vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
       vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
-      -- nvim lsp as LSP client
-      -- Tell the server the capability of foldingRange
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.foldingRange = {
-        dynamicRegistration = false,
-        lineFoldingOnly = true
-      }
-
-      -- Example of setting up lspconfig with folding capabilities
-      -- require('lspconfig')['YOUR_LSP_SERVER'].setup({
-      --   capabilities = capabilities,
-      -- })
-
       local handler = function(virtText, lnum, endLnum, width, truncate)
         local newVirtText = {}
 
@@ -67,8 +54,36 @@ return {
         return newVirtText
       end
 
+      -- -- Option 1: nvim lsp as LSP client
+      -- -- Tell the server the capability of foldingRange
+      -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+      -- capabilities.textDocument.foldingRange = {
+      --   dynamicRegistration = false,
+      --   lineFoldingOnly = true
+      -- }
+      --
+      -- local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
+      -- for _, ls in ipairs(language_servers) do
+      --     require('lspconfig')[ls].setup({
+      --         capabilities = capabilities
+      --         -- you can add other fields for setting up lsp server in this table
+      --     })
+      -- end
+      --
+      -- require('ufo').setup({
+      --   fold_virt_text_handler = handler
+      -- })
+      -- --
+
+      -- Option 2: treesitter as a main provider instead
+      -- (Note: the `nvim-treesitter` plugin is *not* needed.)
+      -- ufo uses the same query files for folding (queries/<lang>/folds.scm)
+      -- performance and stability are better than `foldmethod=nvim_treesitter#foldexpr()
       require('ufo').setup({
-        fold_virt_text_handler = handler
+          fold_virt_text_handler = handler,
+          provider_selector = function(bufnr, filetype, buftype)
+              return {'treesitter', 'indent'}
+          end
       })
 
     end,
