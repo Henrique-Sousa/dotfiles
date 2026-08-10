@@ -14,6 +14,7 @@ return {
         }
       },
       defaults = {
+        path_display = { "filename_first", "truncate" },
         mappings = {
           i = {
             ["<Up>"] = actions.cycle_history_prev,
