@@ -29,6 +29,9 @@ colors
 
 export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
 
+# clock on the right side of prompt
+export RPS1="%*"
+
 
 # Suggestions
 
