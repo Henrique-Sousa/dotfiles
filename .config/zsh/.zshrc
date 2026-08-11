@@ -170,3 +170,21 @@ fcd() {
         \cd "$dir";
     fi
 }
+
+# fuzzy-find (interactively) and (open in) vim
+rv() {
+    file=$(rg -li $1 | sk)
+    if [ "$file" ]; then
+        vim "$file";
+        fasd --add "$file";
+    fi
+}
+
+# fuzzy-find (interactively) and (open in vim) read-only mode
+rvr() {
+    file=$(rg -li $1 | sk)
+    if [ "$file" ]; then
+        vim -R "$file";
+        fasd --add "$file";
+    fi
+}
