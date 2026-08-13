@@ -76,3 +76,10 @@ vim.api.nvim_create_autocmd("BufRead", {
     vim.opt_local.modifiable = not vim.opt_local.readonly:get()
   end,
 })
+
+-- treat .mdx as markdown
+vim.filetype.add({
+  extension = {
+    mdx = 'markdown',
+  },
+})
