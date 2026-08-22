@@ -78,15 +78,58 @@ return {
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      -- Force capability support for code actions & completion text edits
+      capabilities.textDocument.completion.completionItem.additionalTextEditsSupport = true
+
       -- vim.lsp.config("pyright", { capabilities = capabilities })
       -- vim.lsp.config("lua_ls", { capabilities = capabilities })
+
       vim.lsp.config('ts_ls', {
         cmd = { "/usr/bin/typescript-language-server", "--stdio" },
-        -- Make sure this is on your path
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
         -- This is a hint to tell nvim to find your project root from a file within the tree
         root_dir = vim.fs.root(0, { 'package.json', '.git' }),
-        capabilities = capabilities
+        capabilities = capabilities,
+        settings = {
+          javascript = {
+            suggest = {
+              autoImports = true, -- Enables the auto-import suggestion engine
+            },
+            updateImportsOnFileMove = { enabled = "always" },
+          },
+          typescript = {
+            suggest = {
+              autoImports = true,
+            },
+            updateImportsOnFileMove = { enabled = "always" },
+          },
+        }
+      })
+
+      vim.lsp.config('eslint', {
+        cmd = { "vscode-eslint-language-server", "--stdio" },
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+        root_dir = vim.fs.root(0, { 'package.json', '.git' }),
+        capabilities = capabilities,
+        settings = {
+          workingDirectories = { mode = "auto" },
+          -- Tells ESLint to use a global config file path
+          options = {
+            overrideConfigFile = vim.fn.expand("~/.config/eslint/eslint.config.js")
+          }
+        }
+      })
+
+      -- automatically run ESLint --fix whenever you save a file
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+        callback = function(args)
+          -- Safely calls formatting only on language servers that support it
+          vim.lsp.buf.format({ 
+            bufnr = args.buf,
+            async = false 
+          })
+        end,
       })
 
       vim.lsp.config('clangd', {
@@ -122,6 +165,7 @@ return {
       vim.lsp.enable({
         "clangd",
         "ts_ls",
+        "eslint",
         "texlab",
         -- "lua_ls",
         -- "pyright",
@@ -150,6 +194,17 @@ return {
           vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts("LSP: Show signature help"))
           vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, opts("LSP: Rename symbol"))
           vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts("LSP: Code action"))
+
+          -- Apply the "add all missing imports" source action from ts_ls
+          vim.keymap.set('n', '<leader>ci', function()
+            vim.lsp.buf.code_action({
+              context = {
+                only = { 'source.addMissingImports.ts' },
+                diagnostics = {},
+              },
+              apply = true,
+            })
+          end, opts("LSP: Add missing imports"))
           vim.keymap.set('n', '<leader>cs', vim.lsp.buf.workspace_symbol, opts("LSP: Workspace symbol"))
           vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format, opts("LSP: Format code"))
 
