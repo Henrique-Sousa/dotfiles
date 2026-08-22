@@ -90,6 +90,16 @@ return {
         -- This is a hint to tell nvim to find your project root from a file within the tree
         root_dir = vim.fs.root(0, { 'package.json', '.git' }),
         capabilities = capabilities,
+        -- Hide all ts_ls diagnostics on JS files (server still computes them,
+        -- which keeps <leader>ci "add missing imports" working)
+        handlers = {
+          ['textDocument/publishDiagnostics'] = function(err, result, ctx, config)
+            if result and result.uri:match('%.js[x]?$') then
+              return
+            end
+            return vim.lsp.handlers['textDocument/publishDiagnostics'](err, result, ctx, config)
+          end,
+        },
         settings = {
           javascript = {
             suggest = {
@@ -103,7 +113,7 @@ return {
             },
             updateImportsOnFileMove = { enabled = "always" },
           },
-        }
+        },
       })
 
       vim.lsp.config('eslint', {
