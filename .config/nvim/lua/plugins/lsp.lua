@@ -85,7 +85,7 @@ return {
       -- vim.lsp.config("lua_ls", { capabilities = capabilities })
 
       vim.lsp.config('ts_ls', {
-        cmd = { "/usr/bin/typescript-language-server", "--stdio" },
+        cmd = { "typescript-language-server", "--stdio" },
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
         -- This is a hint to tell nvim to find your project root from a file within the tree
         root_dir = vim.fs.root(0, { 'package.json', '.git' }),
