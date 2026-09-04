@@ -85,3 +85,5 @@ stty -ixon
 eval $(keychain --eval --quiet --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
 
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+export MOSH_ESCAPE_KEY=$'\x11'
