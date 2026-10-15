@@ -10,11 +10,23 @@ return {
         "markdown", "markdown_inline",
       }
 
-      require("nvim-treesitter").install(languages)
+       -- The new plugin exports setup() directly from the top-level module
+      local ts = require("nvim-treesitter")
 
+      ts.setup({
+        -- Force compilation via standard C compilers, bypassing your broken global CLI
+        prefer_git = true,
+        
+        -- Automatically installs your list of languages safely
+        ensure_installed = languages,
+      })
+
+      -- Modern Neovim handles treesitter highlighting natively via filetype autocommands
       vim.api.nvim_create_autocmd('FileType', {
-          pattern = languages,
-          callback = function() vim.treesitter.start() end,
+        pattern = languages,
+        callback = function() 
+          vim.treesitter.start() 
+        end,
       })
     end,
   },
