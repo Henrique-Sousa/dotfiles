@@ -123,10 +123,6 @@ return {
         capabilities = capabilities,
         settings = {
           workingDirectories = { mode = "auto" },
-          -- Tells ESLint to use a global config file path
-          options = {
-            overrideConfigFile = vim.fn.expand("~/.config/eslint/eslint.config.js")
-          }
         }
       })
 
