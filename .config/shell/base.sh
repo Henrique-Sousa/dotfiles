@@ -1,4 +1,4 @@
-# export TERM='xterm-256color'
+export TERM='xterm-256color'
 export EDITOR='/usr/bin/vim'
 
 # XDG base directory
@@ -36,6 +36,7 @@ export DOOMDIR="$XDG_CONFIG_HOME/doom"
 export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
 
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # source /usr/share/nvm/nvm.sh
 # source /usr/share/nvm/bash_completion
@@ -82,7 +83,7 @@ wlog() {
 # disable terminal freezing with ctrl + s, allowing to do a forward-search-history with ctrl + s
 stty -ixon
 
-eval $(keychain --eval --quiet --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
+# eval $(keychain --eval --quiet --absolute --dir "$XDG_RUNTIME_DIR"/keychain)
 
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 

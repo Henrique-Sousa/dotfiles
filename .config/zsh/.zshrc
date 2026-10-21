@@ -27,7 +27,7 @@ setopt extended_history
 autoload -U colors
 colors
 
-export PS1="%B%{$fg[blue]%}%n@%M:%~%{$reset_color%}$%b "
+export PS1="%B%{$fg[green]%}%n@%M:%~%{$reset_color%}$%b "
 
 # clock on the right side of prompt
 export RPS1="%*"
@@ -188,3 +188,7 @@ rvr() {
         fasd --add "$file";
     fi
 }
+
+export NVM_DIR="$HOME/.local/share/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
