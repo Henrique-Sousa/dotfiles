@@ -119,7 +119,12 @@ source "$ZDOTDIR"/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # cd and vim by recency/frequency: fasd, zoxide
 
 eval "$(fasd --init auto)"
-# fasd is more cumbersome (for directories) than zoxide, but let's define some aliases to it
+# z and zz are aliases defined by fasd; z clashes with z, a function defined by zoxide
+unalias z 
+unalias zz
+# fasd is more cumbersome (for directories) than zoxide
+# but let's define some aliases to it
+# to replace z and zz
 alias j='fasd_cd -d'
 alias jj='fasd_cd -d -i'
 # open "frecent" files in vim, interactively if two or more matches
@@ -135,9 +140,6 @@ vr() {
   [ -n "$file" ] && vim -R "$file"
 }
 
-# z and zz are aliases defined by fasd; z clashes with z, a function defined by zoxide
-unalias z 
-unalias zz
 eval "$(zoxide init zsh)"
 # cd into "frecent" directories
 alias cd='z'
@@ -154,7 +156,7 @@ fv() {
     fi
 }
 
-# fuzzy-find (interactively) and (open in vim) read-only mode
+# fuzzy-find (interactively) and (open in) vim read-only mode
 fvr() {
     file=$(fd -tf | sk)
     if [ "$file" ]; then
@@ -171,7 +173,7 @@ fcd() {
     fi
 }
 
-# fuzzy-find (interactively) and (open in) vim
+# fuzzy-find interactively by file content and open in vim
 rv() {
     file=$(rg -li $1 | sk)
     if [ "$file" ]; then
@@ -180,7 +182,7 @@ rv() {
     fi
 }
 
-# fuzzy-find (interactively) and (open in vim) read-only mode
+# fuzzy-find interactively by file content and open in vim read-only mode
 rvr() {
     file=$(rg -li $1 | sk)
     if [ "$file" ]; then
